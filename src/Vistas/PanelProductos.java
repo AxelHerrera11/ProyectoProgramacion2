@@ -46,12 +46,12 @@ public class PanelProductos extends javax.swing.JPanel {
         letActualizarProducto = new javax.swing.JLabel();
         btnEliminarProducto = new javax.swing.JPanel();
         letEliminarProducto = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
         btnAgregarImagen = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnActualizarImagen = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        separadorIzquierda = new javax.swing.JSeparator();
+        separadorDerecha = new javax.swing.JSeparator();
         letFondoProducto = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(980, 720));
@@ -162,14 +162,6 @@ public class PanelProductos extends javax.swing.JPanel {
 
         fondoPanel.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 550, 80, 30));
 
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setOpaque(true);
-        fondoPanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 280, -1));
-
-        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
-        jSeparator3.setOpaque(true);
-        fondoPanel.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 280, -1));
-
         btnAgregarImagen.setBackground(new java.awt.Color(96, 124, 124));
         btnAgregarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -192,6 +184,14 @@ public class PanelProductos extends javax.swing.JPanel {
 
         fondoPanel.add(btnActualizarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 110, 30));
 
+        separadorIzquierda.setForeground(new java.awt.Color(255, 255, 255));
+        separadorIzquierda.setOpaque(true);
+        fondoPanel.add(separadorIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 280, -1));
+
+        separadorDerecha.setForeground(new java.awt.Color(255, 255, 255));
+        separadorDerecha.setOpaque(true);
+        fondoPanel.add(separadorDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 280, -1));
+
         letFondoProducto.setBackground(new java.awt.Color(122, 167, 167));
         letFondoProducto.setForeground(new java.awt.Color(122, 167, 167));
         letFondoProducto.setText("jLabel8");
@@ -202,7 +202,7 @@ public class PanelProductos extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,8 +225,6 @@ public class PanelProductos extends javax.swing.JPanel {
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel letActualizarProducto;
     private javax.swing.JLabel letAgregarProducto;
     private javax.swing.JLabel letCantidad;
@@ -238,6 +236,8 @@ public class PanelProductos extends javax.swing.JPanel {
     private javax.swing.JLabel letPrecioNormal;
     private javax.swing.JLabel letPrecioPromocional;
     private javax.swing.JLabel letTituloProducto;
+    private javax.swing.JSeparator separadorDerecha;
+    private javax.swing.JSeparator separadorIzquierda;
     private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtCodigoProducto;
     private javax.swing.JTextField txtNombreProducto;

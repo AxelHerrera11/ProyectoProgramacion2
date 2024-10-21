@@ -26,19 +26,50 @@ public class PanelVentas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fondoPanel = new javax.swing.JPanel();
+        letTituloVentas = new javax.swing.JLabel();
+        separadorDerecha = new javax.swing.JSeparator();
+        separadorIzquierda = new javax.swing.JSeparator();
+        letFondoVentas = new javax.swing.JLabel();
+
+        fondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letTituloVentas.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        letTituloVentas.setForeground(new java.awt.Color(255, 255, 255));
+        letTituloVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letTituloVentas.setText("VENTAS");
+        fondoPanel.add(letTituloVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 70, 980, -1));
+
+        separadorDerecha.setForeground(new java.awt.Color(255, 255, 255));
+        separadorDerecha.setOpaque(true);
+        fondoPanel.add(separadorDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 100, 200, -1));
+
+        separadorIzquierda.setForeground(new java.awt.Color(255, 255, 255));
+        separadorIzquierda.setOpaque(true);
+        fondoPanel.add(separadorIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 200, -1));
+
+        letFondoVentas.setBackground(new java.awt.Color(122, 167, 167));
+        letFondoVentas.setOpaque(true);
+        fondoPanel.add(letFondoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 720));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
+            .addComponent(fondoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addComponent(fondoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel fondoPanel;
+    private javax.swing.JLabel letFondoVentas;
+    private javax.swing.JLabel letTituloVentas;
+    private javax.swing.JSeparator separadorDerecha;
+    private javax.swing.JSeparator separadorIzquierda;
     // End of variables declaration//GEN-END:variables
 }

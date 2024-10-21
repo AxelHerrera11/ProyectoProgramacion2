@@ -26,17 +26,75 @@ public class VistaVendedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fondoPanelVendedor = new javax.swing.JPanel();
+        letTituloVendedor = new javax.swing.JLabel();
+        separador = new javax.swing.JSeparator();
+        btnVendedorVentas = new javax.swing.JPanel();
+        letVendedorVentas = new javax.swing.JLabel();
+        btnVendedorClientes = new javax.swing.JPanel();
+        letVendedorClientes = new javax.swing.JLabel();
+        fondoVendedor = new javax.swing.JLabel();
+        contenedor1 = new javax.swing.JPanel();
+        contenedor2 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        fondoPanelVendedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letTituloVendedor.setFont(new java.awt.Font("Arial Unicode MS", 1, 24)); // NOI18N
+        letTituloVendedor.setForeground(new java.awt.Color(255, 255, 255));
+        letTituloVendedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letTituloVendedor.setText("VENDEDOR");
+        fondoPanelVendedor.add(letTituloVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 300, -1));
+
+        separador.setForeground(new java.awt.Color(255, 255, 255));
+        separador.setOpaque(true);
+        fondoPanelVendedor.add(separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 190, -1));
+
+        btnVendedorVentas.setBackground(new java.awt.Color(48, 99, 99));
+        btnVendedorVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVendedorVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letVendedorVentas.setFont(new java.awt.Font("Arial Unicode MS", 0, 18)); // NOI18N
+        letVendedorVentas.setForeground(new java.awt.Color(255, 255, 255));
+        letVendedorVentas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        letVendedorVentas.setText("VENTAS");
+        btnVendedorVentas.add(letVendedorVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, -1));
+
+        fondoPanelVendedor.add(btnVendedorVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 180, 30));
+
+        btnVendedorClientes.setBackground(new java.awt.Color(48, 99, 99));
+        btnVendedorClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVendedorClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letVendedorClientes.setFont(new java.awt.Font("Arial Unicode MS", 0, 18)); // NOI18N
+        letVendedorClientes.setForeground(new java.awt.Color(255, 255, 255));
+        letVendedorClientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        letVendedorClientes.setText("CLIENTES");
+        btnVendedorClientes.add(letVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, -1));
+
+        fondoPanelVendedor.add(btnVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 180, 40));
+
+        fondoVendedor.setBackground(new java.awt.Color(48, 99, 99));
+        fondoVendedor.setOpaque(true);
+        fondoPanelVendedor.add(fondoVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 720));
+
+        contenedor1.setBackground(new java.awt.Color(122, 167, 167));
+        contenedor1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fondoPanelVendedor.add(contenedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 980, 720));
+
+        contenedor2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fondoPanelVendedor.add(contenedor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addComponent(fondoPanelVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addComponent(fondoPanelVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,5 +136,15 @@ public class VistaVendedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnVendedorClientes;
+    private javax.swing.JPanel btnVendedorVentas;
+    private javax.swing.JPanel contenedor1;
+    private javax.swing.JPanel contenedor2;
+    private javax.swing.JPanel fondoPanelVendedor;
+    private javax.swing.JLabel fondoVendedor;
+    private javax.swing.JLabel letTituloVendedor;
+    private javax.swing.JLabel letVendedorClientes;
+    private javax.swing.JLabel letVendedorVentas;
+    private javax.swing.JSeparator separador;
     // End of variables declaration//GEN-END:variables
 }

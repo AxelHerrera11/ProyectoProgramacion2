@@ -28,6 +28,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
 
         fondoPanelInicio = new javax.swing.JPanel();
         letTitulo = new javax.swing.JLabel();
+        separador = new javax.swing.JSeparator();
         letUsuario = new javax.swing.JLabel();
         letContraseña = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
@@ -47,6 +48,10 @@ public class VistaInicioSesion extends javax.swing.JFrame {
         letTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letTitulo.setText("INICIO SESIÓN");
         fondoPanelInicio.add(letTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 300, 50));
+
+        separador.setForeground(new java.awt.Color(255, 255, 255));
+        separador.setOpaque(true);
+        fondoPanelInicio.add(separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 167, 220, -1));
 
         letUsuario.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,6 +150,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel letInicioSesion;
     private javax.swing.JLabel letTitulo;
     private javax.swing.JLabel letUsuario;
+    private javax.swing.JSeparator separador;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables

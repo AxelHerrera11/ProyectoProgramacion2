@@ -26,17 +26,94 @@ public class VistaSupervisor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fondoPanelSupervisor = new javax.swing.JPanel();
+        letTituloSupervisor = new javax.swing.JLabel();
+        separador = new javax.swing.JSeparator();
+        btnSupervisorProductos = new javax.swing.JPanel();
+        letSupervisorProductos = new javax.swing.JLabel();
+        btnSupervisorInventario = new javax.swing.JPanel();
+        letSupervisorInventario = new javax.swing.JLabel();
+        btnSupervisorReportesVentas = new javax.swing.JPanel();
+        letSupervisorReportesVentas = new javax.swing.JLabel();
+        fondoSupervisor = new javax.swing.JLabel();
+        contenedor1 = new javax.swing.JPanel();
+        contenedor2 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+
+        fondoPanelSupervisor.setBackground(new java.awt.Color(122, 167, 167));
+        fondoPanelSupervisor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letTituloSupervisor.setFont(new java.awt.Font("Arial Unicode MS", 1, 24)); // NOI18N
+        letTituloSupervisor.setForeground(new java.awt.Color(255, 255, 255));
+        letTituloSupervisor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letTituloSupervisor.setText("SUPERVISOR");
+        fondoPanelSupervisor.add(letTituloSupervisor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 300, -1));
+
+        separador.setForeground(new java.awt.Color(255, 255, 255));
+        separador.setOpaque(true);
+        fondoPanelSupervisor.add(separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 200, -1));
+
+        btnSupervisorProductos.setBackground(new java.awt.Color(48, 99, 99));
+        btnSupervisorProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSupervisorProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letSupervisorProductos.setFont(new java.awt.Font("Arial Unicode MS", 0, 18)); // NOI18N
+        letSupervisorProductos.setForeground(new java.awt.Color(255, 255, 255));
+        letSupervisorProductos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        letSupervisorProductos.setText("PRODUCTOS");
+        letSupervisorProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSupervisorProductos.add(letSupervisorProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 20));
+
+        fondoPanelSupervisor.add(btnSupervisorProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 160, 30));
+
+        btnSupervisorInventario.setBackground(new java.awt.Color(48, 99, 99));
+        btnSupervisorInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSupervisorInventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letSupervisorInventario.setFont(new java.awt.Font("Arial Unicode MS", 0, 18)); // NOI18N
+        letSupervisorInventario.setForeground(new java.awt.Color(255, 255, 255));
+        letSupervisorInventario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        letSupervisorInventario.setText("INVENTARIO");
+        btnSupervisorInventario.add(letSupervisorInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 20));
+
+        fondoPanelSupervisor.add(btnSupervisorInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 160, 30));
+
+        btnSupervisorReportesVentas.setBackground(new java.awt.Color(48, 99, 99));
+        btnSupervisorReportesVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSupervisorReportesVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letSupervisorReportesVentas.setFont(new java.awt.Font("Arial Unicode MS", 0, 18)); // NOI18N
+        letSupervisorReportesVentas.setForeground(new java.awt.Color(255, 255, 255));
+        letSupervisorReportesVentas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        letSupervisorReportesVentas.setText("REPORTES VENTAS");
+        btnSupervisorReportesVentas.add(letSupervisorReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 20));
+
+        fondoPanelSupervisor.add(btnSupervisorReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 180, 30));
+
+        fondoSupervisor.setBackground(new java.awt.Color(48, 99, 99));
+        fondoSupervisor.setForeground(new java.awt.Color(48, 99, 99));
+        fondoSupervisor.setOpaque(true);
+        fondoPanelSupervisor.add(fondoSupervisor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 720));
+
+        contenedor1.setBackground(new java.awt.Color(122, 167, 167));
+        contenedor1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fondoPanelSupervisor.add(contenedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 980, 720));
+
+        contenedor2.setPreferredSize(new java.awt.Dimension(300, 0));
+        contenedor2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fondoPanelSupervisor.add(contenedor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addComponent(fondoPanelSupervisor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addComponent(fondoPanelSupervisor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,5 +155,17 @@ public class VistaSupervisor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnSupervisorInventario;
+    private javax.swing.JPanel btnSupervisorProductos;
+    private javax.swing.JPanel btnSupervisorReportesVentas;
+    private javax.swing.JPanel contenedor1;
+    private javax.swing.JPanel contenedor2;
+    private javax.swing.JPanel fondoPanelSupervisor;
+    private javax.swing.JLabel fondoSupervisor;
+    private javax.swing.JLabel letSupervisorInventario;
+    private javax.swing.JLabel letSupervisorProductos;
+    private javax.swing.JLabel letSupervisorReportesVentas;
+    private javax.swing.JLabel letTituloSupervisor;
+    private javax.swing.JSeparator separador;
     // End of variables declaration//GEN-END:variables
 }

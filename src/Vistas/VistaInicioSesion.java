@@ -46,25 +46,25 @@ public class VistaInicioSesion extends javax.swing.JFrame {
         letTitulo.setForeground(new java.awt.Color(255, 255, 255));
         letTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letTitulo.setText("INICIO SESIÓN");
-        fondoPanelInicio.add(letTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 460, 50));
+        fondoPanelInicio.add(letTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 300, 50));
 
         letUsuario.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letUsuario.setForeground(new java.awt.Color(255, 255, 255));
         letUsuario.setText("USUARIO");
-        fondoPanelInicio.add(letUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
+        fondoPanelInicio.add(letUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
         letContraseña.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letContraseña.setForeground(new java.awt.Color(255, 255, 255));
         letContraseña.setText("CONTRASEÑA");
-        fondoPanelInicio.add(letContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
+        fondoPanelInicio.add(letContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
         txtUsuario.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         txtUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        fondoPanelInicio.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 260, 20));
+        fondoPanelInicio.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 210, 20));
 
         txtContraseña.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         txtContraseña.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        fondoPanelInicio.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 260, -1));
+        fondoPanelInicio.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 210, -1));
 
         btnIngreso.setBackground(new java.awt.Color(122, 167, 167));
         btnIngreso.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -77,21 +77,21 @@ public class VistaInicioSesion extends javax.swing.JFrame {
         letInicioSesion.setText("INICIAR SESIÓN");
         btnIngreso.add(letInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 120, -1));
 
-        fondoPanelInicio.add(btnIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, 120, 40));
+        fondoPanelInicio.add(btnIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 120, 40));
 
         fondoDerecha.setBackground(new java.awt.Color(122, 167, 167));
         fondoDerecha.setOpaque(true);
-        fondoPanelInicio.add(fondoDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 920, 720));
+        fondoPanelInicio.add(fondoDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 980, 720));
 
         fondoIzquierda.setBackground(new java.awt.Color(48, 99, 99));
         fondoIzquierda.setOpaque(true);
-        fondoPanelInicio.add(fondoIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 720));
+        fondoPanelInicio.add(fondoIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondoPanelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondoPanelInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -23,15 +23,14 @@ public class InicioSesionImp implements IInicioSesion{
             ps = conector.preparar(sql.getCONSULTA_USUARIO());
             
             ps.setString(1, usuario);
-            ps.setString(2, contrasenia);
             rs = ps.executeQuery();
             
             
             while(rs.next()){
-                modelo.setUsuario(rs.getString("nombre_usuario"));
-                modelo.setContrasenia(rs.getString("contrasenia_usuario"));
+                modelo.setUsuarioEncontrado(rs.getString("nombre_usuario"));
+                modelo.setContraseniaEncontrada(rs.getString("contrasenia_usuario"));
                 modelo.setTipoUsuario(Integer.parseInt(rs.getString("tipo_usuario")));
-                System.out.println(rs.getString("tipo_usuario"));
+                System.out.println(Integer.parseInt(rs.getString("tipo_usuario")));
             }
             conector.desconectar();
                 

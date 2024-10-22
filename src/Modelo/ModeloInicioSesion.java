@@ -3,10 +3,13 @@ package Modelo;
 import Vistas.VistaInicioSesion;
 
 public class ModeloInicioSesion {
+
     VistaInicioSesion vistaInicioSesion;
-    private String Usuario;
-    private String Contrasenia;
-    private int tipoUsuario;
+    private String usuario;
+    private String contrasenia;
+    private static int tipoUsuario;
+    private static String usuarioEncontrado;
+    private static String contraseniaEncontrada;
 
     public ModeloInicioSesion() {
     }
@@ -24,19 +27,19 @@ public class ModeloInicioSesion {
     }
 
     public String getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
-    public void setUsuario(String Usuario) {
-        this.Usuario = Usuario;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getContrasenia() {
-        return Contrasenia;
+        return contrasenia;
     }
 
-    public void setContrasenia(String Contrasenia) {
-        this.Contrasenia = Contrasenia;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     public int getTipoUsuario() {
@@ -46,5 +49,21 @@ public class ModeloInicioSesion {
     public void setTipoUsuario(int tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
-    
+
+    public String getUsuarioEncontrado() {
+        return usuarioEncontrado;
+    }
+
+    public void setUsuarioEncontrado(String usuarioEncontrado) {
+        this.usuarioEncontrado = usuarioEncontrado;
+    }
+
+    public String getContraseniaEncontrada() {
+        return contraseniaEncontrada;
+    }
+
+    public void setContraseniaEncontrada(String contraseniaEncontrada) {
+        this.contraseniaEncontrada = contraseniaEncontrada;
+    }
+
 }

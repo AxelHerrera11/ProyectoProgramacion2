@@ -244,4 +244,10 @@ public class PanelProductos extends javax.swing.JPanel {
     public javax.swing.JTextField txtPrecioNormal;
     public javax.swing.JTextField txtPrecioPromocional;
     // End of variables declaration//GEN-END:variables
+
+
+public void setControlador(String controlador){
+
+
+}
 }

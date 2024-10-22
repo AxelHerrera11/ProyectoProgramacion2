@@ -154,4 +154,11 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     public javax.swing.JPasswordField txtContraseña;
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+public void setControlador(String controlador){
+
+
 }
+
+}
+

@@ -30,6 +30,15 @@ public class PanelReportesVentas extends javax.swing.JPanel {
         letTituloReportesVentas = new javax.swing.JLabel();
         separadorDerecha = new javax.swing.JSeparator();
         separadorIzquierda = new javax.swing.JSeparator();
+        btnMostrarVentas = new javax.swing.JPanel();
+        letMostrarVentas = new javax.swing.JLabel();
+        panelTabla = new javax.swing.JPanel();
+        tblReportesVentas = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btnExportarExcel = new javax.swing.JPanel();
+        letExportarExcel = new javax.swing.JLabel();
+        btnExportarPDF = new javax.swing.JPanel();
+        letExportarPDF = new javax.swing.JLabel();
         letfondoReportesVentas = new javax.swing.JLabel();
 
         fondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,9 +57,61 @@ public class PanelReportesVentas extends javax.swing.JPanel {
         separadorIzquierda.setOpaque(true);
         fondoPanel.add(separadorIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 180, -1));
 
+        btnMostrarVentas.setBackground(new java.awt.Color(48, 99, 99));
+        btnMostrarVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letMostrarVentas.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letMostrarVentas.setForeground(new java.awt.Color(255, 255, 255));
+        letMostrarVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letMostrarVentas.setText("MOSTRAR VENTAS DEL DÍA");
+        btnMostrarVentas.add(letMostrarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
+
+        fondoPanel.add(btnMostrarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 210, 40));
+
+        panelTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblReportesVentas.setViewportView(jTable1);
+
+        panelTabla.add(tblReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 370));
+
+        fondoPanel.add(panelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 800, 370));
+
+        btnExportarExcel.setBackground(new java.awt.Color(48, 99, 99));
+        btnExportarExcel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letExportarExcel.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letExportarExcel.setForeground(new java.awt.Color(255, 255, 255));
+        letExportarExcel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letExportarExcel.setText("EXPORTAR EN EXCEL");
+        btnExportarExcel.add(letExportarExcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
+
+        fondoPanel.add(btnExportarExcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 590, 170, 40));
+
+        btnExportarPDF.setBackground(new java.awt.Color(48, 99, 99));
+        btnExportarPDF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letExportarPDF.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letExportarPDF.setForeground(new java.awt.Color(255, 255, 255));
+        letExportarPDF.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letExportarPDF.setText("EXPORTAR EN PDF");
+        btnExportarPDF.add(letExportarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
+
+        fondoPanel.add(btnExportarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 590, 170, 40));
+
         letfondoReportesVentas.setBackground(new java.awt.Color(122, 167, 167));
         letfondoReportesVentas.setOpaque(true);
-        fondoPanel.add(letfondoReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 720));
+        fondoPanel.add(letfondoReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 980, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -66,10 +127,19 @@ public class PanelReportesVentas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnExportarExcel;
+    private javax.swing.JPanel btnExportarPDF;
+    private javax.swing.JPanel btnMostrarVentas;
     private javax.swing.JPanel fondoPanel;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel letExportarExcel;
+    private javax.swing.JLabel letExportarPDF;
+    private javax.swing.JLabel letMostrarVentas;
     private javax.swing.JLabel letTituloReportesVentas;
     private javax.swing.JLabel letfondoReportesVentas;
+    private javax.swing.JPanel panelTabla;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
+    private javax.swing.JScrollPane tblReportesVentas;
     // End of variables declaration//GEN-END:variables
 }

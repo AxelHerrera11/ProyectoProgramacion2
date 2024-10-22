@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import Controlador.ControladorInicioSesion;
+import Modelo.ModeloInicioSesion;
+
 /**
  *
  * @author axels
@@ -15,6 +18,9 @@ public class VistaInicioSesion extends javax.swing.JFrame {
      */
     public VistaInicioSesion() {
         initComponents();
+        Modelo.ModeloInicioSesion modelo = new ModeloInicioSesion(this);
+        Controlador.ControladorInicioSesion controlador = new ControladorInicioSesion(modelo);
+        setControlador(controlador);
     }
 
     /**
@@ -142,7 +148,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnIngreso;
+    public javax.swing.JPanel btnIngreso;
     private javax.swing.JLabel fondoDerecha;
     private javax.swing.JLabel fondoIzquierda;
     private javax.swing.JPanel fondoPanelInicio;
@@ -155,10 +161,8 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
-public void setControlador(String controlador){
-
+    public void setControlador(ControladorInicioSesion controlador) {
+        btnIngreso.addMouseListener(controlador);
+    }
 
 }
-
-}
-

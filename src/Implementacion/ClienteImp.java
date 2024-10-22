@@ -20,7 +20,14 @@ public class ClienteImp implements ICliente {
         boolean resultado = true;
         conector.conectar();
         ps = conector.preparar(sql.getINSERTAR_CLIENTE());
-
+        try {
+            ps.setString(1, modelo.getNombreCliente());
+            ps.setString(2, modelo.getTelefono_Cliente());
+            ps.setString(2, modelo.getNit_cliente());
+            resultado = ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error en la insercion", 0);
+        }
         return resultado;
     }
 

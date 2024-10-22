@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import Controlador.ControladorProductos;
+import Modelo.ModeloProductos;
+
 /**
  *
  * @author Cindy Ruano
@@ -14,7 +17,12 @@ public class PanelProductos extends javax.swing.JPanel {
      * Creates new form PanelProductos
      */
     public PanelProductos() {
+
         initComponents();
+
+        Modelo.ModeloProductos modelo = new ModeloProductos(this);
+        Controlador.ControladorProductos controlador = new ControladorProductos(modelo);
+        setControlador(controlador);
     }
 
     /**
@@ -239,9 +247,14 @@ public class PanelProductos extends javax.swing.JPanel {
     public javax.swing.JTextField txtPrecioPromocional;
     // End of variables declaration//GEN-END:variables
 
+    public void setControlador(ControladorProductos controlador) {
 
-public void setControlador(String controlador){
+        btnActualizarImagen.addMouseListener(controlador);
+        btnActualizarProducto.addMouseListener(controlador);
+        btnAgregarImagen.addMouseListener(controlador);
+        btnAgregarProducto.addMouseListener(controlador);
+        btnEliminarProducto.addMouseListener(controlador);
+        btnImagen.addMouseListener(controlador);
 
-
-}
+    }
 }

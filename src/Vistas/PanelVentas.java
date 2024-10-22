@@ -40,7 +40,8 @@ public class PanelVentas extends javax.swing.JPanel {
         letPrecio = new javax.swing.JLabel();
         txtPrecioVenta = new javax.swing.JTextField();
         letImagen = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        panelImagenVentas = new javax.swing.JPanel();
+        letImagenVentas = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -59,6 +60,8 @@ public class PanelVentas extends javax.swing.JPanel {
         btnVentasContinuar = new javax.swing.JPanel();
         letVentasContinuar = new javax.swing.JLabel();
         panelProductosAgregados = new javax.swing.JPanel();
+        tblProductosAgregados = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         letFondoVentas = new javax.swing.JLabel();
 
         fondoPanel.setMinimumSize(new java.awt.Dimension(980, 720));
@@ -120,8 +123,10 @@ public class PanelVentas extends javax.swing.JPanel {
         letImagen.setText("IMAGEN");
         constructor1.add(letImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        constructor1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 250, 250));
+        panelImagenVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelImagenVentas.add(letImagenVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
+
+        constructor1.add(panelImagenVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 250, 250));
 
         jPanel5.setBackground(new java.awt.Color(48, 99, 99));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -206,6 +211,22 @@ public class PanelVentas extends javax.swing.JPanel {
 
         panelProductosAgregados.setPreferredSize(new java.awt.Dimension(250, 250));
         panelProductosAgregados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblProductosAgregados.setViewportView(jTable1);
+
+        panelProductosAgregados.add(tblProductosAgregados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 330));
+
         fondoPanel.add(panelProductosAgregados, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 300, 330));
 
         letFondoVentas.setBackground(new java.awt.Color(122, 167, 167));
@@ -234,14 +255,15 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel letBuscarNIT;
     private javax.swing.JLabel letCantidadVenta;
     private javax.swing.JLabel letFondoVentas;
     private javax.swing.JLabel letIDProducto;
     private javax.swing.JLabel letImagen;
+    private javax.swing.JLabel letImagenVentas;
     private javax.swing.JLabel letMetodoPago;
     private javax.swing.JLabel letNIT;
     private javax.swing.JLabel letNombreProducto;
@@ -251,9 +273,11 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JLabel letTextoContinuar;
     private javax.swing.JLabel letTituloVentas;
     private javax.swing.JLabel letVentasContinuar;
+    private javax.swing.JPanel panelImagenVentas;
     private javax.swing.JPanel panelProductosAgregados;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
+    private javax.swing.JScrollPane tblProductosAgregados;
     private javax.swing.JTextField txtCantidadVenta;
     private javax.swing.JTextField txtIDProducto;
     private javax.swing.JTextField txtNITVentas;

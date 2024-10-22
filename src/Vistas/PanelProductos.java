@@ -36,6 +36,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letTituloProducto = new javax.swing.JLabel();
         txtCodigoProducto = new javax.swing.JTextField();
         btnImagen = new javax.swing.JPanel();
+        letProductoImagen = new javax.swing.JLabel();
         txtNombreProducto = new javax.swing.JTextField();
         txtPrecioNormal = new javax.swing.JTextField();
         txtPrecioPromocional = new javax.swing.JTextField();
@@ -99,16 +100,8 @@ public class PanelProductos extends javax.swing.JPanel {
         txtCodigoProducto.setText("////////////////////////////////////");
         fondoPanel.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 250, -1));
 
-        javax.swing.GroupLayout btnImagenLayout = new javax.swing.GroupLayout(btnImagen);
-        btnImagen.setLayout(btnImagenLayout);
-        btnImagenLayout.setHorizontalGroup(
-            btnImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
-        );
-        btnImagenLayout.setVerticalGroup(
-            btnImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
-        );
+        btnImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnImagen.add(letProductoImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         fondoPanel.add(btnImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 250, 250));
 
@@ -235,6 +228,7 @@ public class PanelProductos extends javax.swing.JPanel {
     private javax.swing.JLabel letNombreProducto;
     private javax.swing.JLabel letPrecioNormal;
     private javax.swing.JLabel letPrecioPromocional;
+    private javax.swing.JLabel letProductoImagen;
     private javax.swing.JLabel letTituloProducto;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;

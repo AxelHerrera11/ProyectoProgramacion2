@@ -216,12 +216,12 @@ public class PanelProductos extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnActualizarImagen;
-    private javax.swing.JPanel btnActualizarProducto;
-    private javax.swing.JPanel btnAgregarImagen;
-    private javax.swing.JPanel btnAgregarProducto;
-    private javax.swing.JPanel btnEliminarProducto;
-    private javax.swing.JPanel btnImagen;
+    public javax.swing.JPanel btnActualizarImagen;
+    public javax.swing.JPanel btnActualizarProducto;
+    public javax.swing.JPanel btnAgregarImagen;
+    public javax.swing.JPanel btnAgregarProducto;
+    public javax.swing.JPanel btnEliminarProducto;
+    public javax.swing.JPanel btnImagen;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -238,10 +238,10 @@ public class PanelProductos extends javax.swing.JPanel {
     private javax.swing.JLabel letTituloProducto;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
-    private javax.swing.JTextField txtCantidad;
-    private javax.swing.JTextField txtCodigoProducto;
-    private javax.swing.JTextField txtNombreProducto;
-    private javax.swing.JTextField txtPrecioNormal;
-    private javax.swing.JTextField txtPrecioPromocional;
+    public javax.swing.JTextField txtCantidad;
+    public javax.swing.JTextField txtCodigoProducto;
+    public javax.swing.JTextField txtNombreProducto;
+    public javax.swing.JTextField txtPrecioNormal;
+    public javax.swing.JTextField txtPrecioPromocional;
     // End of variables declaration//GEN-END:variables
 }

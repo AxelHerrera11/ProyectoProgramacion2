@@ -147,11 +147,11 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel fondoIzquierda;
     private javax.swing.JPanel fondoPanelInicio;
     private javax.swing.JLabel letContraseña;
-    private javax.swing.JLabel letInicioSesion;
+    public javax.swing.JLabel letInicioSesion;
     private javax.swing.JLabel letTitulo;
     private javax.swing.JLabel letUsuario;
     private javax.swing.JSeparator separador;
-    private javax.swing.JPasswordField txtContraseña;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JPasswordField txtContraseña;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,6 +21,7 @@ public class VistaVendedor extends javax.swing.JFrame {
         Modelo.ModeloVendedor modelo = new ModeloVendedor(this);
         Controlador.ControladorVendedor controlador = new ControladorVendedor(modelo);
         setControlador(controlador);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -39,6 +40,8 @@ public class VistaVendedor extends javax.swing.JFrame {
         letVendedorVentas = new javax.swing.JLabel();
         btnVendedorClientes = new javax.swing.JPanel();
         letVendedorClientes = new javax.swing.JLabel();
+        btnVolver = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         fondoVendedor = new javax.swing.JLabel();
         contenedor1 = new javax.swing.JPanel();
         contenedor2 = new javax.swing.JPanel();
@@ -81,6 +84,34 @@ public class VistaVendedor extends javax.swing.JFrame {
         btnVendedorClientes.add(letVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 40));
 
         fondoPanelVendedor.add(btnVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 300, 40));
+
+        btnVolver.setBackground(new java.awt.Color(122, 167, 167));
+        btnVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("SALIR");
+
+        javax.swing.GroupLayout btnVolverLayout = new javax.swing.GroupLayout(btnVolver);
+        btnVolver.setLayout(btnVolverLayout);
+        btnVolverLayout.setHorizontalGroup(
+            btnVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnVolverLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        btnVolverLayout.setVerticalGroup(
+            btnVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnVolverLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        fondoPanelVendedor.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 80, 40));
 
         fondoVendedor.setBackground(new java.awt.Color(48, 99, 99));
         fondoVendedor.setOpaque(true);
@@ -156,10 +187,12 @@ public class VistaVendedor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel btnVendedorClientes;
     public javax.swing.JPanel btnVendedorVentas;
+    public javax.swing.JPanel btnVolver;
     public javax.swing.JPanel contenedor1;
     private javax.swing.JPanel contenedor2;
     private javax.swing.JPanel fondoPanelVendedor;
     private javax.swing.JLabel fondoVendedor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel letTituloVendedor;
     private javax.swing.JLabel letVendedorClientes;
     private javax.swing.JLabel letVendedorVentas;
@@ -169,5 +202,6 @@ public class VistaVendedor extends javax.swing.JFrame {
         this.addWindowListener(controlador);
         btnVendedorVentas.addMouseListener(controlador);
         btnVendedorClientes.addMouseListener(controlador);
+        btnVolver.addMouseListener(controlador);
     }
 }

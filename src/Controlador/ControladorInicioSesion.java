@@ -4,6 +4,7 @@ import Implementacion.InicioSesionImp;
 import Modelo.ModeloInicioSesion;
 import Vistas.VistaSupervisor;
 import Vistas.VistaVendedor;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -63,7 +64,7 @@ public class ControladorInicioSesion implements WindowListener, MouseListener, K
         String contrasenia = String.valueOf(modelo.getVistaInicioSesion().txtContraseña.getPassword());
         
         if(usuario.isEmpty() || contrasenia.isEmpty()){
-            JOptionPane.showConfirmDialog(null, "DATOS INCORRECTOS", "ERROR AL INICIO DE SESIÓN", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "DATOS INCORRECTOS", "ERROR EN EL INICIO DE SESIÓN", JOptionPane.ERROR_MESSAGE);
         } else {
             validarUsuario();
         }
@@ -108,7 +109,7 @@ public class ControladorInicioSesion implements WindowListener, MouseListener, K
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getComponent().equals(modelo.getVistaInicioSesion().btnIngreso)) {
-            validarUsuario();
+            procesoInicioSesion();
         }
     }
 
@@ -124,11 +125,19 @@ public class ControladorInicioSesion implements WindowListener, MouseListener, K
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        //Color original del botón [122,167,167]
+        if (e.getComponent().equals(modelo.getVistaInicioSesion().btnIngreso)){
+            modelo.getVistaInicioSesion().btnIngreso.setBackground(new Color(183,213,213));
+        }
 
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        
+        if (e.getComponent().equals(modelo.getVistaInicioSesion().btnIngreso)){
+            modelo.getVistaInicioSesion().btnIngreso.setBackground(new Color(122,167,167));
+        }
 
     }
 

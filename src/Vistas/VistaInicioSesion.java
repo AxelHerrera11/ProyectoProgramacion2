@@ -21,6 +21,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
         Modelo.ModeloInicioSesion modelo = new ModeloInicioSesion(this);
         Controlador.ControladorInicioSesion controlador = new ControladorInicioSesion(modelo);
         setControlador(controlador);
+        setLocationRelativeTo(null);
     }
 
     /**

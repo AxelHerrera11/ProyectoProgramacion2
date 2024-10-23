@@ -1,7 +1,9 @@
 package Controlador;
 
 import Modelo.ModeloVendedor;
+import Vistas.PanelClientes;
 import Vistas.PanelVentas;
+import Vistas.VistaInicioSesion;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -34,7 +36,15 @@ public class ControladorVendedor implements MouseListener, WindowListener {
         if (e.getComponent().equals(modelo.getVistaVendedor().btnVendedorVentas)) {
             PanelVentas panelV = new PanelVentas();
             MostrarPanel(panelV);
+        } else if (e.getComponent().equals(modelo.getVistaVendedor().btnVendedorClientes)){
+            PanelClientes panelC = new PanelClientes();
+            MostrarPanel(panelC);          
+        } else if (e.getComponent().equals(modelo.getVistaVendedor().btnVolver)){
+            VistaInicioSesion vistaInicioP = new VistaInicioSesion();
+            vistaInicioP.setVisible(true);
+            modelo.getVistaVendedor().dispose();
         }
+        
     }
 
     @Override
@@ -53,6 +63,8 @@ public class ControladorVendedor implements MouseListener, WindowListener {
             modelo.getVistaVendedor().btnVendedorVentas.setBackground(new Color(48,133,131));
         } else if(e.getComponent().equals(modelo.getVistaVendedor().btnVendedorClientes)){
             modelo.getVistaVendedor().btnVendedorClientes.setBackground(new Color(48,133,131));
+        } else if(e.getComponent().equals(modelo.getVistaVendedor().btnVolver)){
+            modelo.getVistaVendedor().btnVolver.setBackground(new Color(183, 213, 213));
         }
     }
 
@@ -62,6 +74,8 @@ public class ControladorVendedor implements MouseListener, WindowListener {
             modelo.getVistaVendedor().btnVendedorVentas.setBackground(new Color(48,99,99));
         } else if(e.getComponent().equals(modelo.getVistaVendedor().btnVendedorClientes)){
             modelo.getVistaVendedor().btnVendedorClientes.setBackground(new Color(48,99,99));
+        } else if(e.getComponent().equals(modelo.getVistaVendedor().btnVolver)){
+            modelo.getVistaVendedor().btnVolver.setBackground(new Color(122, 167, 167));
         }
     }
 

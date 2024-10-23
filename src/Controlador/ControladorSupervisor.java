@@ -4,6 +4,8 @@ import Modelo.ModeloSupervisor;
 import Vistas.PanelInventario;
 import Vistas.PanelProductos;
 import Vistas.PanelReportesVentas;
+import Vistas.VistaInicioSesion;
+import Vistas.VistaSupervisor;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -36,12 +38,16 @@ public class ControladorSupervisor implements MouseListener {
         if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorProductos)) {
             PanelProductos panelP = new PanelProductos();
             MostrarPanel(panelP);
-        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorInventario)){
+        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorInventario)) {
             PanelInventario PanelIn = new PanelInventario();
             MostrarPanel(PanelIn);
-        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorReportesVentas)){
+        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorReportesVentas)) {
             PanelReportesVentas PanelRV = new PanelReportesVentas();
-            MostrarPanel(PanelRV);  
+            MostrarPanel(PanelRV);
+        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnVolver)) {
+            VistaInicioSesion vistaInicioP = new VistaInicioSesion();
+            vistaInicioP.setVisible(true);
+            modelo.getVistaSupervisor().dispose();
         }
     }
 
@@ -62,19 +68,23 @@ public class ControladorSupervisor implements MouseListener {
             modelo.getVistaSupervisor().btnSupervisorInventario.setBackground(new Color(48, 133, 131));
         } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorReportesVentas)) {
             modelo.getVistaSupervisor().btnSupervisorReportesVentas.setBackground(new Color(48, 133, 131));
+        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnVolver)) {
+            modelo.getVistaSupervisor().btnVolver.setBackground(new Color(183, 213, 213));
         }
 
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+//122, 167, 167
         if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorProductos)) {
             modelo.getVistaSupervisor().btnSupervisorProductos.setBackground(new Color(48, 99, 99));
         } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorInventario)) {
             modelo.getVistaSupervisor().btnSupervisorInventario.setBackground(new Color(48, 99, 99));
         } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnSupervisorReportesVentas)) {
             modelo.getVistaSupervisor().btnSupervisorReportesVentas.setBackground(new Color(48, 99, 99));
+        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnVolver)) {
+            modelo.getVistaSupervisor().btnVolver.setBackground(new Color(122, 167, 167));
         }
 
     }

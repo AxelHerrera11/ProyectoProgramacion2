@@ -21,6 +21,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
         Modelo.ModeloSupervisor modelo = new ModeloSupervisor(this);
         Controlador.ControladorSupervisor controlador = new ControladorSupervisor(modelo);
         setControlador(controlador);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -41,6 +42,8 @@ public class VistaSupervisor extends javax.swing.JFrame {
         letSupervisorInventario = new javax.swing.JLabel();
         btnSupervisorReportesVentas = new javax.swing.JPanel();
         letSupervisorReportesVentas = new javax.swing.JLabel();
+        btnVolver = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         fondoSupervisor = new javax.swing.JLabel();
         contenedor1 = new javax.swing.JPanel();
         contenedor2 = new javax.swing.JPanel();
@@ -96,6 +99,34 @@ public class VistaSupervisor extends javax.swing.JFrame {
         btnSupervisorReportesVentas.add(letSupervisorReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 30));
 
         fondoPanelSupervisor.add(btnSupervisorReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 300, 30));
+
+        btnVolver.setBackground(new java.awt.Color(122, 167, 167));
+        btnVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("SALIR");
+
+        javax.swing.GroupLayout btnVolverLayout = new javax.swing.GroupLayout(btnVolver);
+        btnVolver.setLayout(btnVolverLayout);
+        btnVolverLayout.setHorizontalGroup(
+            btnVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnVolverLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        btnVolverLayout.setVerticalGroup(
+            btnVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnVolverLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        fondoPanelSupervisor.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 80, 40));
 
         fondoSupervisor.setBackground(new java.awt.Color(48, 99, 99));
         fondoSupervisor.setForeground(new java.awt.Color(48, 99, 99));
@@ -174,10 +205,12 @@ public class VistaSupervisor extends javax.swing.JFrame {
     public javax.swing.JPanel btnSupervisorInventario;
     public javax.swing.JPanel btnSupervisorProductos;
     public javax.swing.JPanel btnSupervisorReportesVentas;
+    public javax.swing.JPanel btnVolver;
     public javax.swing.JPanel contenedor1;
     private javax.swing.JPanel contenedor2;
     private javax.swing.JPanel fondoPanelSupervisor;
     private javax.swing.JLabel fondoSupervisor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel letSupervisorInventario;
     private javax.swing.JLabel letSupervisorProductos;
     private javax.swing.JLabel letSupervisorReportesVentas;
@@ -190,6 +223,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
         btnSupervisorProductos.addMouseListener(controlador);
         btnSupervisorInventario.addMouseListener(controlador);
         btnSupervisorReportesVentas.addMouseListener(controlador);
+        btnVolver.addMouseListener(controlador);
 
     }
 

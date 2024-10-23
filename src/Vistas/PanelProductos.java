@@ -85,7 +85,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letCodigoProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letCodigoProducto.setForeground(new java.awt.Color(255, 255, 255));
         letCodigoProducto.setText("CÓDIGO PRODUCTO");
-        fondoPanel.add(letCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 570, -1, -1));
+        fondoPanel.add(letCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, -1, -1));
 
         letImagenProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letImagenProducto.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,8 +110,8 @@ public class PanelProductos extends javax.swing.JPanel {
 
         txtCodigoProducto.setEditable(false);
         txtCodigoProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
-        fondoPanel.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, 250, -1));
-        fondoPanel.add(letCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, 250, 70));
+        fondoPanel.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 250, -1));
+        fondoPanel.add(letCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 250, 70));
 
         btnImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         btnImagen.add(letProductoImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
@@ -259,7 +259,7 @@ public class PanelProductos extends javax.swing.JPanel {
     private javax.swing.JLabel letNombreProducto;
     private javax.swing.JLabel letPrecioNormal;
     private javax.swing.JLabel letPrecioPromocional;
-    private javax.swing.JLabel letProductoImagen;
+    public javax.swing.JLabel letProductoImagen;
     private javax.swing.JLabel letTituloProducto;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;

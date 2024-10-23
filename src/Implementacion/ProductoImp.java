@@ -4,9 +4,13 @@ import Conector.DBConnection;
 import Conector.SQL;
 import Interfaces.IProducto;
 import Modelo.ModeloProductos;
+import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class ProductoImp implements IProducto{
     DBConnection conector = new DBConnection();
@@ -32,6 +36,21 @@ public class ProductoImp implements IProducto{
             conector.mensaje(e.getMessage(), "Error en la insercion", 0);
         }
         return resultado;
+    }
+
+    @Override
+    public ImageIcon seleccionarImagen(String ruta) {
+        ModeloProductos modelo = new ModeloProductos();
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("JPG", "PNG", "jpg", "png");
+        fileChooser.setFileFilter(extensionFilter);
+        ImageIcon pIconoProducto = null;
+        if(fileChooser.showOpenDialog(modelo.getVistaProductos()) == JFileChooser.APPROVE_OPTION){
+            ruta = fileChooser.getSelectedFile().getAbsolutePath();
+            Image pImagenProducto = new ImageIcon(ruta).getImage();
+            pIconoProducto = new ImageIcon(pImagenProducto.getScaledInstance(250, 250, 0));          
+        }
+        return pIconoProducto;
     }
     
 }

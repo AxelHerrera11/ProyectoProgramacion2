@@ -1,5 +1,6 @@
 package Controlador;
 
+import Implementacion.ProductoImp;
 import Modelo.ModeloProductos;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -8,6 +9,8 @@ import java.awt.event.MouseListener;
 
 public class ControladorProductos implements MouseListener, KeyListener {
     ModeloProductos modelo;
+    ProductoImp implementacion = new ProductoImp();
+    String ruta = "";
 
     public ControladorProductos(ModeloProductos modelo) {
         this.modelo = modelo;
@@ -15,7 +18,9 @@ public class ControladorProductos implements MouseListener, KeyListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        if(e.getComponent().equals(modelo.getVistaProductos().btnImagen)){
+            modelo.getVistaProductos().letProductoImagen.setIcon(implementacion.seleccionarImagen(ruta));
+        }
     }
 
     @Override

@@ -5,6 +5,7 @@
 package Vistas;
 
 import Controlador.ControladorProductos;
+import Implementacion.ProductoImp;
 import Modelo.ModeloProductos;
 
 /**
@@ -23,6 +24,8 @@ public class PanelProductos extends javax.swing.JPanel {
         Modelo.ModeloProductos modelo = new ModeloProductos(this);
         Controlador.ControladorProductos controlador = new ControladorProductos(modelo);
         setControlador(controlador);
+        ProductoImp implementacion = new ProductoImp();
+        comBoxCategoriaProducto.setModel(implementacion.mostrarCategoriaProducto());
     }
 
     /**
@@ -41,6 +44,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letImagenProducto = new javax.swing.JLabel();
         letPrecioPromocional = new javax.swing.JLabel();
         letCantidad = new javax.swing.JLabel();
+        letCantidad1 = new javax.swing.JLabel();
         letTituloProducto = new javax.swing.JLabel();
         txtCodigoProducto = new javax.swing.JTextField();
         letCodigoBarras = new javax.swing.JLabel();
@@ -50,7 +54,7 @@ public class PanelProductos extends javax.swing.JPanel {
         txtPrecioNormal = new javax.swing.JTextField();
         txtPrecioPromocional = new javax.swing.JTextField();
         txtCantidad = new javax.swing.JTextField();
-        comCategoriaProducto = new javax.swing.JComboBox<>();
+        comBoxCategoriaProducto = new javax.swing.JComboBox<>();
         btnAgregarProducto = new javax.swing.JPanel();
         letAgregarProducto = new javax.swing.JLabel();
         btnActualizarProducto = new javax.swing.JPanel();
@@ -102,6 +106,11 @@ public class PanelProductos extends javax.swing.JPanel {
         letCantidad.setText("CANTIDAD");
         fondoPanel.add(letCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
 
+        letCantidad1.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letCantidad1.setForeground(new java.awt.Color(255, 255, 255));
+        letCantidad1.setText("CATEGORÍA");
+        fondoPanel.add(letCantidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, -1, -1));
+
         letTituloProducto.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
         letTituloProducto.setForeground(new java.awt.Color(255, 255, 255));
         letTituloProducto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -135,8 +144,8 @@ public class PanelProductos extends javax.swing.JPanel {
         txtCantidad.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         fondoPanel.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 260, -1));
 
-        comCategoriaProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        fondoPanel.add(comCategoriaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, 260, 30));
+        comBoxCategoriaProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        fondoPanel.add(comBoxCategoriaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 260, 30));
 
         btnAgregarProducto.setBackground(new java.awt.Color(48, 99, 99));
         btnAgregarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -243,7 +252,7 @@ public class PanelProductos extends javax.swing.JPanel {
     private javax.swing.JPanel btnBorrarImagen;
     public javax.swing.JPanel btnEliminarProducto;
     public javax.swing.JPanel btnImagen;
-    private javax.swing.JComboBox<String> comCategoriaProducto;
+    public javax.swing.JComboBox<String> comBoxCategoriaProducto;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -251,6 +260,7 @@ public class PanelProductos extends javax.swing.JPanel {
     private javax.swing.JLabel letActualizarProducto;
     private javax.swing.JLabel letAgregarProducto;
     private javax.swing.JLabel letCantidad;
+    private javax.swing.JLabel letCantidad1;
     private javax.swing.JLabel letCodigoBarras;
     private javax.swing.JLabel letCodigoProducto;
     private javax.swing.JLabel letEliminarProducto;

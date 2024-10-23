@@ -5,9 +5,13 @@ import Conector.SQL;
 import Interfaces.IProducto;
 import Modelo.ModeloProductos;
 import java.awt.Image;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -17,6 +21,25 @@ public class ProductoImp implements IProducto{
     SQL sql = new SQL();
     PreparedStatement ps;
     ResultSet rs;
+    
+    String ruta = "";
+    
+    public byte[] getImagen(){
+        File imagen = new File(ruta);
+        byte[] icono;
+        try {
+            icono = new byte[(int) imagen.length()];
+            InputStream input = new FileInputStream(imagen);
+            input.read(icono);
+        } catch (Exception e) {
+            return null;
+        }
+        return icono;
+    }
+    
+    public String obtenerRuta(){
+        return ruta;
+    }
     
     @Override
     public boolean guardarProducto(ModeloProductos modelo) {
@@ -39,7 +62,7 @@ public class ProductoImp implements IProducto{
     }
 
     @Override
-    public ImageIcon seleccionarImagen(String ruta) {
+    public ImageIcon seleccionarImagen() {
         ModeloProductos modelo = new ModeloProductos();
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("JPG", "PNG", "jpg", "png");
@@ -48,9 +71,28 @@ public class ProductoImp implements IProducto{
         if(fileChooser.showOpenDialog(modelo.getVistaProductos()) == JFileChooser.APPROVE_OPTION){
             ruta = fileChooser.getSelectedFile().getAbsolutePath();
             Image pImagenProducto = new ImageIcon(ruta).getImage();
-            pIconoProducto = new ImageIcon(pImagenProducto.getScaledInstance(250, 250, 0));          
+            pIconoProducto = new ImageIcon(pImagenProducto.getScaledInstance(250, 250, 0));
         }
+        
         return pIconoProducto;
+    }
+
+    @Override
+    public DefaultComboBoxModel mostrarCategoriaProducto() {
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        conector.conectar();
+        try {
+            ps = conector.preparar(sql.getMOSTRAR_CATEGORIA_PRODUCTO());
+            rs = ps.executeQuery();
+            while(rs.next()){
+                modelo.addElement(rs.getString("nombre_categoria_producto"));
+            }
+            return modelo;
+        } catch (SQLException e) {
+            conector.mensaje("Error al cargar las categorias", "Error de conecxion", 0);
+            return modelo;
+        }
+        
     }
     
 }

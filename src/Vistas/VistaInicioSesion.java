@@ -163,6 +163,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
 
     public void setControlador(ControladorInicioSesion controlador) {
         btnIngreso.addMouseListener(controlador);
+        btnIngreso.addKeyListener(controlador);     
     }
-
+    
 }

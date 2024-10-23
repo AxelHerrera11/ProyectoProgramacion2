@@ -1,26 +1,26 @@
 package Controlador;
 
-import Modelo.ModeloClientes;
+import Modelo.ModeloInventario;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class ControladorClientes implements MouseListener, KeyListener {
-    ModeloClientes modelo;
+public class ControladorInventario implements MouseListener, KeyListener {
+    ModeloInventario modelo;
 
-    public ControladorClientes(ModeloClientes modelo) {
+    public ControladorInventario(ModeloInventario modelo) {
         this.modelo = modelo;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        
+
     }
 
     @Override
@@ -30,7 +30,7 @@ public class ControladorClientes implements MouseListener, KeyListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-       
+
     }
 
     @Override
@@ -45,12 +45,11 @@ public class ControladorClientes implements MouseListener, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
     }
-    
 }

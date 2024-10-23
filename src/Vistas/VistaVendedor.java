@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import Controlador.ControladorVendedor;
+import Modelo.ModeloVendedor;
+
 /**
  *
  * @author Cindy Ruano
@@ -15,6 +18,9 @@ public class VistaVendedor extends javax.swing.JFrame {
      */
     public VistaVendedor() {
         initComponents();
+        Modelo.ModeloVendedor modelo = new ModeloVendedor(this);
+        Controlador.ControladorVendedor controlador = new ControladorVendedor(modelo);
+        setControlador(controlador);
     }
 
     /**
@@ -57,11 +63,12 @@ public class VistaVendedor extends javax.swing.JFrame {
 
         letVendedorVentas.setFont(new java.awt.Font("Arial Unicode MS", 0, 18)); // NOI18N
         letVendedorVentas.setForeground(new java.awt.Color(255, 255, 255));
-        letVendedorVentas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        letVendedorVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letVendedorVentas.setText("VENTAS");
-        btnVendedorVentas.add(letVendedorVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, -1));
+        letVendedorVentas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVendedorVentas.add(letVendedorVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 40));
 
-        fondoPanelVendedor.add(btnVendedorVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 180, 30));
+        fondoPanelVendedor.add(btnVendedorVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 300, 40));
 
         btnVendedorClientes.setBackground(new java.awt.Color(48, 99, 99));
         btnVendedorClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -69,18 +76,29 @@ public class VistaVendedor extends javax.swing.JFrame {
 
         letVendedorClientes.setFont(new java.awt.Font("Arial Unicode MS", 0, 18)); // NOI18N
         letVendedorClientes.setForeground(new java.awt.Color(255, 255, 255));
-        letVendedorClientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        letVendedorClientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letVendedorClientes.setText("CLIENTES");
-        btnVendedorClientes.add(letVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, -1));
+        btnVendedorClientes.add(letVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 40));
 
-        fondoPanelVendedor.add(btnVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 180, 40));
+        fondoPanelVendedor.add(btnVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 300, 40));
 
         fondoVendedor.setBackground(new java.awt.Color(48, 99, 99));
         fondoVendedor.setOpaque(true);
         fondoPanelVendedor.add(fondoVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 720));
 
         contenedor1.setBackground(new java.awt.Color(122, 167, 167));
-        contenedor1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout contenedor1Layout = new javax.swing.GroupLayout(contenedor1);
+        contenedor1.setLayout(contenedor1Layout);
+        contenedor1Layout.setHorizontalGroup(
+            contenedor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 980, Short.MAX_VALUE)
+        );
+        contenedor1Layout.setVerticalGroup(
+            contenedor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
         fondoPanelVendedor.add(contenedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 980, 720));
 
         contenedor2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -136,9 +154,9 @@ public class VistaVendedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnVendedorClientes;
-    private javax.swing.JPanel btnVendedorVentas;
-    private javax.swing.JPanel contenedor1;
+    public javax.swing.JPanel btnVendedorClientes;
+    public javax.swing.JPanel btnVendedorVentas;
+    public javax.swing.JPanel contenedor1;
     private javax.swing.JPanel contenedor2;
     private javax.swing.JPanel fondoPanelVendedor;
     private javax.swing.JLabel fondoVendedor;
@@ -147,4 +165,9 @@ public class VistaVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel letVendedorVentas;
     private javax.swing.JSeparator separador;
     // End of variables declaration//GEN-END:variables
+    public void setControlador(ControladorVendedor controlador){
+        this.addWindowListener(controlador);
+        btnVendedorVentas.addMouseListener(controlador);
+        btnVendedorClientes.addMouseListener(controlador);
+    }
 }

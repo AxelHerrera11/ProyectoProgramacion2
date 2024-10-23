@@ -9,12 +9,16 @@ import java.awt.event.MouseListener;
 public class ControladorVentas implements MouseListener, KeyListener {
     ModeloVentas modelo;
 
-    public ControladorVentas() {
+    public ControladorVentas(ModeloVentas modelo) {
+        this.modelo = modelo;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        if(e.getComponent().equals(modelo.getVistaVentas().btnVentasContinuar)){
+            modelo.getVistaVentas().panelAgregarProductos.setVisible(false);
+            modelo.getVistaVentas().panelMetodoPago.setVisible(true);
+        }
     }
 
     @Override

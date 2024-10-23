@@ -11,5 +11,14 @@ public class ModeloVentas {
     public ModeloVentas(PanelVentas vistaVentas) {
         this.vistaVentas = vistaVentas;
     }
+
+    public PanelVentas getVistaVentas() {
+        return vistaVentas;
+    }
+
+    public void setVistaVentas(PanelVentas vistaVentas) {
+        this.vistaVentas = vistaVentas;
+    }
+    
     
 }

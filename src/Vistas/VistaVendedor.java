@@ -80,7 +80,7 @@ public class VistaVendedor extends javax.swing.JFrame {
         letVendedorClientes.setText("CLIENTES");
         btnVendedorClientes.add(letVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 40));
 
-        fondoPanelVendedor.add(btnVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 300, 40));
+        fondoPanelVendedor.add(btnVendedorClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 300, 40));
 
         fondoVendedor.setBackground(new java.awt.Color(48, 99, 99));
         fondoVendedor.setOpaque(true);

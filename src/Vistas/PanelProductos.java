@@ -43,12 +43,14 @@ public class PanelProductos extends javax.swing.JPanel {
         letCantidad = new javax.swing.JLabel();
         letTituloProducto = new javax.swing.JLabel();
         txtCodigoProducto = new javax.swing.JTextField();
+        letCodigoBarras = new javax.swing.JLabel();
         btnImagen = new javax.swing.JPanel();
         letProductoImagen = new javax.swing.JLabel();
         txtNombreProducto = new javax.swing.JTextField();
         txtPrecioNormal = new javax.swing.JTextField();
         txtPrecioPromocional = new javax.swing.JTextField();
         txtCantidad = new javax.swing.JTextField();
+        comCategoriaProducto = new javax.swing.JComboBox<>();
         btnAgregarProducto = new javax.swing.JPanel();
         letAgregarProducto = new javax.swing.JLabel();
         btnActualizarProducto = new javax.swing.JPanel();
@@ -59,6 +61,8 @@ public class PanelProductos extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btnActualizarImagen = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        btnBorrarImagen = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         separadorIzquierda = new javax.swing.JSeparator();
         separadorDerecha = new javax.swing.JSeparator();
         letFondoProducto = new javax.swing.JLabel();
@@ -81,7 +85,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letCodigoProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letCodigoProducto.setForeground(new java.awt.Color(255, 255, 255));
         letCodigoProducto.setText("CÓDIGO PRODUCTO");
-        fondoPanel.add(letCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, -1, -1));
+        fondoPanel.add(letCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 570, -1, -1));
 
         letImagenProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letImagenProducto.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,9 +108,10 @@ public class PanelProductos extends javax.swing.JPanel {
         letTituloProducto.setText("PRODUCTO");
         fondoPanel.add(letTituloProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 980, -1));
 
+        txtCodigoProducto.setEditable(false);
         txtCodigoProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
-        txtCodigoProducto.setText("////////////////////////////////////");
-        fondoPanel.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 250, -1));
+        fondoPanel.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, 250, -1));
+        fondoPanel.add(letCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, 250, 70));
 
         btnImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         btnImagen.add(letProductoImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
@@ -130,6 +135,9 @@ public class PanelProductos extends javax.swing.JPanel {
         txtCantidad.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         fondoPanel.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 260, -1));
 
+        comCategoriaProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        fondoPanel.add(comCategoriaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, 260, 30));
+
         btnAgregarProducto.setBackground(new java.awt.Color(48, 99, 99));
         btnAgregarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -139,7 +147,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letAgregarProducto.setText("AGREGAR");
         btnAgregarProducto.add(letAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        fondoPanel.add(btnAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 80, 30));
+        fondoPanel.add(btnAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 80, 30));
 
         btnActualizarProducto.setBackground(new java.awt.Color(48, 99, 99));
         btnActualizarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,7 +158,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letActualizarProducto.setText("ACTUALIZAR");
         btnActualizarProducto.add(letActualizarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        fondoPanel.add(btnActualizarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 80, 30));
+        fondoPanel.add(btnActualizarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 590, 80, 30));
 
         btnEliminarProducto.setBackground(new java.awt.Color(48, 99, 99));
         btnEliminarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,7 +169,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letEliminarProducto.setText("ELIMINAR");
         btnEliminarProducto.add(letEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        fondoPanel.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 550, 80, 30));
+        fondoPanel.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 590, 80, 30));
 
         btnAgregarImagen.setBackground(new java.awt.Color(96, 124, 124));
         btnAgregarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -170,9 +178,9 @@ public class PanelProductos extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("AGREGAR");
-        btnAgregarImagen.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
+        btnAgregarImagen.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 75, 30));
 
-        fondoPanel.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, 110, 30));
+        fondoPanel.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 75, 30));
 
         btnActualizarImagen.setBackground(new java.awt.Color(96, 124, 124));
         btnActualizarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -181,9 +189,20 @@ public class PanelProductos extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ACTUALIZAR");
-        btnActualizarImagen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
+        btnActualizarImagen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 85, 30));
 
-        fondoPanel.add(btnActualizarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 110, 30));
+        fondoPanel.add(btnActualizarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, 85, 30));
+
+        btnBorrarImagen.setBackground(new java.awt.Color(96, 124, 124));
+        btnBorrarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("BORRAR");
+        btnBorrarImagen.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 75, 30));
+
+        fondoPanel.add(btnBorrarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 470, 75, 30));
 
         separadorIzquierda.setForeground(new java.awt.Color(255, 255, 255));
         separadorIzquierda.setOpaque(true);
@@ -221,14 +240,18 @@ public class PanelProductos extends javax.swing.JPanel {
     public javax.swing.JPanel btnActualizarProducto;
     public javax.swing.JPanel btnAgregarImagen;
     public javax.swing.JPanel btnAgregarProducto;
+    private javax.swing.JPanel btnBorrarImagen;
     public javax.swing.JPanel btnEliminarProducto;
     public javax.swing.JPanel btnImagen;
+    private javax.swing.JComboBox<String> comCategoriaProducto;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel letActualizarProducto;
     private javax.swing.JLabel letAgregarProducto;
     private javax.swing.JLabel letCantidad;
+    private javax.swing.JLabel letCodigoBarras;
     private javax.swing.JLabel letCodigoProducto;
     private javax.swing.JLabel letEliminarProducto;
     private javax.swing.JLabel letFondoProducto;

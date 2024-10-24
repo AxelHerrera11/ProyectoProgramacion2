@@ -26,7 +26,11 @@ public class ControladorVentas implements MouseListener, KeyListener {
             modelo.getVistaVentas().letTextoContinuar.setVisible(false);
             modelo.getVistaVentas().btnVentasContinuar.setVisible(false);
             modelo.getVistaVentas().btnRegresar.setVisible(true);
-            modelo.getVistaVentas().btnTerminarVenta.setVisible(true);
+            if(modelo.getVistaVentas().txtNombreCliente.getText().isEmpty()){
+                modelo.getVistaVentas().btnTerminarVenta.setVisible(false);
+            }else{
+                modelo.getVistaVentas().btnTerminarVenta.setVisible(true);
+            }
         } else if(e.getComponent().equals(modelo.getVistaVentas().btnBuscarProducto)){
             try {
                 mostrarProducto();
@@ -47,6 +51,9 @@ public class ControladorVentas implements MouseListener, KeyListener {
             modelo.getVistaVentas().btnRegresar.setVisible(false);
             modelo.getVistaVentas().letTextoContinuar.setVisible(true);
             modelo.getVistaVentas().btnVentasContinuar.setVisible(true);
+        } else if(e.getComponent().equals(modelo.getVistaVentas().btnBuscarNIT)){
+            mostrarCliente();
+            modelo.getVistaVentas().btnTerminarVenta.setVisible(true);
         }
     }
 
@@ -120,6 +127,12 @@ public class ControladorVentas implements MouseListener, KeyListener {
             total += fila;
         }
         modelo.getVistaVentas().txtTotalVenta.setText(String.valueOf(total));
+    }
+    
+    public void mostrarCliente(){
+        ModeloVentas model = implementacion.mostrarCliente(modelo.getVistaVentas().txtNITVentas.getText());
+        modelo.getVistaVentas().txtNombreCliente.setText(model.getNombreCliente());
+        System.out.println(modelo.getNombreCliente());
     }
     
 }

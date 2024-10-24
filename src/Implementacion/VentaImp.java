@@ -82,5 +82,24 @@ public class VentaImp implements iVenta{
             return modelo;
         }
     }
+
+    @Override
+    public ModeloVentas mostrarCliente(String nitCliente) {
+        ModeloVentas modelo = new ModeloVentas();
+        conector.conectar();
+        try {
+            ps = conector.preparar(sql.getCONSULTA_CLIENTE_NIT());
+            ps.setString(1, nitCliente);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                modelo.setNombreCliente(rs.getString("nombre_cliente"));
+            }
+            conector.desconectar();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error", 0);
+            conector.desconectar();
+        }
+        return modelo;
+    }
     
 }

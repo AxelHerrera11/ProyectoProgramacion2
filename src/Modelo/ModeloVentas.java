@@ -10,6 +10,8 @@ public class ModeloVentas {
     private double precioNormal;
     private double percioPromocion;
     private byte[] imagenProducto;
+    private String nitCliente;
+    private String nombreCliente;
 
     public ModeloVentas() {
     }
@@ -72,6 +74,22 @@ public class ModeloVentas {
 
     public void setImagenProducto(byte[] imagenProducto) {
         this.imagenProducto = imagenProducto;
+    }
+
+    public String getNitCliente() {
+        return nitCliente;
+    }
+
+    public void setNitCliente(String nitCliente) {
+        this.nitCliente = nitCliente;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
     }
     
     

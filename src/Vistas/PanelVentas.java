@@ -71,7 +71,7 @@ public class PanelVentas extends javax.swing.JPanel {
         letNIT = new javax.swing.JLabel();
         txtNITVentas = new javax.swing.JTextField();
         letNombreVentas = new javax.swing.JLabel();
-        txtNombreVentas = new javax.swing.JTextField();
+        txtNombreCliente = new javax.swing.JTextField();
         letMetodoPago = new javax.swing.JLabel();
         comboMetodoPago = new javax.swing.JComboBox<>();
         btnBuscarNIT = new javax.swing.JPanel();
@@ -215,7 +215,7 @@ public class PanelVentas extends javax.swing.JPanel {
         letNombreVentas.setForeground(new java.awt.Color(255, 255, 255));
         letNombreVentas.setText("NOMBRE");
         panelMetodoPago.add(letNombreVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
-        panelMetodoPago.add(txtNombreVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 240, -1));
+        panelMetodoPago.add(txtNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 240, -1));
 
         letMetodoPago.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letMetodoPago.setForeground(new java.awt.Color(255, 255, 255));
@@ -323,7 +323,7 @@ public class PanelVentas extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> ComBoxPromocion;
     public javax.swing.JPanel btnAgregarProducto;
-    private javax.swing.JPanel btnBuscarNIT;
+    public javax.swing.JPanel btnBuscarNIT;
     public javax.swing.JPanel btnBuscarProducto;
     public javax.swing.JPanel btnEliminar;
     public javax.swing.JPanel btnRegresar;
@@ -361,10 +361,10 @@ public class PanelVentas extends javax.swing.JPanel {
     public javax.swing.JTable tblProductos;
     public javax.swing.JScrollPane tblProductosAgregados;
     public javax.swing.JTextField txtCantidadVenta;
-    private javax.swing.JTextField txtNITVentas;
+    public javax.swing.JTextField txtNITVentas;
     public javax.swing.JTextField txtNoCodigoBarras;
+    public javax.swing.JTextField txtNombreCliente;
     public javax.swing.JTextField txtNombreProducto;
-    private javax.swing.JTextField txtNombreVentas;
     public javax.swing.JTextField txtPrecioVenta;
     public javax.swing.JTextField txtTotalVenta;
     // End of variables declaration//GEN-END:variables

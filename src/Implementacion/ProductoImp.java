@@ -145,5 +145,16 @@ public class ProductoImp implements IProducto{
             return noCodBar;
         }
     }
+
+    @Override
+    public ModeloProductos mostrarProducto(int idProducto) {
+        ModeloProductos modelo = new ModeloProductos();
+        conector.conectar();
+        try {
+            ps = conector.preparar(sql.getCONSULTA_PRODUCTO());
+        } catch (Exception e) {
+        }
+        return modelo;
+    }
     
 }

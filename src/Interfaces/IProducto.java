@@ -9,4 +9,5 @@ public interface IProducto {
     public ImageIcon seleccionarImagen();
     public DefaultComboBoxModel mostrarCategoriaProducto();
     public int consultarNoCodigoBarras();
+    public ModeloProductos mostrarProducto(int idProducto);
 }

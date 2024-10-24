@@ -8,6 +8,7 @@ public class SQL {
     private final String AGREGAR_PRODUCTO = "INSERT INTO Producto (nombre_producto, cantidad, precio_normal, precio_promocional, codigo_de_barra, imagen_producto, categoria_producto, numero_codigo_barras) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     private final String MOSTRAR_CATEGORIA_PRODUCTO = "SELECT nombre_categoria_producto FROM Categoria_Producto";
     private final String CONSULTA_NUMERO_CODIGO_BARRAS = "SELECT MAX(numero_codigo_barras) FROM Producto";
+    private final String CONSULTA_PRODUCTO = "SELECT nombre_producto, cantidad, precio_normal, precio_promocional, codigo_de_barra, imagen_producto FROM Producto WHERE id_producto = ?";
     
     public SQL() {
     }
@@ -38,6 +39,10 @@ public class SQL {
 
     public String getCONSULTA_NUMERO_CODIGO_BARRAS() {
         return CONSULTA_NUMERO_CODIGO_BARRAS;
+    }
+
+    public String getCONSULTA_PRODUCTO() {
+        return CONSULTA_PRODUCTO;
     }
     
     

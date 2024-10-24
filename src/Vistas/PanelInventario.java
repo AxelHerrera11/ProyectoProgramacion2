@@ -4,6 +4,11 @@
  */
 package Vistas;
 
+import Controlador.ControladorInventario;
+import Modelo.ModeloInventario;
+
+
+
 /**
  *
  * @author Cindy Ruano
@@ -15,6 +20,12 @@ public class PanelInventario extends javax.swing.JPanel {
      */
     public PanelInventario() {
         initComponents();
+        
+        
+        Modelo.ModeloInventario modelo = new ModeloInventario(this);
+        Controlador.ControladorInventario controlador = new ControladorInventario(modelo);
+        SetControlador(controlador);
+       
     }
 
     /**
@@ -114,4 +125,12 @@ public class PanelInventario extends javax.swing.JPanel {
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
     // End of variables declaration//GEN-END:variables
+
+    private void SetControlador(ControladorInventario controlador) {
+        
+         letMostrarInventario.addMouseListener(controlador);
+        
+    }
+
+  
 }

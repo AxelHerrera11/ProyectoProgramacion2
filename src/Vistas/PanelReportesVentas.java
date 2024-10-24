@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import Controlador.ControladorReportesVentas;
+import Modelo.ModeloReportesVentas;
+
 /**
  *
  * @author Cindy Ruano
@@ -15,6 +18,13 @@ public class PanelReportesVentas extends javax.swing.JPanel {
      */
     public PanelReportesVentas() {
         initComponents();
+        
+        
+        
+        Modelo.ModeloReportesVentas modelo = new ModeloReportesVentas(this);
+        Controlador.ControladorReportesVentas controlador = new ControladorReportesVentas();
+        setControlador(controlador);
+       
     }
 
     /**
@@ -143,4 +153,15 @@ public class PanelReportesVentas extends javax.swing.JPanel {
     private javax.swing.JSeparator separadorIzquierda;
     private javax.swing.JScrollPane tblReportesVentas;
     // End of variables declaration//GEN-END:variables
+
+
+
+    private void setControlador(ControladorReportesVentas controlador) {
+        
+        letMostrarVentas.addMouseListener(controlador);
+        letExportarExcel.addMouseListener(controlador);
+        letExportarPDF.addMouseListener(controlador);
+    
+    
+    }
 }

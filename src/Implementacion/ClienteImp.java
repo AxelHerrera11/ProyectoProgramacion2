@@ -120,5 +120,5 @@ public class ClienteImp implements ICliente {
         
         return modelo;
     }
-    
+      
 }

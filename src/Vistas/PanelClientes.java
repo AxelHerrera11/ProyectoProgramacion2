@@ -22,9 +22,7 @@ public class PanelClientes extends javax.swing.JPanel {
 //        tblClientes.getColumnModel().getColumn(1).setResizable(false);
 //        tblClientes.getColumnModel().getColumn(2).setResizable(false);
 //        tblClientes.getColumnModel().getColumn(3).setResizable(false);
-        
-        
-        
+            
     }
     
 
@@ -44,9 +42,11 @@ public class PanelClientes extends javax.swing.JPanel {
         lblNIT = new javax.swing.JLabel();
         letNombreCliente = new javax.swing.JLabel();
         letTelefono = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         txtNit = new javax.swing.JTextField();
         txtNombreCliente = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
+        txtIDCliente = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnActualizar = new javax.swing.JPanel();
@@ -76,7 +76,7 @@ public class PanelClientes extends javax.swing.JPanel {
         lblNIT.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblNIT.setForeground(new java.awt.Color(255, 255, 255));
         lblNIT.setText("NIT");
-        fondoPanel.add(lblNIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
+        fondoPanel.add(lblNIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
 
         letNombreCliente.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         letNombreCliente.setForeground(new java.awt.Color(255, 255, 255));
@@ -88,14 +88,22 @@ public class PanelClientes extends javax.swing.JPanel {
         letTelefono.setText("TELÉFONO");
         fondoPanel.add(letTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ID DE CLIENTE");
+        fondoPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+
         txtNit.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
-        fondoPanel.add(txtNit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 320, -1));
+        fondoPanel.add(txtNit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 320, -1));
 
         txtNombreCliente.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         fondoPanel.add(txtNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 320, -1));
 
         txtTelefono.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         fondoPanel.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 320, -1));
+
+        txtIDCliente.setEditable(false);
+        fondoPanel.add(txtIDCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 320, -1));
 
         btnAgregar.setBackground(new java.awt.Color(48, 99, 99));
 
@@ -121,7 +129,7 @@ public class PanelClientes extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        fondoPanel.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 100, 40));
+        fondoPanel.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 100, 40));
 
         btnActualizar.setBackground(new java.awt.Color(48, 99, 99));
 
@@ -147,7 +155,7 @@ public class PanelClientes extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        fondoPanel.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 100, 40));
+        fondoPanel.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 100, 40));
 
         btnEliminar.setBackground(new java.awt.Color(48, 99, 99));
 
@@ -173,7 +181,7 @@ public class PanelClientes extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        fondoPanel.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 100, 40));
+        fondoPanel.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 100, 40));
 
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,9 +196,6 @@ public class PanelClientes extends javax.swing.JPanel {
         ));
         tblClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane1.setViewportView(tblClientes);
-        if (tblClientes.getColumnModel().getColumnCount() > 0) {
-            tblClientes.getColumnModel().getColumn(2).setResizable(false);
-        }
 
         fondoPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, -1, 480));
 
@@ -216,6 +221,7 @@ public class PanelClientes extends javax.swing.JPanel {
     public javax.swing.JPanel btnAgregar;
     public javax.swing.JPanel btnEliminar;
     private javax.swing.JPanel fondoPanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
@@ -228,15 +234,17 @@ public class PanelClientes extends javax.swing.JPanel {
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
     public javax.swing.JTable tblClientes;
-    private javax.swing.JTextField txtNit;
-    private javax.swing.JTextField txtNombreCliente;
-    private javax.swing.JTextField txtTelefono;
+    public javax.swing.JTextField txtIDCliente;
+    public javax.swing.JTextField txtNit;
+    public javax.swing.JTextField txtNombreCliente;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 
     public void setControlador(ControladorClientes controlador) {
         btnAgregar.addMouseListener(controlador);
         btnActualizar.addMouseListener(controlador);
         btnEliminar.addMouseListener(controlador);
+        tblClientes.addMouseListener(controlador);
 
     }
 

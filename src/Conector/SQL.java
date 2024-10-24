@@ -2,7 +2,7 @@ package Conector;
 
 public class SQL {
 
-    private final String CONSULTA_CLIENTES = "SELECT * FROM cliente";
+    private final String CONSULTA_CLIENTES = "SELECT * FROM Cliente";
     private final String CONSULTA_CLIENTES_CODIGO = "SELECT * FROM cliente WHERE codigo_cliente = ?";
     private final String INSERTAR_CLIENTE = "INSERT INTO Cliente (nombre_cliente, telefono_cliente, nit_cliente) VALUES(?,?,?)";
     private final String CONSULTA_USUARIO = "SELECT nombre_usuario, contrasenia_usuario, tipo_usuario FROM Usuario WHERE nombre_usuario = ?";

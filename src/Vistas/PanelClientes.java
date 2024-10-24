@@ -1,6 +1,7 @@
 package Vistas;
 
 import Controlador.ControladorClientes;
+import Implementacion.ClienteImp;
 import Modelo.ModeloClientes;
 
 public class PanelClientes extends javax.swing.JPanel {
@@ -14,7 +15,18 @@ public class PanelClientes extends javax.swing.JPanel {
         Modelo.ModeloClientes modelo = new ModeloClientes(this);
         Controlador.ControladorClientes controlador = new ControladorClientes(modelo);
         setControlador(controlador);
+        
+        ClienteImp implementacion = new ClienteImp();
+        tblClientes.setModel(implementacion.modeloClientes());
+//        tblClientes.getColumnModel().getColumn(0).setResizable(false);
+//        tblClientes.getColumnModel().getColumn(1).setResizable(false);
+//        tblClientes.getColumnModel().getColumn(2).setResizable(false);
+//        tblClientes.getColumnModel().getColumn(3).setResizable(false);
+        
+        
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -174,7 +186,11 @@ public class PanelClientes extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane1.setViewportView(tblClientes);
+        if (tblClientes.getColumnModel().getColumnCount() > 0) {
+            tblClientes.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         fondoPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, -1, 480));
 

@@ -22,11 +22,13 @@ public class ControladorClientes implements MouseListener, KeyListener, WindowLi
 //        ModeloClientes model = 
     }
     
+    public void mostrarDatosTbl(){
+//        if(e.getComponent().equals(modelo.getVistaClientes())){
+            modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes()); 
+        
+//        modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
     
-    
-    
-    
-    
+    }
     
 
     @Override
@@ -86,10 +88,10 @@ public class ControladorClientes implements MouseListener, KeyListener, WindowLi
 
     @Override
     public void windowOpened(WindowEvent e) {
-        if(e.getComponent().equals(modelo.getVistaClientes())){
-            modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes()); 
-        }
-        modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
+//        if(e.getComponent().equals(modelo.getVistaClientes())){
+//            modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes()); 
+//        }
+//        modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
     }
 
     @Override

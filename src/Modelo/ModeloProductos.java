@@ -12,6 +12,7 @@ public class ModeloProductos {
     private int categoriaProducto;
     private byte [] codigoBarras;
     private byte [] imagenProducto;
+    private int numeroCodigoBarras;
 
     public ModeloProductos() {
     }
@@ -90,6 +91,14 @@ public class ModeloProductos {
 
     public void setImagenProducto(byte[] imagenProducto) {
         this.imagenProducto = imagenProducto;
+    }
+
+    public int getNumeroCodigoBarras() {
+        return numeroCodigoBarras;
+    }
+
+    public void setNumeroCodigoBarras(int numeroCodigoBarras) {
+        this.numeroCodigoBarras = numeroCodigoBarras;
     }
     
     

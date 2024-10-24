@@ -89,7 +89,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letCodigoProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letCodigoProducto.setForeground(new java.awt.Color(255, 255, 255));
         letCodigoProducto.setText("CÓDIGO PRODUCTO");
-        fondoPanel.add(letCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, -1, -1));
+        fondoPanel.add(letCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 170, -1));
 
         letImagenProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letImagenProducto.setForeground(new java.awt.Color(255, 255, 255));

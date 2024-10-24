@@ -119,7 +119,7 @@ public class PanelProductos extends javax.swing.JPanel {
 
         txtCodigoProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         fondoPanel.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 250, -1));
-        fondoPanel.add(letCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 250, 70));
+        fondoPanel.add(letCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 580, 250, 70));
 
         btnImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -191,7 +191,7 @@ public class PanelProductos extends javax.swing.JPanel {
         jLabel1.setText("BUSCAR");
         btnBuscarProducto.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 75, 30));
 
-        fondoPanel.add(btnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 75, 30));
+        fondoPanel.add(btnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 75, 30));
 
         btnActualizarImagen.setBackground(new java.awt.Color(96, 124, 124));
         btnActualizarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -200,9 +200,9 @@ public class PanelProductos extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ACTUALIZAR");
-        btnActualizarImagen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 85, 30));
+        btnActualizarImagen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 30));
 
-        fondoPanel.add(btnActualizarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, 85, 30));
+        fondoPanel.add(btnActualizarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 120, 30));
 
         btnBorrarImagen.setBackground(new java.awt.Color(96, 124, 124));
         btnBorrarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -211,9 +211,9 @@ public class PanelProductos extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("BORRAR");
-        btnBorrarImagen.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 75, 30));
+        btnBorrarImagen.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 30));
 
-        fondoPanel.add(btnBorrarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 470, 75, 30));
+        fondoPanel.add(btnBorrarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 120, 30));
 
         separadorIzquierda.setForeground(new java.awt.Color(255, 255, 255));
         separadorIzquierda.setOpaque(true);

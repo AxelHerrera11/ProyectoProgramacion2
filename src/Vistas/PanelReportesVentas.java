@@ -86,6 +86,7 @@ public class PanelReportesVentas extends javax.swing.JPanel {
         panelTabla.add(tblReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 370));
 
         fondoPanel.add(panelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 800, 370));
+        panelTabla.getAccessibleContext().setAccessibleDescription("");
 
         btnExportarExcel.setBackground(new java.awt.Color(48, 99, 99));
         btnExportarExcel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

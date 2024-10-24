@@ -30,6 +30,11 @@ public class PanelInventario extends javax.swing.JPanel {
         letTituloInventario = new javax.swing.JLabel();
         separadorDerecha = new javax.swing.JSeparator();
         separadorIzquierda = new javax.swing.JSeparator();
+        panelTabla = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btnMostrarInventario = new javax.swing.JPanel();
+        letMostrarInventario = new javax.swing.JLabel();
         letFondoInventario = new javax.swing.JLabel();
 
         fondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -47,6 +52,38 @@ public class PanelInventario extends javax.swing.JPanel {
         separadorIzquierda.setForeground(new java.awt.Color(255, 255, 255));
         separadorIzquierda.setOpaque(true);
         fondoPanel.add(separadorIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 230, -1));
+
+        panelTabla.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        panelTabla.setMinimumSize(new java.awt.Dimension(800, 370));
+        panelTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        panelTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 370));
+
+        fondoPanel.add(panelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 800, 370));
+
+        btnMostrarInventario.setBackground(new java.awt.Color(48, 99, 99));
+        btnMostrarInventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letMostrarInventario.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letMostrarInventario.setForeground(new java.awt.Color(255, 255, 255));
+        letMostrarInventario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letMostrarInventario.setText("MOSTRAR VERSIÓN INVENTARIO");
+        btnMostrarInventario.add(letMostrarInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
+
+        fondoPanel.add(btnMostrarInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 240, 40));
 
         letFondoInventario.setBackground(new java.awt.Color(122, 167, 167));
         letFondoInventario.setOpaque(true);
@@ -66,9 +103,14 @@ public class PanelInventario extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnMostrarInventario;
     private javax.swing.JPanel fondoPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel letFondoInventario;
+    private javax.swing.JLabel letMostrarInventario;
     private javax.swing.JLabel letTituloInventario;
+    private javax.swing.JPanel panelTabla;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
     // End of variables declaration//GEN-END:variables

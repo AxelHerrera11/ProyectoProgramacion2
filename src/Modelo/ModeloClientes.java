@@ -7,6 +7,7 @@ public class ModeloClientes {
     private String nombreCliente;
     private String telefono_Cliente;
     private String nit_cliente;
+    private int codigo_cliente;
 
     public ModeloClientes() {
     }
@@ -45,6 +46,14 @@ public class ModeloClientes {
 
     public void setNit_cliente(String nit_cliente) {
         this.nit_cliente = nit_cliente;
+    }
+
+    public int getCodigo_cliente() {
+        return codigo_cliente;
+    }
+
+    public void setCodigo_cliente(int codigo_cliente) {
+        this.codigo_cliente = codigo_cliente;
     }
     
     

@@ -103,7 +103,7 @@ public class PanelInventario extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnMostrarInventario;
+    public javax.swing.JPanel btnMostrarInventario;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

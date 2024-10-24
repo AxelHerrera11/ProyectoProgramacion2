@@ -12,6 +12,7 @@ public class SQL {
     private final String CONSULTA_PRODUCTO = "SELECT nombre_producto, cantidad, precio_normal, precio_promocional, codigo_de_barra, imagen_producto FROM Producto WHERE id_producto = ?";
     private final String CONSULTA_ACTUALIZAR_CLIENTE = "INSERT INTO Cliente (nombre_cliente, telefono_cliente) VALUES (?,?)";
     private final String CONSULTA_ELMINAR_CLIENTE = "DELETE FROM Cliente where nit_cliente = ?";
+    private final String CONSULTA_PRODUCTO_NO_CB = "SELECT nombre_producto, cantidad, precio_normal, precio_promocional, imagen_producto FROM Producto WHERE numero_codigo_barras = ?";
     
     public SQL() {
     }
@@ -54,6 +55,10 @@ public class SQL {
 
     public String getCONSULTA_ELMINAR_CLIENTE() {
         return CONSULTA_ELMINAR_CLIENTE;
+    }
+
+    public String getCONSULTA_PRODUCTO_NO_CB() {
+        return CONSULTA_PRODUCTO_NO_CB;
     }
     
 }

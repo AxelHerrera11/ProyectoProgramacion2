@@ -131,7 +131,6 @@ public class ControladorProductos implements MouseListener, KeyListener {
         modelo.getVistaProductos().txtCantidad.setText(String.valueOf(model.getCantidad()));
         modelo.getVistaProductos().txtPrecioNormal.setText(String.valueOf(model.getPrecioNormal()));
         modelo.getVistaProductos().txtPrecioPromocional.setText(String.valueOf(model.getPrecioPromocion()));
-        modelo.getVistaProductos().txtCodigoProducto.setEditable(false);
         modelo.getVistaProductos().letProductoImagen.setIcon(implementacion.generarImagen(model.getImagenProducto(), modelo.getVistaProductos().letProductoImagen.getWidth(), modelo.getVistaProductos().letProductoImagen.getHeight()));
         modelo.getVistaProductos().letCodigoBarras.setIcon(implementacion.generarImagen(model.getCodigoBarras(), modelo.getVistaProductos().letCodigoBarras.getWidth(), modelo.getVistaProductos().letCodigoBarras.getHeight()));
     }

@@ -6,6 +6,7 @@ import Interfaces.IProducto;
 import Modelo.ModeloProductos;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -72,6 +73,14 @@ public class ProductoImp implements IProducto{
         
         pIconCB = new ImageIcon(new ImageIcon(pImageCB).getImage().getScaledInstance(250, 70, 0));
         return pIconCB;
+    }
+    
+    public ImageIcon generarImagen(byte[] codigoBytes, int ancho, int alto) throws IOException{
+        ImageIcon pIcon = null;
+        ByteArrayInputStream bite = new ByteArrayInputStream(codigoBytes);
+        BufferedImage bufferedImage = ImageIO.read(bite);
+        pIcon = new ImageIcon(new ImageIcon(bufferedImage).getImage().getScaledInstance(ancho, alto, 0));
+        return pIcon;
     }
     
     @Override
@@ -152,7 +161,20 @@ public class ProductoImp implements IProducto{
         conector.conectar();
         try {
             ps = conector.preparar(sql.getCONSULTA_PRODUCTO());
-        } catch (Exception e) {
+            ps.setInt(1, idProducto);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                modelo.setNombreProducto(rs.getString("nombre_producto"));
+                modelo.setCantidad(Integer.parseInt(rs.getString("cantidad")));
+                modelo.setPrecioNormal(Double.parseDouble(rs.getString("precio_normal")));
+                modelo.setPrecioPromocion(Double.parseDouble(rs.getString("precio_promocional")));
+                modelo.setCodigoBarras(rs.getBytes("codigo_de_barra"));
+                modelo.setImagenProducto(rs.getBytes("imagen_producto"));
+            }
+            conector.desconectar();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error", 0);
+            conector.desconectar();
         }
         return modelo;
     }

@@ -39,6 +39,7 @@ public class ControladorProductos implements MouseListener, KeyListener {
     
     
     
+    
     public void agregarProducto() throws IOException{
         boolean resultado;
         int consultaNoCB = implementacion.consultarNoCodigoBarras();
@@ -80,6 +81,12 @@ public class ControladorProductos implements MouseListener, KeyListener {
             } catch (IOException ex) {
                 Logger.getLogger(ControladorProductos.class.getName()).log(Level.SEVERE, null, ex);
             }
+        } else if(e.getComponent().equals(modelo.getVistaProductos().btnBuscarProducto)){
+            try {
+                mostrarProducto();
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorProductos.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -116,6 +123,17 @@ public class ControladorProductos implements MouseListener, KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
 
+    }
+    
+    public void mostrarProducto() throws IOException{
+        ModeloProductos model = implementacion.mostrarProducto(Integer.parseInt(modelo.getVistaProductos().txtCodigoProducto.getText()));
+        modelo.getVistaProductos().txtNombreProducto.setText(model.getNombreProducto());
+        modelo.getVistaProductos().txtCantidad.setText(String.valueOf(model.getCantidad()));
+        modelo.getVistaProductos().txtPrecioNormal.setText(String.valueOf(model.getPrecioNormal()));
+        modelo.getVistaProductos().txtPrecioPromocional.setText(String.valueOf(model.getPrecioPromocion()));
+        modelo.getVistaProductos().txtCodigoProducto.setEditable(false);
+        modelo.getVistaProductos().letProductoImagen.setIcon(implementacion.generarImagen(model.getImagenProducto(), modelo.getVistaProductos().letProductoImagen.getWidth(), modelo.getVistaProductos().letProductoImagen.getHeight()));
+        modelo.getVistaProductos().letCodigoBarras.setIcon(implementacion.generarImagen(model.getCodigoBarras(), modelo.getVistaProductos().letCodigoBarras.getWidth(), modelo.getVistaProductos().letCodigoBarras.getHeight()));
     }
     
 }

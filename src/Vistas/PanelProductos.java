@@ -61,7 +61,7 @@ public class PanelProductos extends javax.swing.JPanel {
         letActualizarProducto = new javax.swing.JLabel();
         btnEliminarProducto = new javax.swing.JPanel();
         letEliminarProducto = new javax.swing.JLabel();
-        btnAgregarImagen = new javax.swing.JPanel();
+        btnBuscarProducto = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnActualizarImagen = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -117,12 +117,13 @@ public class PanelProductos extends javax.swing.JPanel {
         letTituloProducto.setText("PRODUCTO");
         fondoPanel.add(letTituloProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 980, -1));
 
-        txtCodigoProducto.setEditable(false);
         txtCodigoProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         fondoPanel.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 250, -1));
         fondoPanel.add(letCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 250, 70));
 
         btnImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        letProductoImagen.setBackground(new java.awt.Color(255, 255, 255));
         btnImagen.add(letProductoImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         fondoPanel.add(btnImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 250, 250));
@@ -180,16 +181,17 @@ public class PanelProductos extends javax.swing.JPanel {
 
         fondoPanel.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 590, 80, 30));
 
-        btnAgregarImagen.setBackground(new java.awt.Color(96, 124, 124));
-        btnAgregarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnBuscarProducto.setBackground(new java.awt.Color(96, 124, 124));
+        btnBuscarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("AGREGAR");
-        btnAgregarImagen.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 75, 30));
+        jLabel1.setText("BUSCAR");
+        btnBuscarProducto.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 75, 30));
 
-        fondoPanel.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 75, 30));
+        fondoPanel.add(btnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 75, 30));
 
         btnActualizarImagen.setBackground(new java.awt.Color(96, 124, 124));
         btnActualizarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -247,9 +249,9 @@ public class PanelProductos extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel btnActualizarImagen;
     public javax.swing.JPanel btnActualizarProducto;
-    public javax.swing.JPanel btnAgregarImagen;
     public javax.swing.JPanel btnAgregarProducto;
     private javax.swing.JPanel btnBorrarImagen;
+    public javax.swing.JPanel btnBuscarProducto;
     public javax.swing.JPanel btnEliminarProducto;
     public javax.swing.JPanel btnImagen;
     public javax.swing.JComboBox<String> comBoxCategoriaProducto;
@@ -261,7 +263,7 @@ public class PanelProductos extends javax.swing.JPanel {
     private javax.swing.JLabel letAgregarProducto;
     private javax.swing.JLabel letCantidad;
     private javax.swing.JLabel letCantidad1;
-    private javax.swing.JLabel letCodigoBarras;
+    public javax.swing.JLabel letCodigoBarras;
     private javax.swing.JLabel letCodigoProducto;
     private javax.swing.JLabel letEliminarProducto;
     private javax.swing.JLabel letFondoProducto;
@@ -284,7 +286,7 @@ public class PanelProductos extends javax.swing.JPanel {
 
         btnActualizarImagen.addMouseListener(controlador);
         btnActualizarProducto.addMouseListener(controlador);
-        btnAgregarImagen.addMouseListener(controlador);
+        btnBuscarProducto.addMouseListener(controlador);
         btnAgregarProducto.addMouseListener(controlador);
         btnEliminarProducto.addMouseListener(controlador);
         btnImagen.addMouseListener(controlador);

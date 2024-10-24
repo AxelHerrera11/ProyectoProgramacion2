@@ -11,7 +11,8 @@ public class SQL {
     private final String CONSULTA_NUMERO_CODIGO_BARRAS = "SELECT MAX(numero_codigo_barras) FROM Producto";
     private final String CONSULTA_PRODUCTO = "SELECT nombre_producto, cantidad, precio_normal, precio_promocional, codigo_de_barra, imagen_producto FROM Producto WHERE id_producto = ?";
     private final String CONSULTA_ACTUALIZAR_CLIENTE = "INSERT INTO Cliente (nombre_cliente, telefono_cliente) VALUES (?,?)";
-
+    private final String CONSULTA_ELMINAR_CLIENTE = "DELETE FROM Cliente where nit_cliente = ?";
+    
     public SQL() {
     }
 
@@ -49,6 +50,10 @@ public class SQL {
 
     public String getCONSULTA_ACTUALIZAR_CLIENTE() {
         return CONSULTA_ACTUALIZAR_CLIENTE;
+    }
+
+    public String getCONSULTA_ELMINAR_CLIENTE() {
+        return CONSULTA_ELMINAR_CLIENTE;
     }
     
 }

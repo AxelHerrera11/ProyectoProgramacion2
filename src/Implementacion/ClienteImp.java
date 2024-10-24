@@ -24,7 +24,7 @@ public class ClienteImp implements ICliente {
         try {
             ps.setString(1, modelo.getNombreCliente());
             ps.setString(2, modelo.getTelefono_Cliente());
-            ps.setString(2, modelo.getNit_cliente());
+            ps.setString(3, modelo.getNit_cliente());
             resultado = ps.execute();
         } catch (SQLException e) {
             conector.mensaje(e.getMessage(), "Error en la insercion", 0);
@@ -38,9 +38,8 @@ public class ClienteImp implements ICliente {
         conector.conectar();
         ps = conector.preparar(sql.getCONSULTA_ACTUALIZAR_CLIENTE());
         try {
-            ps.setString(1, modelo.getNit_cliente());
-            ps.setString(2, modelo.getNombreCliente());
-            ps.setString(3,modelo.getTelefono_Cliente());
+            ps.setString(1, modelo.getNombreCliente());
+            ps.setString(2,modelo.getTelefono_Cliente());
             
             return ps.execute();
         } catch (SQLException e) {
@@ -52,6 +51,15 @@ public class ClienteImp implements ICliente {
 
     @Override
     public boolean eliminarCliente(String nit) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getCONSULTA_ELMINAR_CLIENTE());
+        
+        try {
+//            ps.setString(1, );
+        } catch (Exception e) {
+        }
+        
     
     return false;
     }

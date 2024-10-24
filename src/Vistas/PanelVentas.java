@@ -70,6 +70,7 @@ public class PanelVentas extends javax.swing.JPanel {
         panelProductosAgregados = new javax.swing.JPanel();
         tblProductosAgregados = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
         letFondoVentas = new javax.swing.JLabel();
 
         fondoPanel.setMinimumSize(new java.awt.Dimension(980, 720));
@@ -243,6 +244,9 @@ public class PanelVentas extends javax.swing.JPanel {
 
         fondoPanel.add(panelProductosAgregados, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 390, 330));
 
+        jTextField1.setText("jTextField1");
+        fondoPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, -1, -1));
+
         letFondoVentas.setBackground(new java.awt.Color(122, 167, 167));
         letFondoVentas.setOpaque(true);
         fondoPanel.add(letFondoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 720));
@@ -270,6 +274,7 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel letBuscarNIT;
     private javax.swing.JLabel letCantidadVenta;
     private javax.swing.JLabel letFondoVentas;

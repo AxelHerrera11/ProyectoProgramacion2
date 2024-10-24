@@ -56,16 +56,16 @@ public class PanelReportesVentas extends javax.swing.JPanel {
         letTituloReportesVentas.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
         letTituloReportesVentas.setForeground(new java.awt.Color(255, 255, 255));
         letTituloReportesVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        letTituloReportesVentas.setText("REPORTES VENTAS");
+        letTituloReportesVentas.setText("REPORTES VENTAS DEL DÍA");
         fondoPanel.add(letTituloReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 980, -1));
 
         separadorDerecha.setForeground(new java.awt.Color(255, 255, 255));
         separadorDerecha.setOpaque(true);
-        fondoPanel.add(separadorDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, 180, -1));
+        fondoPanel.add(separadorDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 100, 130, -1));
 
         separadorIzquierda.setForeground(new java.awt.Color(255, 255, 255));
         separadorIzquierda.setOpaque(true);
-        fondoPanel.add(separadorIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 180, -1));
+        fondoPanel.add(separadorIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 130, -1));
 
         btnMostrarVentas.setBackground(new java.awt.Color(48, 99, 99));
         btnMostrarVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

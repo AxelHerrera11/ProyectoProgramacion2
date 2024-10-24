@@ -14,6 +14,7 @@ public class SQL {
     private final String CONSULTA_ELMINAR_CLIENTE = "DELETE FROM Cliente where nit_cliente = ?";
     private final String CONSULTA_PRODUCTO_NO_CB = "SELECT nombre_producto, cantidad, precio_normal, precio_promocional, imagen_producto FROM Producto WHERE numero_codigo_barras = ?";
     private final String CONSULTA_TIPO_PAGO = "SELECT nombre_tipo_pago FROM Tipo_Pago";
+    private final String CONSULTA_CLIENTE_NIT = "SELECT * FROM Cliente WHERE nit_cliente = ?";
     public SQL() {
     }
 
@@ -63,6 +64,10 @@ public class SQL {
 
     public String getCONSULTA_TIPO_PAGO() {
         return CONSULTA_TIPO_PAGO;
+    }
+
+    public String getCONSULTA_CLIENTE_NIT() {
+        return CONSULTA_CLIENTE_NIT;
     }
     
 }

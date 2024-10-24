@@ -72,11 +72,11 @@ public class VistaInicioSesion extends javax.swing.JFrame {
 
         txtUsuario.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         txtUsuario.setBorder(null);
-        fondoPanelInicio.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 210, 20));
+        fondoPanelInicio.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 210, 30));
 
         txtContraseña.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         txtContraseña.setBorder(null);
-        fondoPanelInicio.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 210, 20));
+        fondoPanelInicio.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 210, 30));
 
         btnIngreso.setBackground(new java.awt.Color(122, 167, 167));
         btnIngreso.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

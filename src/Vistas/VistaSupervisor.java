@@ -72,9 +72,9 @@ public class VistaSupervisor extends javax.swing.JFrame {
         letSupervisorProductos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letSupervisorProductos.setText("PRODUCTOS");
         letSupervisorProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSupervisorProductos.add(letSupervisorProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 30));
+        btnSupervisorProductos.add(letSupervisorProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 40));
 
-        fondoPanelSupervisor.add(btnSupervisorProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 300, 30));
+        fondoPanelSupervisor.add(btnSupervisorProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 300, 40));
 
         btnSupervisorInventario.setBackground(new java.awt.Color(48, 99, 99));
         btnSupervisorInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -84,9 +84,9 @@ public class VistaSupervisor extends javax.swing.JFrame {
         letSupervisorInventario.setForeground(new java.awt.Color(255, 255, 255));
         letSupervisorInventario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letSupervisorInventario.setText("INVENTARIO");
-        btnSupervisorInventario.add(letSupervisorInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 30));
+        btnSupervisorInventario.add(letSupervisorInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 40));
 
-        fondoPanelSupervisor.add(btnSupervisorInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 300, 30));
+        fondoPanelSupervisor.add(btnSupervisorInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 300, 40));
 
         btnSupervisorReportesVentas.setBackground(new java.awt.Color(48, 99, 99));
         btnSupervisorReportesVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -96,9 +96,9 @@ public class VistaSupervisor extends javax.swing.JFrame {
         letSupervisorReportesVentas.setForeground(new java.awt.Color(255, 255, 255));
         letSupervisorReportesVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letSupervisorReportesVentas.setText("REPORTES VENTAS");
-        btnSupervisorReportesVentas.add(letSupervisorReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 30));
+        btnSupervisorReportesVentas.add(letSupervisorReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 40));
 
-        fondoPanelSupervisor.add(btnSupervisorReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 300, 30));
+        fondoPanelSupervisor.add(btnSupervisorReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 300, 40));
 
         btnVolver.setBackground(new java.awt.Color(122, 167, 167));
         btnVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));

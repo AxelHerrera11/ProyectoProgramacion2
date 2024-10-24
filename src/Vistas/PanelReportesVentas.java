@@ -122,7 +122,7 @@ public class PanelReportesVentas extends javax.swing.JPanel {
 
         letfondoReportesVentas.setBackground(new java.awt.Color(122, 167, 167));
         letfondoReportesVentas.setOpaque(true);
-        fondoPanel.add(letfondoReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 980, 720));
+        fondoPanel.add(letfondoReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 750));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

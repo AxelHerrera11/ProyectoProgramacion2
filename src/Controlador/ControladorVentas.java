@@ -23,6 +23,10 @@ public class ControladorVentas implements MouseListener, KeyListener {
         if(e.getComponent().equals(modelo.getVistaVentas().btnVentasContinuar)){
             modelo.getVistaVentas().panelAgregarProductos.setVisible(false);
             modelo.getVistaVentas().panelMetodoPago.setVisible(true);
+            modelo.getVistaVentas().letTextoContinuar.setVisible(false);
+            modelo.getVistaVentas().btnVentasContinuar.setVisible(false);
+            modelo.getVistaVentas().btnRegresar.setVisible(true);
+            modelo.getVistaVentas().btnTerminarVenta.setVisible(true);
         } else if(e.getComponent().equals(modelo.getVistaVentas().btnBuscarProducto)){
             try {
                 mostrarProducto();
@@ -33,6 +37,16 @@ public class ControladorVentas implements MouseListener, KeyListener {
         } else if(e.getComponent().equals(modelo.getVistaVentas().btnAgregarProducto)){
             agregarProudctoEnTabla();
             mostrarTotalVenta();
+            modelo.getVistaVentas().letTextoContinuar.setVisible(true);
+            modelo.getVistaVentas().btnVentasContinuar.setVisible(true);
+            modelo.getVistaVentas().btnEliminar.setVisible(true);
+        } else if(e.getComponent().equals(modelo.getVistaVentas().btnRegresar)){
+            modelo.getVistaVentas().panelMetodoPago.setVisible(false);
+            modelo.getVistaVentas().panelAgregarProductos.setVisible(true);
+            modelo.getVistaVentas().btnTerminarVenta.setVisible(false);
+            modelo.getVistaVentas().btnRegresar.setVisible(false);
+            modelo.getVistaVentas().letTextoContinuar.setVisible(true);
+            modelo.getVistaVentas().btnVentasContinuar.setVisible(true);
         }
     }
 

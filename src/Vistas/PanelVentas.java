@@ -27,6 +27,11 @@ public class PanelVentas extends javax.swing.JPanel {
         VentaImp implementacion = new VentaImp();
         comboMetodoPago.setModel(implementacion.mostrarTipoPago());
         tblProductos.setModel(implementacion.modeloTablaClientes());
+        this.btnRegresar.setVisible(false);
+        this.btnTerminarVenta.setVisible(false);
+        this.btnEliminar.setVisible(false);
+        this.btnVentasContinuar.setVisible(false);
+        this.letTextoContinuar.setVisible(false);
     }
 
     /**
@@ -81,6 +86,8 @@ public class PanelVentas extends javax.swing.JPanel {
         txtTotalVenta = new javax.swing.JTextField();
         btnRegresar = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        btnTerminarVenta = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         letFondoVentas = new javax.swing.JLabel();
 
         fondoPanel.setMinimumSize(new java.awt.Dimension(980, 720));
@@ -285,6 +292,17 @@ public class PanelVentas extends javax.swing.JPanel {
 
         fondoPanel.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 650, 110, 30));
 
+        btnTerminarVenta.setBackground(new java.awt.Color(96, 124, 124));
+        btnTerminarVenta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("TERMINAR VENTA");
+        btnTerminarVenta.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
+
+        fondoPanel.add(btnTerminarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 650, 140, 30));
+
         letFondoVentas.setBackground(new java.awt.Color(122, 167, 167));
         letFondoVentas.setOpaque(true);
         fondoPanel.add(letFondoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 720));
@@ -308,13 +326,15 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JPanel btnBuscarNIT;
     public javax.swing.JPanel btnBuscarProducto;
     public javax.swing.JPanel btnEliminar;
-    private javax.swing.JPanel btnRegresar;
+    public javax.swing.JPanel btnRegresar;
+    public javax.swing.JPanel btnTerminarVenta;
     public javax.swing.JPanel btnVentasContinuar;
     private javax.swing.JComboBox<String> comboMetodoPago;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel letBuscarNIT;
     private javax.swing.JLabel letCantidadVenta;
@@ -329,7 +349,7 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JLabel letNombreVentas;
     private javax.swing.JLabel letPrecio;
     private javax.swing.JLabel letProductosAgregados;
-    private javax.swing.JLabel letTextoContinuar;
+    public javax.swing.JLabel letTextoContinuar;
     private javax.swing.JLabel letTituloVentas;
     private javax.swing.JLabel letVentasContinuar;
     public javax.swing.JPanel panelAgregarProductos;
@@ -354,5 +374,8 @@ public class PanelVentas extends javax.swing.JPanel {
         btnAgregarProducto.addMouseListener(controlador);
         btnBuscarProducto.addMouseListener(controlador);
         btnBuscarNIT.addMouseListener(controlador);
+        btnRegresar.addMouseListener(controlador);
+        btnTerminarVenta.addMouseListener(controlador);
+        btnEliminar.addMouseListener(controlador);
     }
 }

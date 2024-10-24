@@ -1,7 +1,9 @@
 package Interfaces;
 
 import Modelo.ModeloVentas;
+import javax.swing.DefaultComboBoxModel;
 
 public interface iVenta {
     public ModeloVentas mostrarProducto(int noCodBar);
+    public DefaultComboBoxModel mostrarTipoPago();
 }

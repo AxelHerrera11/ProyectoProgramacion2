@@ -11,7 +11,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.imageio.ImageIO;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 
 public class VentaImp implements iVenta{
 
@@ -49,6 +51,36 @@ public class VentaImp implements iVenta{
         BufferedImage bufferedImage = ImageIO.read(bite);
         pIcon = new ImageIcon(new ImageIcon(bufferedImage).getImage().getScaledInstance(ancho, alto, 0));
         return pIcon;
+    }
+    
+    DefaultTableModel modeloTabla = new DefaultTableModel();
+    public DefaultTableModel modeloTablaClientes() {
+        
+        modeloTabla.setColumnIdentifiers(new Object[]{"Producto","Precio","Cantidad","Sub Total"});
+        return modeloTabla;
+    }
+    
+    public DefaultTableModel agregarEnTabla(String nombre, String precio, String cantidad, String subTotal){
+        modeloTabla.setColumnIdentifiers(new Object[]{"Producto","Precio","Cantidad","Sub Total"});
+        modeloTabla.addRow(new Object[]{nombre, precio, cantidad, subTotal});
+        return modeloTabla;
+    }
+    
+    @Override
+    public DefaultComboBoxModel mostrarTipoPago() {
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        conector.conectar();
+        try {
+            ps = conector.preparar(sql.getCONSULTA_TIPO_PAGO());
+            rs = ps.executeQuery();
+            while(rs.next()){
+                modelo.addElement(rs.getString("nombre_tipo_pago"));
+            }
+            return modelo;
+        } catch (SQLException e) {
+            conector.mensaje("Error al cargar los tipso de pago", "Error de conecxion", 0);
+            return modelo;
+        }
     }
     
 }

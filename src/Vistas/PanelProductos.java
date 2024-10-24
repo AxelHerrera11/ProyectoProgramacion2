@@ -26,6 +26,7 @@ public class PanelProductos extends javax.swing.JPanel {
         setControlador(controlador);
         ProductoImp implementacion = new ProductoImp();
         comBoxCategoriaProducto.setModel(implementacion.mostrarCategoriaProducto());
+       
     }
 
     /**

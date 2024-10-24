@@ -5,6 +5,7 @@
 package Vistas;
 
 import Controlador.ControladorVentas;
+import Implementacion.VentaImp;
 import Modelo.ModeloVentas;
 
 /**
@@ -23,6 +24,9 @@ public class PanelVentas extends javax.swing.JPanel {
         Controlador.ControladorVentas controlador = new ControladorVentas(modelo);
         setControlador(controlador);
         this.btnAgregarProducto.setVisible(false);
+        VentaImp implementacion = new VentaImp();
+        comboMetodoPago.setModel(implementacion.mostrarTipoPago());
+        tblProductos.setModel(implementacion.modeloTablaClientes());
     }
 
     /**
@@ -71,8 +75,8 @@ public class PanelVentas extends javax.swing.JPanel {
         letVentasContinuar = new javax.swing.JLabel();
         panelProductosAgregados = new javax.swing.JPanel();
         tblProductosAgregados = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        tblProductos = new javax.swing.JTable();
+        txtTotalVenta = new javax.swing.JTextField();
         letFondoVentas = new javax.swing.JLabel();
 
         fondoPanel.setMinimumSize(new java.awt.Dimension(980, 720));
@@ -232,7 +236,7 @@ public class PanelVentas extends javax.swing.JPanel {
         panelProductosAgregados.setPreferredSize(new java.awt.Dimension(250, 250));
         panelProductosAgregados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -243,12 +247,12 @@ public class PanelVentas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tblProductosAgregados.setViewportView(jTable1);
+        tblProductosAgregados.setViewportView(tblProductos);
 
         panelProductosAgregados.add(tblProductosAgregados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 330));
 
         fondoPanel.add(panelProductosAgregados, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 390, 330));
-        fondoPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, 250, 30));
+        fondoPanel.add(txtTotalVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, 250, 30));
 
         letFondoVentas.setBackground(new java.awt.Color(122, 167, 167));
         letFondoVentas.setOpaque(true);
@@ -277,8 +281,6 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel letBuscarNIT;
     private javax.swing.JLabel letCantidadVenta;
     private javax.swing.JLabel letFondoVentas;
@@ -301,13 +303,15 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JPanel panelProductosAgregados;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
-    private javax.swing.JScrollPane tblProductosAgregados;
+    public javax.swing.JTable tblProductos;
+    public javax.swing.JScrollPane tblProductosAgregados;
     public javax.swing.JTextField txtCantidadVenta;
     private javax.swing.JTextField txtNITVentas;
     public javax.swing.JTextField txtNoCodigoBarras;
     public javax.swing.JTextField txtNombreProducto;
     private javax.swing.JTextField txtNombreVentas;
     public javax.swing.JTextField txtPrecioVenta;
+    public javax.swing.JTextField txtTotalVenta;
     // End of variables declaration//GEN-END:variables
 
     public void setControlador(ControladorVentas controlador){

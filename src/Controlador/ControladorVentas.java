@@ -30,6 +30,9 @@ public class ControladorVentas implements MouseListener, KeyListener {
             } catch (IOException ex) {
                 Logger.getLogger(ControladorVentas.class.getName()).log(Level.SEVERE, null, ex);
             }
+        } else if(e.getComponent().equals(modelo.getVistaVentas().btnAgregarProducto)){
+            agregarProudctoEnTabla();
+            mostrarTotalVenta();
         }
     }
 
@@ -80,6 +83,29 @@ public class ControladorVentas implements MouseListener, KeyListener {
         modelo.getVistaVentas().txtNombreProducto.setText(model.getNombreProducto());
         modelo.getVistaVentas().txtPrecioVenta.setText(String.valueOf(precio));
         modelo.getVistaVentas().letImagenVentas.setIcon(implementacion.generarImagen(model.getImagenProducto(), modelo.getVistaVentas().letImagenVentas.getWidth(), modelo.getVistaVentas().letImagenVentas.getHeight()));
+    }
+    
+    public void agregarProudctoEnTabla(){
+        String nombre = modelo.getVistaVentas().txtNombreProducto.getText();
+        double precio = Double.parseDouble(modelo.getVistaVentas().txtPrecioVenta.getText());
+        int cantidad = Integer.parseInt(modelo.getVistaVentas().txtCantidadVenta.getText());
+        double subTotal = precio * cantidad;
+        String precioTabla = String.valueOf(precio);
+        String cantidadTabla = String.valueOf(cantidad);
+        String subTotalTabla = String.valueOf(subTotal);
+        
+        modelo.getVistaVentas().tblProductos.setModel(implementacion.agregarEnTabla(nombre, precioTabla, cantidadTabla, subTotalTabla));
+    }
+    
+    public void mostrarTotalVenta(){
+        double fila = 0;
+        double total = 0;
+        
+        for(int i = 0; i < modelo.getVistaVentas().tblProductos.getRowCount(); i++){
+            fila = Double.parseDouble(modelo.getVistaVentas().tblProductos.getValueAt(i, 3).toString());
+            total += fila;
+        }
+        modelo.getVistaVentas().txtTotalVenta.setText(String.valueOf(total));
     }
     
 }

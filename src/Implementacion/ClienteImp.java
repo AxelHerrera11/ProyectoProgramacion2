@@ -7,6 +7,7 @@ import Modelo.ModeloClientes;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
 public class ClienteImp implements ICliente {
 
@@ -31,4 +32,41 @@ public class ClienteImp implements ICliente {
         return resultado;
     }
 
+    @Override
+    public boolean actualizarCliente(ModeloClientes modelo) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.get)
+        
+        
+        return false;
+    }
+
+    @Override
+    public boolean eliminarCliente(String nit) {
+    
+    return false;
+    }
+
+    @Override
+    public DefaultTableModel modeloClientes() {
+        
+        
+        return null;
+    }
+
+    @Override
+    public DefaultTableModel modeloCliente(int codigo_cliente) {
+        
+        
+        return null;
+    }
+
+    @Override
+    public ModeloClientes mostrarCliente(int codigo_cliente) {
+        
+        
+        return null;
+    }
+    
 }

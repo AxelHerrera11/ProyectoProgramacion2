@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.ModeloClientes;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -30,11 +31,26 @@ public class ControladorClientes implements MouseListener, KeyListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        
+        if(e.getComponent().equals(modelo.getVistaClientes().btnAgregar)){
+            modelo.getVistaClientes().btnAgregar.setBackground(new Color(83, 134, 134));
+        } else if (e.getComponent().equals(modelo.getVistaClientes().btnActualizar)){
+            modelo.getVistaClientes().btnActualizar.setBackground(new Color(83, 134, 134));
+        } else if (e.getComponent().equals(modelo.getVistaClientes().btnEliminar)){
+            modelo.getVistaClientes().btnEliminar.setBackground(new Color(83, 134, 134));
+        }
        
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        if(e.getComponent().equals(modelo.getVistaClientes().btnAgregar)){
+            modelo.getVistaClientes().btnAgregar.setBackground(new Color(48,99,99));
+        } else if (e.getComponent().equals(modelo.getVistaClientes().btnActualizar)){
+            modelo.getVistaClientes().btnActualizar.setBackground(new Color(48,99,99));
+        } else if (e.getComponent().equals(modelo.getVistaClientes().btnEliminar)){
+            modelo.getVistaClientes().btnEliminar.setBackground(new Color(48,99,99));
+        }
 
     }
 

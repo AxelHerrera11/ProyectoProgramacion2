@@ -29,7 +29,7 @@ public class PanelVentas extends javax.swing.JPanel {
         tblProductos.setModel(implementacion.modeloTablaClientes());
         this.btnRegresar.setVisible(false);
         this.btnTerminarVenta.setVisible(false);
-        this.btnEliminar.setVisible(false);
+        this.btnEliminarProducto.setVisible(false);
         this.btnVentasContinuar.setVisible(false);
         this.letTextoContinuar.setVisible(false);
     }
@@ -64,7 +64,7 @@ public class PanelVentas extends javax.swing.JPanel {
         btnAgregarProducto = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         ComBoxPromocion = new javax.swing.JComboBox<>();
-        btnEliminar = new javax.swing.JPanel();
+        btnEliminarProducto = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         letIDProducto1 = new javax.swing.JLabel();
         panelMetodoPago = new javax.swing.JPanel();
@@ -183,17 +183,17 @@ public class PanelVentas extends javax.swing.JPanel {
         ComBoxPromocion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SIN PROMOCIÓN", "CON PROMOCIÓN" }));
         panelAgregarProductos.add(ComBoxPromocion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 140, 30));
 
-        btnEliminar.setBackground(new java.awt.Color(48, 99, 99));
-        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnEliminarProducto.setBackground(new java.awt.Color(48, 99, 99));
+        btnEliminarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ELIMINAR");
-        btnEliminar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+        btnEliminarProducto.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
 
-        panelAgregarProductos.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 90, 30));
+        panelAgregarProductos.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 90, 30));
 
         fondoPanel.add(panelAgregarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 720));
 
@@ -226,6 +226,7 @@ public class PanelVentas extends javax.swing.JPanel {
         panelMetodoPago.add(comboMetodoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 240, -1));
 
         btnBuscarNIT.setBackground(new java.awt.Color(48, 99, 99));
+        btnBuscarNIT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBuscarNIT.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         letBuscarNIT.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
@@ -245,7 +246,7 @@ public class PanelVentas extends javax.swing.JPanel {
 
         letTextoContinuar.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letTextoContinuar.setForeground(new java.awt.Color(255, 255, 255));
-        letTextoContinuar.setText("Continuar con los datos de compra");
+        letTextoContinuar.setText("CONTINUAR CON EL MÉTODO DE PAGO");
         fondoPanel.add(letTextoContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 580, -1, 20));
 
         btnVentasContinuar.setBackground(new java.awt.Color(96, 124, 124));
@@ -282,6 +283,7 @@ public class PanelVentas extends javax.swing.JPanel {
         fondoPanel.add(txtTotalVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, 250, 30));
 
         btnRegresar.setBackground(new java.awt.Color(96, 124, 124));
+        btnRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRegresar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
@@ -293,6 +295,7 @@ public class PanelVentas extends javax.swing.JPanel {
         fondoPanel.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 650, 110, 30));
 
         btnTerminarVenta.setBackground(new java.awt.Color(96, 124, 124));
+        btnTerminarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTerminarVenta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
@@ -325,7 +328,7 @@ public class PanelVentas extends javax.swing.JPanel {
     public javax.swing.JPanel btnAgregarProducto;
     public javax.swing.JPanel btnBuscarNIT;
     public javax.swing.JPanel btnBuscarProducto;
-    public javax.swing.JPanel btnEliminar;
+    public javax.swing.JPanel btnEliminarProducto;
     public javax.swing.JPanel btnRegresar;
     public javax.swing.JPanel btnTerminarVenta;
     public javax.swing.JPanel btnVentasContinuar;
@@ -376,6 +379,6 @@ public class PanelVentas extends javax.swing.JPanel {
         btnBuscarNIT.addMouseListener(controlador);
         btnRegresar.addMouseListener(controlador);
         btnTerminarVenta.addMouseListener(controlador);
-        btnEliminar.addMouseListener(controlador);
+        btnEliminarProducto.addMouseListener(controlador);
     }
 }

@@ -66,6 +66,11 @@ public class VentaImp implements iVenta{
         return modeloTabla;
     }
     
+    public DefaultTableModel eliminarEnTabla(int fila){
+        modeloTabla.removeRow(fila);
+        return modeloTabla;
+    }
+    
     @Override
     public DefaultComboBoxModel mostrarTipoPago() {
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();

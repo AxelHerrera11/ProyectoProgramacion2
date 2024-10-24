@@ -43,7 +43,7 @@ public class ControladorVentas implements MouseListener, KeyListener {
             mostrarTotalVenta();
             modelo.getVistaVentas().letTextoContinuar.setVisible(true);
             modelo.getVistaVentas().btnVentasContinuar.setVisible(true);
-            modelo.getVistaVentas().btnEliminar.setVisible(true);
+            modelo.getVistaVentas().btnEliminarProducto.setVisible(true);
         } else if(e.getComponent().equals(modelo.getVistaVentas().btnRegresar)){
             modelo.getVistaVentas().panelMetodoPago.setVisible(false);
             modelo.getVistaVentas().panelAgregarProductos.setVisible(true);
@@ -54,6 +54,9 @@ public class ControladorVentas implements MouseListener, KeyListener {
         } else if(e.getComponent().equals(modelo.getVistaVentas().btnBuscarNIT)){
             mostrarCliente();
             modelo.getVistaVentas().btnTerminarVenta.setVisible(true);
+        } else if(e.getComponent().equals(modelo.getVistaVentas().btnEliminarProducto)){
+            eliminarProductoEnTabla();
+            mostrarTotalVenta();
         }
     }
 
@@ -133,6 +136,11 @@ public class ControladorVentas implements MouseListener, KeyListener {
         ModeloVentas model = implementacion.mostrarCliente(modelo.getVistaVentas().txtNITVentas.getText());
         modelo.getVistaVentas().txtNombreCliente.setText(model.getNombreCliente());
         System.out.println(modelo.getNombreCliente());
+    }
+    
+    public void eliminarProductoEnTabla(){
+        int fila = modelo.getVistaVentas().tblProductos.getSelectedRow();
+        modelo.getVistaVentas().tblProductos.setModel(implementacion.eliminarEnTabla(fila));
     }
     
 }

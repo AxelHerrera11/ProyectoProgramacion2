@@ -37,17 +37,17 @@ public class ClienteImp implements ICliente {
         boolean resultado = true;
         conector.conectar();
         ps = conector.preparar(sql.getCONSULTA_ACTUALIZAR_CLIENTE());
-        
         try {
             ps.setString(1, modelo.getNit_cliente());
             ps.setString(2, modelo.getNombreCliente());
             ps.setString(3,modelo.getTelefono_Cliente());
-        } catch (Exception e) {
+            
+            return ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error al actualizar", 0);
+            return resultado;
         }
         
-        
-        
-        return false;
     }
 
     @Override

@@ -128,5 +128,22 @@ public class ProductoImp implements IProducto{
         }
         
     }
+
+    @Override
+    public int consultarNoCodigoBarras() {
+        int noCodBar = 0;
+        conector.conectar();
+        try {
+            ps = conector.preparar(sql.getCONSULTA_NUMERO_CODIGO_BARRAS());
+            rs = ps.executeQuery();
+            while(rs.next()){
+                noCodBar = rs.getInt("MAX(numero_codigo_barras)");
+            }
+            return noCodBar;
+        } catch (SQLException e) {
+            conector.mensaje("Error al consultar el numero de codigo de barras", "Error de conecxion", 0);
+            return noCodBar;
+        }
+    }
     
 }

@@ -41,7 +41,14 @@ public class ControladorProductos implements MouseListener, KeyListener {
     
     public void agregarProducto() throws IOException{
         boolean resultado;
-        String numeroCodigoBarras = "10001";
+        int consultaNoCB = implementacion.consultarNoCodigoBarras();
+        int noCodigoBarras;
+        if(consultaNoCB != 0){
+            noCodigoBarras = consultaNoCB + 1;
+        } else{
+            noCodigoBarras = 10001;
+        }
+        String numeroCodigoBarras = String.valueOf(noCodigoBarras);
         implementacion.generarCodigoBarras(numeroCodigoBarras);
         int codigoCategoria = this.modelo.getVistaProductos().comBoxCategoriaProducto.getSelectedIndex() + 1;
         ModeloProductos modelo = new ModeloProductos();
@@ -51,7 +58,7 @@ public class ControladorProductos implements MouseListener, KeyListener {
         modelo.setPrecioPromocion(Double.parseDouble(this.modelo.getVistaProductos().txtPrecioPromocional.getText()));
         modelo.setCategoriaProducto(codigoCategoria);
         modelo.setImagenProducto(getImagen());
-        modelo.setNumeroCodigoBarras(Integer.parseInt(numeroCodigoBarras));
+        modelo.setNumeroCodigoBarras(noCodigoBarras);
         modelo.setCodigoBarras(implementacion.obtenerCodigoBarras());
         resultado = implementacion.guardarProducto(modelo);
         if(!resultado){

@@ -8,4 +8,5 @@ public interface IProducto {
     public boolean guardarProducto(ModeloProductos modelo);
     public ImageIcon seleccionarImagen();
     public DefaultComboBoxModel mostrarCategoriaProducto();
+    public int consultarNoCodigoBarras();
 }

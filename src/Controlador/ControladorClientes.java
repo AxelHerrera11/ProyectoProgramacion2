@@ -78,10 +78,12 @@ public class ControladorClientes implements MouseListener, KeyListener, WindowLi
             }
 
         } else if (e.getComponent().equals(modelo.getVistaClientes().tblClientes)) {
+            
             modelo.getVistaClientes().txtIDCliente.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 0)));
             modelo.getVistaClientes().txtNombreCliente.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 1)));
             modelo.getVistaClientes().txtTelefono.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 2)));
             modelo.getVistaClientes().txtNit.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 3)));
+            
         }   
         
 

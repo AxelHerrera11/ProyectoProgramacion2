@@ -19,6 +19,7 @@ public class SQL {
     private final String INSERTAR_VENTA = "INSERT INTO Venta (vendedor, tipo_pago, fecha_venta, hora_venta, total_venta, iva, cliente) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private final String CONSULTA_MOSTRAR_TIPO_USUARIO = "SELECT tipo_usuario FROM Usuario";
     private final String CONSULTA_INSERTAR_USUARIO = "INSERT INTO Usuario (nombre_usuario, contrasenia_usuario, tipo_usuario) VALUES (?,?,?)";
+    private final String CONSULTA_CANTIDAD_PRODUCTO = "SELECT cantidad FROM Producto WHERE id_producto = ?";
     private final String ACTUALIZAR_CAN_AL_RE_VENTA = "UPDATE Producto SET cantidad = ? WHERE id_producto = ?";
     private final String CONSULTA_ULTIMA_VENTA = "SELECT MAX(id_venta) FROM Venta";
     private final String INSERTAR_DETALLE_VENTA = "INSERT INTO Detalle_Venta (producto_dv, precio_venta, cantidad_dv, subtotal, venta) VALUES (?, ?, ?, ?, ?)";
@@ -88,6 +89,10 @@ public class SQL {
 
     public String getCONSULTA_INSERTAR_USUARIO() {
         return CONSULTA_INSERTAR_USUARIO;
+    }
+
+    public String getCONSULTA_CANTIDAD_PRODUCTO() {
+        return CONSULTA_CANTIDAD_PRODUCTO;
     }
 
     public String getACTUALIZAR_CAN_AL_RE_VENTA() {

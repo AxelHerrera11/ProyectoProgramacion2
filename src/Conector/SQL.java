@@ -78,5 +78,13 @@ public class SQL {
     public String getINSERTAR_VENTA() {
         return INSERTAR_VENTA;
     }
+
+    public String getCONSULTA_MOSTRAR_TIPO_USUARIO() {
+        return CONSULTA_MOSTRAR_TIPO_USUARIO;
+    }
+
+    public String getCONSULTA_INSERTAR_USUARIO() {
+        return CONSULTA_INSERTAR_USUARIO;
+    }
     
 }

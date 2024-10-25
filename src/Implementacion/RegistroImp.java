@@ -36,7 +36,10 @@ public class RegistroImp implements IRegistro{
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         conector.conectar();
         
-        
+        try {
+            ps = conector.preparar(sql.getCONSULTA_MOSTRAR_TIPO_USUARIO());
+        } catch (Exception e) {
+        }
         
         return null;
     }

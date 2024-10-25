@@ -15,6 +15,10 @@ public class ModeloVentas {
     private byte[] imagenProducto;
     private String nitCliente;
     private String nombreCliente;
+    private double precioVenta;
+    private int cantidadVenta;
+    private double subTotal;
+    private int idVenta;
     
     private int idVendedor;
     private int tipoPago;
@@ -109,6 +113,38 @@ public class ModeloVentas {
 
     public void setNombreCliente(String nombreCliente) {
         this.nombreCliente = nombreCliente;
+    }
+
+    public double getPrecioVenta() {
+        return precioVenta;
+    }
+
+    public void setPrecioVenta(double precioVenta) {
+        this.precioVenta = precioVenta;
+    }
+
+    public int getCantidadVenta() {
+        return cantidadVenta;
+    }
+
+    public void setCantidadVenta(int cantidadVenta) {
+        this.cantidadVenta = cantidadVenta;
+    }
+
+    public double getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
+    }
+
+    public int getIdVenta() {
+        return idVenta;
+    }
+
+    public void setIdVenta(int idVenta) {
+        this.idVenta = idVenta;
     }
 
     public int getIdVendedor() {

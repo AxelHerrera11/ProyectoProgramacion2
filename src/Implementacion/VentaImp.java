@@ -128,5 +128,73 @@ public class VentaImp implements iVenta{
         }
         return resultado;
     }
+
+    @Override
+    public int buscarCantidad(int idProducto) {
+        int cantidad = 0;
+        try {
+            ps = conector.preparar(sql.getCONSULTA_CANTIDAD_PRODUCTO());
+            ps.setInt(1, idProducto);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                cantidad = rs.getInt("cantidad");
+            }
+            return cantidad;
+        } catch (SQLException e) {
+            conector.mensaje("Error al consultar la cantidad", "Error de conecxion", 0);
+            return cantidad;
+        }
+    }
+
+    @Override
+    public boolean actualizarCantidad(ModeloVentas modelo) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getACTUALIZAR_CAN_AL_RE_VENTA());
+        try {
+            ps.setInt(2, modelo.getIdProducto());
+            ps.setInt(1, modelo.getCantidadProducto());
+            
+            resultado = ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error al actualizar la cantidad", 0);
+        }
+        return resultado;
+    }
+
+    @Override
+    public boolean guardarDetalleVenta(ModeloVentas modelo) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getINSERTAR_DETALLE_VENTA());
+        try {
+            ps.setInt(1, modelo.getIdProducto());
+            ps.setDouble(2, modelo.getPrecioVenta());
+            ps.setInt(3, modelo.getCantidadVenta());
+            ps.setDouble(4, modelo.getSubTotal());
+            ps.setInt(5, modelo.getIdVenta());
+            resultado = ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error en la insercion", 0);
+        }
+        return resultado;
+    }
+
+    @Override
+    public int utimaVenta() {
+        int idVenta = 0;
+        conector.conectar();
+        try {
+            ps = conector.preparar(sql.getCONSULTA_ULTIMA_VENTA());
+            rs = ps.executeQuery();
+            while(rs.next()){
+                idVenta = rs.getInt("MAX(id_venta)");
+            }
+            return idVenta;
+        } catch (SQLException e) {
+            conector.mensaje("Error al consultar la ulitma venta", "Error de conexion", idVenta);
+            return idVenta;
+        }
+    }
     
 }

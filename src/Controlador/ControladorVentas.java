@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class ControladorVentas implements MouseListener, KeyListener {
     ModeloVentas modelo;
@@ -64,6 +65,8 @@ public class ControladorVentas implements MouseListener, KeyListener {
             mostrarTotalVenta();
         } else if(e.getComponent().equals(modelo.getVistaVentas().btnTerminarVenta)){
             realizarVenta();
+            agregarDetalleVenta();
+            JOptionPane.showMessageDialog(null, "Venta realizada con éxito", "Venta", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -190,6 +193,52 @@ public class ControladorVentas implements MouseListener, KeyListener {
             }else{
                 System.out.println("Hubo un problema al insertar.");
             }
+    }
+    
+    public void agregarDetalleVenta(){
+        double fila = 0;
+        int idProducto = 0;
+        double precioVenta = 0;
+        int CantidadActualizar = 0;
+        int CantidadVenta = 0;
+        double subTotal = 0;
+        int idVenta = 0;
+        
+        for(int i = 0; i < modelo.getVistaVentas().tblProductos.getRowCount(); i++){
+            idProducto = Integer.parseInt(modelo.getVistaVentas().tblProductos.getValueAt(i, 0).toString());
+            precioVenta = Double.parseDouble(modelo.getVistaVentas().tblProductos.getValueAt(i, 2).toString());
+            int cantidadBD = implementacion.buscarCantidad(idProducto);
+            int cantidadT = Integer.parseInt(modelo.getVistaVentas().tblProductos.getValueAt(i, 3).toString());
+            
+            boolean resultado;
+            ModeloVentas modeloA = new ModeloVentas();
+            boolean resultado2;
+            ModeloVentas modeloD = new ModeloVentas();
+            
+            
+            if(cantidadBD < cantidadT){
+            
+                
+            }else{
+                CantidadActualizar = cantidadBD - cantidadT;
+                modeloA.setIdProducto(idProducto);
+                modeloA.setCantidadProducto(CantidadActualizar);
+                resultado = implementacion.actualizarCantidad(modeloA);
+                CantidadVenta = cantidadT;
+                subTotal = Double.parseDouble(modelo.getVistaVentas().tblProductos.getValueAt(i, 4).toString());
+                idVenta = implementacion.utimaVenta();
+                
+                modeloD.setIdProducto(idProducto);
+                modeloD.setPrecioVenta(precioVenta);
+                modeloD.setCantidadVenta(CantidadVenta);
+                modeloD.setSubTotal(subTotal);
+                modeloD.setIdVenta(idVenta);
+                resultado2 = implementacion.guardarDetalleVenta(modeloD);
+            }
+            
+            
+            
+        }
     }
     
 }

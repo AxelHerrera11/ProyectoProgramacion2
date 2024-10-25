@@ -23,7 +23,7 @@ public class SQL {
     private final String ACTUALIZAR_CAN_AL_RE_VENTA = "UPDATE Producto SET cantidad = ? WHERE id_producto = ?";
     private final String CONSULTA_ULTIMA_VENTA = "SELECT MAX(id_venta) FROM Venta";
     private final String INSERTAR_DETALLE_VENTA = "INSERT INTO Detalle_Venta (producto_dv, precio_venta, cantidad_dv, subtotal, venta) VALUES (?, ?, ?, ?, ?)";
-    private final String CONSULTA_MOSTRAR_USUARIOS = "SELECT nombre_usuario, contrasenia_usuario FROM Usuario";
+    private final String CONSULTA_MOSTRAR_USUARIOS = "SELECT nombre_usuario, contrasenia_usuario FROM Usuario WHERE nombre_usuario = ?";
     private final String CONSULTA_ELIMINAR_USUARIO = "DELETE FROM Usuario WHERE nombre_usuario = ?;";
     private final String ACTUALIZAR_PRODUCTO = "UPDATE Producto SET nombre_producto = ?, cantidad = ?, precio_normal = ?, precio_promocional = ?, categoria_producto = ? WHERE id_producto = ?";
     private final String ELIMINAR_PRODUCTO = "DELETE FROM Producto WHERE id_producto = ?";

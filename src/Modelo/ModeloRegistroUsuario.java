@@ -11,12 +11,14 @@ import Vistas.PanelRegistrarUsuario;
  * @author jhosu
  */
 public class ModeloRegistroUsuario {
-    
+
     PanelRegistrarUsuario vistaRegistro;
     private String nombreUsuario;
     private String ContraseniaUsuario;
     private int categoriaUsuario;
-    
+    private static String usuarioEncontrado;
+    private static String contraseniaEncontrada;
+
     public ModeloRegistroUsuario() {
     }
 
@@ -56,5 +58,21 @@ public class ModeloRegistroUsuario {
         this.categoriaUsuario = categoriaUsuario;
     }
 
-    
+    public String getUsuarioEncontrado() {
+        return usuarioEncontrado;
+    }
+
+    public void setUsuarioEncontrado(String usuarioEncontrado) {
+        this.usuarioEncontrado = usuarioEncontrado;
+    }
+
+    public String getContraseniaEncontrada() {
+        return contraseniaEncontrada;
+    }
+
+    public void setContraseniaEncontrada(String contraseniaEncontrada) {
+        this.contraseniaEncontrada = contraseniaEncontrada;
+    }
+
+   
 }

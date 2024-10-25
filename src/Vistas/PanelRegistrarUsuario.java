@@ -113,13 +113,15 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        FondoPanel.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, 130, 40));
+        FondoPanel.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 130, 40));
 
         btnBorrar.setBackground(new java.awt.Color(48, 99, 99));
+        btnBorrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("BORRAR");
 
         javax.swing.GroupLayout btnBorrarLayout = new javax.swing.GroupLayout(btnBorrar);
         btnBorrar.setLayout(btnBorrarLayout);
@@ -127,18 +129,18 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             btnBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnBorrarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnBorrarLayout.setVerticalGroup(
             btnBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnBorrarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        FondoPanel.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 130, 40));
+        FondoPanel.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, 130, 40));
 
         FondoRegistro.setBackground(new java.awt.Color(122, 167, 167));
         FondoRegistro.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -166,7 +168,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FondoPanel;
     private javax.swing.JLabel FondoRegistro;
-    private javax.swing.JPanel btnBorrar;
+    public javax.swing.JPanel btnBorrar;
     public javax.swing.JPanel btnRegistrar;
     public javax.swing.JComboBox<String> cmbTipoUsuario;
     private javax.swing.JLabel jLabel1;
@@ -181,6 +183,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
 
     public void setControlador(ControladorRegistroUsuario controlador){
         btnRegistrar.addMouseListener(controlador);
+        btnBorrar.addMouseListener(controlador);
         
     }
 

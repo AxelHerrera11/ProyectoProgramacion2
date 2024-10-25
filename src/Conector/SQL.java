@@ -55,6 +55,7 @@ public class SQL {
                                             "    Tipo_Pago tp ON v.tipo_pago = tp.id_tipo_pago\n" +
                                             "JOIN \n" +
                                             "    Cliente c ON v.cliente = c.id_cliente;";
+    private final String CONSULTAR_ULTIMO_PRODUCTO_AGREGADO = "SELECT MAX(id_producto) FROM Producto";
     
     public SQL() {
     }
@@ -173,6 +174,10 @@ public class SQL {
 
     public String getCONSULTA_VENTAS() {
         return CONSULTA_VENTAS;
+    }
+
+    public String getCONSULTAR_ULTIMO_PRODUCTO_AGREGADO() {
+        return CONSULTAR_ULTIMO_PRODUCTO_AGREGADO;
     }
     
 }

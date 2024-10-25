@@ -1,6 +1,8 @@
 package Modelo;
 
 import Vistas.PanelProductos;
+import java.sql.Date;
+import java.sql.Time;
 
 public class ModeloProductos {
     PanelProductos vistaProductos;
@@ -13,6 +15,10 @@ public class ModeloProductos {
     private byte [] codigoBarras;
     private byte [] imagenProducto;
     private int numeroCodigoBarras;
+    private int tipoGestion;
+    private int usuarioGestion;
+    private Date fechaGestion;
+    private Time horaGestion;
 
     public ModeloProductos() {
     }
@@ -99,6 +105,38 @@ public class ModeloProductos {
 
     public void setNumeroCodigoBarras(int numeroCodigoBarras) {
         this.numeroCodigoBarras = numeroCodigoBarras;
+    }
+
+    public int getTipoGestion() {
+        return tipoGestion;
+    }
+
+    public void setTipoGestion(int tipoGestion) {
+        this.tipoGestion = tipoGestion;
+    }
+
+    public int getUsuarioGestion() {
+        return usuarioGestion;
+    }
+
+    public void setUsuarioGestion(int usuarioGestion) {
+        this.usuarioGestion = usuarioGestion;
+    }
+
+    public Date getFechaGestion() {
+        return fechaGestion;
+    }
+
+    public void setFechaGestion(Date fechaGestion) {
+        this.fechaGestion = fechaGestion;
+    }
+
+    public Time getHoraGestion() {
+        return horaGestion;
+    }
+
+    public void setHoraGestion(Time horaGestion) {
+        this.horaGestion = horaGestion;
     }
     
     

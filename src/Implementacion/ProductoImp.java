@@ -246,6 +246,25 @@ public class ProductoImp implements IProducto{
         return resultado;
     }
 
+    @Override
+    public boolean insertarGestionInventario(ModeloProductos modelo) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getACTUALIZAR_PRODUCTO());
+        try {
+            ps.setInt(1, modelo.getTipoGestion());
+            ps.setInt(2, modelo.getCantidad());
+            ps.setDate(3, modelo.getFechaGestion());
+            ps.setTime(4, modelo.getHoraGestion());
+            ps.setInt(5, modelo.getUsuarioGestion());
+            ps.setInt(6, modelo.getIdProducto());
+            resultado = ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error en al actualizar", 0);
+        }
+        return resultado;
+    }
+
 
     
 }

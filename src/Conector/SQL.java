@@ -29,6 +29,15 @@ public class SQL {
     private final String ELIMINAR_PRODUCTO = "DELETE FROM Producto WHERE id_producto = ?";
     private final String ACTUALIZAR_IMAGEN_PRODUCTO = "UPDATE Producto SET imagen_producto = ? WHERE id_producto = ?";
     private final String ELIMINAR_IMAGEN_PRODUCTO = "UPDATE Producto SET imagen_producto = NULL WHERE id_producto = ?";
+    private final String INSERTAR_GESTION_INVENTARIO = "INSERT INTO Gestion_Inventario (tipo_gestion, cantidad_gestion, fecha_gestion, hora_gestion, usuario_gestion, producto_gestion) VALUES(?, ?, ?, ?, ?, ?)";
+    private final String CONSULTAR_GESTION_INVENTARIO = "FROM \n" +
+                                                        "    Gestion_Inventario gi\n" +
+                                                        "JOIN \n" +
+                                                        "    Tipo_Gestion tg ON gi.tipo_gestion = tg.id_tipo_gestion\n" +
+                                                        "JOIN \n" +
+                                                        "    Usuario u ON gi.usuario_gestion = u.id_usuario\n" +
+                                                        "JOIN \n" +
+                                                        "    Producto p ON gi.producto_gestion = p.id_producto";
     
     public SQL() {
     }
@@ -135,6 +144,14 @@ public class SQL {
 
     public String getELIMINAR_IMAGEN_PRODUCTO() {
         return ELIMINAR_IMAGEN_PRODUCTO;
+    }
+
+    public String getINSERTAR_GESTION_INVENTARIO() {
+        return INSERTAR_GESTION_INVENTARIO;
+    }
+
+    public String getCONSULTAR_GESTION_INVENTARIO() {
+        return CONSULTAR_GESTION_INVENTARIO;
     }
     
 }

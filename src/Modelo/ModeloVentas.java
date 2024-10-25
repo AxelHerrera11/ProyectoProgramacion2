@@ -21,7 +21,7 @@ public class ModeloVentas {
     private Time hora;
     private Double totalVenta;
     private Double iva;
-    private int idCliente;
+    private static int idCliente;
 
     public ModeloVentas() {
     }

@@ -8,6 +8,10 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -58,6 +62,8 @@ public class ControladorVentas implements MouseListener, KeyListener {
         } else if(e.getComponent().equals(modelo.getVistaVentas().btnEliminarProducto)){
             eliminarProductoEnTabla();
             mostrarTotalVenta();
+        } else if(e.getComponent().equals(modelo.getVistaVentas().btnTerminarVenta)){
+            realizarVenta();
         }
     }
 
@@ -146,7 +152,41 @@ public class ControladorVentas implements MouseListener, KeyListener {
     
     public void realizarVenta(){
         ModeloInicioSesion modeloIS = new ModeloInicioSesion();
-        int vVendedor = modeloIS.getTipoUsuario();
+        int vVendedor = modeloIS.getIdUsuarioEncontrado();
+        int tipoPago = modelo.getVistaVentas().comboMetodoPago.getSelectedIndex() + 1;
+        
+        LocalDate fechaActual = LocalDate.now();
+        LocalTime horaActual = LocalTime.now();
+        
+        Date fecha = Date.valueOf(fechaActual);
+        Time hora = Time.valueOf(horaActual);
+        double vTotal = Double.parseDouble(modelo.getVistaVentas().txtTotalVenta.getText());
+        
+        double vTotalVenta = 0;
+        if(tipoPago == 1){
+            vTotalVenta = vTotal;
+        } else if(tipoPago == 2){
+            vTotalVenta = vTotal + (vTotal * 0.05);
+        }
+        
+        double iva = vTotalVenta * 0.12;
+        int id_cliente = modelo.getIdCliente();
+        
+        boolean resultado;
+        ModeloVentas modelo = new ModeloVentas();
+        modelo.setIdVendedor(vVendedor);
+        modelo.setTipoPago(tipoPago);
+        modelo.setFecha(fecha);
+        modelo.setHora(hora);
+        modelo.setTotalVenta(vTotalVenta);
+        modelo.setIva(iva);
+        modelo.setIdCliente(id_cliente);
+        resultado = implementacion.guardarVenta(modelo);
+        if(!resultado){
+                System.out.println("Insercion realizada con exito.");
+            }else{
+                System.out.println("Hubo un problema al insertar.");
+            }
     }
     
 }

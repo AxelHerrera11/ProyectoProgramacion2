@@ -98,6 +98,7 @@ public class VentaImp implements iVenta{
             rs = ps.executeQuery();
             while(rs.next()){
                 modelo.setNombreCliente(rs.getString("nombre_cliente"));
+                modelo.setIdCliente(rs.getInt("id_cliente"));
             }
             conector.desconectar();
         } catch (SQLException e) {

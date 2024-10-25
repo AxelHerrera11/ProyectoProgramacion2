@@ -332,7 +332,7 @@ public class PanelVentas extends javax.swing.JPanel {
     public javax.swing.JPanel btnRegresar;
     public javax.swing.JPanel btnTerminarVenta;
     public javax.swing.JPanel btnVentasContinuar;
-    private javax.swing.JComboBox<String> comboMetodoPago;
+    public javax.swing.JComboBox<String> comboMetodoPago;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

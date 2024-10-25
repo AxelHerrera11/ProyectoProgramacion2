@@ -43,8 +43,44 @@ public class ControladorClientes implements MouseListener, KeyListener, WindowLi
         modelo.getVistaClientes().txtIDCliente.setText("");
     }
 
-    public void comparar() {
+    public void agregarCliente() {
 
+        modelo.setNombreCliente(this.modelo.getVistaClientes().txtNombreCliente.getText());
+        modelo.setTelefono_Cliente(this.modelo.getVistaClientes().txtTelefono.getText());
+        modelo.setNit_cliente(this.modelo.getVistaClientes().txtNit.getText());
+        implementacion.insertarCliente(modelo);
+        JOptionPane.showMessageDialog(null, "Cliente agregado", "CLIENTE AGREGADO", JOptionPane.INFORMATION_MESSAGE);
+        limpiar();
+        modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
+
+    }
+
+    public void actualizarCliente() {
+
+        modelo.setNombreCliente(this.modelo.getVistaClientes().txtNombreCliente.getText());
+        modelo.setTelefono_Cliente(this.modelo.getVistaClientes().txtTelefono.getText());
+        modelo.setCodigo_cliente(Integer.parseInt(this.modelo.getVistaClientes().txtIDCliente.getText()));
+        implementacion.actualizarCliente(modelo);
+        JOptionPane.showMessageDialog(null, "Cliente actualizado", "ACTUALIZACIÓN CLIENTE", JOptionPane.INFORMATION_MESSAGE);
+        limpiar();
+        modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
+
+    }
+
+    public void eliminarCliente() {
+        int respuesta = JOptionPane.showConfirmDialog(null, "El Cliente se eliminará, ¿está seguro?", "ELIMINAR CLIENTE", JOptionPane.YES_NO_OPTION);
+        if (respuesta == JOptionPane.YES_OPTION) {
+            implementacion.eliminarCliente(modelo.getVistaClientes().txtNit.getText());
+            limpiar();
+            modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
+        }
+    }
+
+    public void seleccionTablaClientes() {
+        modelo.getVistaClientes().txtIDCliente.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 0)));
+        modelo.getVistaClientes().txtNombreCliente.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 1)));
+        modelo.getVistaClientes().txtTelefono.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 2)));
+        modelo.getVistaClientes().txtNit.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 3)));
     }
 
     @Override
@@ -54,47 +90,26 @@ public class ControladorClientes implements MouseListener, KeyListener, WindowLi
             if (modelo.getVistaClientes().txtNit.getText().isEmpty() || modelo.getVistaClientes().txtNombreCliente.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Debe de ingresar todos los campos", "ERROR AL AGREGAR CLIENTE", JOptionPane.ERROR_MESSAGE);
             } else {
-                modelo.setNombreCliente(this.modelo.getVistaClientes().txtNombreCliente.getText());
-                modelo.setTelefono_Cliente(this.modelo.getVistaClientes().txtTelefono.getText());
-                modelo.setNit_cliente(this.modelo.getVistaClientes().txtNit.getText());
-                implementacion.insertarCliente(modelo);
-                JOptionPane.showMessageDialog(null, "Cliente agregado", "CLIENTE AGREGADO", JOptionPane.INFORMATION_MESSAGE);
-                limpiar();
-                modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
+                agregarCliente();
             }
 
         } else if (e.getComponent().equals(modelo.getVistaClientes().btnActualizar)) {
             if (modelo.getVistaClientes().txtNit.getText().isEmpty() || modelo.getVistaClientes().txtNombreCliente.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Debe de ingresar todos los campos", "ERROR AL AGREGAR CLIENTE", JOptionPane.ERROR_MESSAGE);
             } else {
-                modelo.setNombreCliente(this.modelo.getVistaClientes().txtNombreCliente.getText());
-                modelo.setTelefono_Cliente(this.modelo.getVistaClientes().txtTelefono.getText());
-                modelo.setCodigo_cliente(Integer.parseInt(this.modelo.getVistaClientes().txtIDCliente.getText()));
-                implementacion.actualizarCliente(modelo);
-                JOptionPane.showMessageDialog(null, "Cliente actualizado", "ACTUALIZACIÓN CLIENTE", JOptionPane.INFORMATION_MESSAGE);
-                limpiar();
-                modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
+                actualizarCliente();
+
             }
 
         } else if (e.getComponent().equals(modelo.getVistaClientes().btnEliminar)) {
             if (modelo.getVistaClientes().txtIDCliente.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Debe de ingresar todos los campos", "ERROR AL ELIMINAR CLIENTE", JOptionPane.ERROR_MESSAGE);
             } else {
-                int respuesta = JOptionPane.showConfirmDialog(null, "El Cliente se eliminará, ¿está seguro?", "ELIMINAR CLIENTE", JOptionPane.YES_NO_OPTION);
-                if (respuesta == JOptionPane.YES_OPTION) {
-                    implementacion.eliminarCliente(modelo.getVistaClientes().txtNit.getText());
-                    limpiar();
-                    modelo.getVistaClientes().tblClientes.setModel(implementacion.modeloClientes());
-                }
+                eliminarCliente();
             }
 
         } else if (e.getComponent().equals(modelo.getVistaClientes().tblClientes)) {
-
-            modelo.getVistaClientes().txtIDCliente.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 0)));
-            modelo.getVistaClientes().txtNombreCliente.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 1)));
-            modelo.getVistaClientes().txtTelefono.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 2)));
-            modelo.getVistaClientes().txtNit.setText(String.valueOf(modelo.getVistaClientes().tblClientes.getValueAt(modelo.getVistaClientes().tblClientes.getSelectedRow(), 3)));
-
+            seleccionTablaClientes();
         }
 
     }

@@ -17,7 +17,7 @@ public class SQL {
     private final String CONSULTA_TIPO_PAGO = "SELECT nombre_tipo_pago FROM Tipo_Pago";
     private final String CONSULTA_CLIENTE_NIT = "SELECT * FROM Cliente WHERE nit_cliente = ?";
     private final String INSERTAR_VENTA = "INSERT INTO Venta (vendedor, tipo_pago, fecha_venta, hora_venta, total_venta, iva, cliente) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    private final String CONSULTA_MOSTRAR_TIPO_USUARIO = "SELECT tipo_usuario FROM Usuario";
+    private final String CONSULTA_MOSTRAR_TIPO_USUARIO = "SELECT nombre_tipo_usuario FROM Usuario";
     private final String CONSULTA_INSERTAR_USUARIO = "INSERT INTO Usuario (nombre_usuario, contrasenia_usuario, tipo_usuario) VALUES (?,?,?)";
     private final String CONSULTA_CANTIDAD_PRODUCTO = "SELECT cantidad FROM Producto WHERE id_producto = ?";
     private final String ACTUALIZAR_CAN_AL_RE_VENTA = "UPDATE Producto SET cantidad = ? WHERE id_producto = ?";

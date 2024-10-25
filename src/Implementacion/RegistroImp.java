@@ -29,8 +29,18 @@ public class RegistroImp implements IRegistro{
 
     @Override
     public boolean guardarUsuario(ModeloRegistroUsuario modelo) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getINSERTAR_CLIENTE());
         
-        return false;
+        try {
+            ps.setString(1,modelo.getNombreUsuario());
+            ps.setString(2,modelo.getContraseniaUsuario());
+            ps.setInt(3,modelo.getCategoriaUsuario());
+        } catch (Exception e) {
+            conector.mensaje(e.getMessage(), "Error en la insercion del usuario", 0);
+        }
+        return resultado;
     }
 
     @Override
@@ -42,12 +52,16 @@ public class RegistroImp implements IRegistro{
             ps = conector.preparar(sql.getCONSULTA_MOSTRAR_TIPO_USUARIO());
             rs = ps.executeQuery();
             
+            while(rs.next()){
+                modelo.addElement(rs.getString("nombre_tipo_usuarios"));   
+            }
           
           return modelo;
         } catch (SQLException e) {
             conector.mensaje("Error al cargar los tipos de usuarios", "Error en la conexion", 0);
+            return modelo;
         }
-        
-        return modelo;
+   
     }
+    
 }

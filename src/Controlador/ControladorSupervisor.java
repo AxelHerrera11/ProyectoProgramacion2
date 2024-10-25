@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.ModeloSupervisor;
 import Vistas.PanelInventario;
 import Vistas.PanelProductos;
+import Vistas.PanelRegistrarUsuario;
 import Vistas.PanelReportesVentas;
 import Vistas.VistaInicioSesion;
 import Vistas.VistaSupervisor;
@@ -48,6 +49,9 @@ public class ControladorSupervisor implements MouseListener {
             VistaInicioSesion vistaInicioP = new VistaInicioSesion();
             vistaInicioP.setVisible(true);
             modelo.getVistaSupervisor().dispose();
+        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnRegistrar)){
+            PanelRegistrarUsuario panelRU = new PanelRegistrarUsuario();
+            MostrarPanel(panelRU);
         }
     }
 
@@ -70,6 +74,8 @@ public class ControladorSupervisor implements MouseListener {
             modelo.getVistaSupervisor().btnSupervisorReportesVentas.setBackground(new Color(48, 133, 131));
         } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnVolver)) {
             modelo.getVistaSupervisor().btnVolver.setBackground(new Color(183, 213, 213));
+        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnRegistrar)){
+            modelo.getVistaSupervisor().btnRegistrar.setBackground(new Color(48, 133, 131));
         }
 
     }
@@ -85,6 +91,8 @@ public class ControladorSupervisor implements MouseListener {
             modelo.getVistaSupervisor().btnSupervisorReportesVentas.setBackground(new Color(48, 99, 99));
         } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnVolver)) {
             modelo.getVistaSupervisor().btnVolver.setBackground(new Color(122, 167, 167));
+        } else if (e.getComponent().equals(modelo.getVistaSupervisor().btnRegistrar)){
+            modelo.getVistaSupervisor().btnRegistrar.setBackground(new Color(48, 99, 99));
         }
 
     }

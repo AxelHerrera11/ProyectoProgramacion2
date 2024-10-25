@@ -44,6 +44,8 @@ public class VistaSupervisor extends javax.swing.JFrame {
         letSupervisorReportesVentas = new javax.swing.JLabel();
         btnVolver = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         fondoSupervisor = new javax.swing.JLabel();
         contenedor1 = new javax.swing.JPanel();
         contenedor2 = new javax.swing.JPanel();
@@ -128,6 +130,26 @@ public class VistaSupervisor extends javax.swing.JFrame {
 
         fondoPanelSupervisor.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 80, 40));
 
+        btnRegistrar.setBackground(new java.awt.Color(48, 99, 99));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("REGISTRAR USUARIO");
+
+        javax.swing.GroupLayout btnRegistrarLayout = new javax.swing.GroupLayout(btnRegistrar);
+        btnRegistrar.setLayout(btnRegistrarLayout);
+        btnRegistrarLayout.setHorizontalGroup(
+            btnRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        );
+        btnRegistrarLayout.setVerticalGroup(
+            btnRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        fondoPanelSupervisor.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 300, 40));
+
         fondoSupervisor.setBackground(new java.awt.Color(48, 99, 99));
         fondoSupervisor.setForeground(new java.awt.Color(48, 99, 99));
         fondoSupervisor.setOpaque(true);
@@ -202,6 +224,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel btnRegistrar;
     public javax.swing.JPanel btnSupervisorInventario;
     public javax.swing.JPanel btnSupervisorProductos;
     public javax.swing.JPanel btnSupervisorReportesVentas;
@@ -211,6 +234,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
     private javax.swing.JPanel fondoPanelSupervisor;
     private javax.swing.JLabel fondoSupervisor;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel letSupervisorInventario;
     private javax.swing.JLabel letSupervisorProductos;
     private javax.swing.JLabel letSupervisorReportesVentas;
@@ -224,6 +248,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
         btnSupervisorInventario.addMouseListener(controlador);
         btnSupervisorReportesVentas.addMouseListener(controlador);
         btnVolver.addMouseListener(controlador);
+        btnRegistrar.addMouseListener(controlador);
 
     }
 

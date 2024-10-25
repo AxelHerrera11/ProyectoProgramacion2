@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import Controlador.ControladorRegistroUsuario;
+import Modelo.ModeloRegistroUsuario;
+
 /**
  *
  * @author jhosu
@@ -16,6 +19,8 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     public PanelRegistrarUsuario() {
         initComponents();
         
+        Modelo.ModeloRegistroUsuario modelo = new ModeloRegistroUsuario(this);
+        Controlador.ControladorRegistroUsuario controlador = new ControladorRegistroUsuario(modelo);
         
     }
 
@@ -130,14 +135,24 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FondoPanel;
     private javax.swing.JLabel FondoRegistro;
-    private javax.swing.JPanel btnRegistrar;
-    private javax.swing.JComboBox<String> cmbTipoUsuario;
+    public javax.swing.JPanel btnRegistrar;
+    public javax.swing.JComboBox<String> cmbTipoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel letTituloProducto;
-    private javax.swing.JTextField txtContraseniaUsuario;
-    private javax.swing.JTextField txtNombreUsuario;
+    public javax.swing.JTextField txtContraseniaUsuario;
+    public javax.swing.JTextField txtNombreUsuario;
     // End of variables declaration//GEN-END:variables
+
+    public void setControlador(ControladorRegistroUsuario controlador){
+        btnRegistrar.addMouseListener(controlador);
+        
+    }
+
+
+
+
+
 }

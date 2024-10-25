@@ -106,5 +106,10 @@ public class VentaImp implements iVenta{
         }
         return modelo;
     }
+
+    @Override
+    public boolean guardarVenta(ModeloVentas modelo) {
+        return false;
+    }
     
 }

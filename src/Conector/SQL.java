@@ -15,6 +15,7 @@ public class SQL {
     private final String CONSULTA_PRODUCTO_NO_CB = "SELECT nombre_producto, cantidad, precio_normal, precio_promocional, imagen_producto FROM Producto WHERE numero_codigo_barras = ?";
     private final String CONSULTA_TIPO_PAGO = "SELECT nombre_tipo_pago FROM Tipo_Pago";
     private final String CONSULTA_CLIENTE_NIT = "SELECT * FROM Cliente WHERE nit_cliente = ?";
+    private final String INSERTAR_VENTA = "INSERT INTO Venta (vendedor, tipo_pago, fecha_venta, hora_venta, total_venta, iva, cliente) VALUES (?, ?, ?, ?, ?, ?, ?)";
     public SQL() {
     }
 
@@ -68,6 +69,10 @@ public class SQL {
 
     public String getCONSULTA_CLIENTE_NIT() {
         return CONSULTA_CLIENTE_NIT;
+    }
+
+    public String getINSERTAR_VENTA() {
+        return INSERTAR_VENTA;
     }
     
 }

@@ -131,6 +131,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
         fondoPanelSupervisor.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 80, 40));
 
         btnRegistrar.setBackground(new java.awt.Color(48, 99, 99));
+        btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));

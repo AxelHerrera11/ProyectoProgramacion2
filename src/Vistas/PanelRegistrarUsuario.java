@@ -47,6 +47,8 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         cmbTipoUsuario = new javax.swing.JComboBox<>();
         btnRegistrar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btnBorrar = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         FondoRegistro = new javax.swing.JLabel();
 
         FondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,6 +115,31 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
 
         FondoPanel.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, 130, 40));
 
+        btnBorrar.setBackground(new java.awt.Color(48, 99, 99));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("jLabel5");
+
+        javax.swing.GroupLayout btnBorrarLayout = new javax.swing.GroupLayout(btnBorrar);
+        btnBorrar.setLayout(btnBorrarLayout);
+        btnBorrarLayout.setHorizontalGroup(
+            btnBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnBorrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        btnBorrarLayout.setVerticalGroup(
+            btnBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnBorrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        FondoPanel.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 130, 40));
+
         FondoRegistro.setBackground(new java.awt.Color(122, 167, 167));
         FondoRegistro.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         FondoRegistro.setForeground(new java.awt.Color(122, 167, 167));
@@ -139,12 +166,14 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FondoPanel;
     private javax.swing.JLabel FondoRegistro;
+    private javax.swing.JPanel btnBorrar;
     public javax.swing.JPanel btnRegistrar;
     public javax.swing.JComboBox<String> cmbTipoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel letTituloProducto;
     public javax.swing.JTextField txtContraseniaUsuario;
     public javax.swing.JTextField txtNombreUsuario;

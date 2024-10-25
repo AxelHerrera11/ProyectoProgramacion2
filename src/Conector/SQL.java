@@ -23,7 +23,9 @@ public class SQL {
     private final String ACTUALIZAR_CAN_AL_RE_VENTA = "UPDATE Producto SET cantidad = ? WHERE id_producto = ?";
     private final String CONSULTA_ULTIMA_VENTA = "SELECT MAX(id_venta) FROM Venta";
     private final String INSERTAR_DETALLE_VENTA = "INSERT INTO Detalle_Venta (producto_dv, precio_venta, cantidad_dv, subtotal, venta) VALUES (?, ?, ?, ?, ?)";
-   
+    private final String CONSULTA_MOSTRAR_USUARIOS = "SELECT nombre_usuario, contrasenia_usuario FROM Usuario";
+    private final String CONSULTA_ELIMINAR_USUARIO = "DELETE FROM Usuario WHERE nombre_usuario = ?;";
+    
     public SQL() {
     }
 
@@ -105,6 +107,14 @@ public class SQL {
 
     public String getINSERTAR_DETALLE_VENTA() {
         return INSERTAR_DETALLE_VENTA;
+    }
+
+    public String getCONSULTA_MOSTRAR_USUARIOS() {
+        return CONSULTA_MOSTRAR_USUARIOS;
+    }
+
+    public String getCONSULTA_ELIMINAR_USUARIO() {
+        return CONSULTA_ELIMINAR_USUARIO;
     }
     
 }

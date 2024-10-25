@@ -13,12 +13,15 @@ public class SQL {
     private final String CONSULTA_PRODUCTO = "SELECT nombre_producto, cantidad, precio_normal, precio_promocional, codigo_de_barra, imagen_producto FROM Producto WHERE id_producto = ?";
     private final String CONSULTA_ACTUALIZAR_CLIENTE = "UPDATE Cliente SET nombre_cliente = ?, telefono_cliente = ? WHERE id_cliente = ?";
     private final String CONSULTA_ELMINAR_CLIENTE = "DELETE FROM Cliente where nit_cliente = ?";
-    private final String CONSULTA_PRODUCTO_NO_CB = "SELECT nombre_producto, cantidad, precio_normal, precio_promocional, imagen_producto FROM Producto WHERE numero_codigo_barras = ?";
+    private final String CONSULTA_PRODUCTO_NO_CB = "SELECT id_producto, nombre_producto, cantidad, precio_normal, precio_promocional, imagen_producto FROM Producto WHERE numero_codigo_barras = ?";
     private final String CONSULTA_TIPO_PAGO = "SELECT nombre_tipo_pago FROM Tipo_Pago";
     private final String CONSULTA_CLIENTE_NIT = "SELECT * FROM Cliente WHERE nit_cliente = ?";
     private final String INSERTAR_VENTA = "INSERT INTO Venta (vendedor, tipo_pago, fecha_venta, hora_venta, total_venta, iva, cliente) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private final String CONSULTA_MOSTRAR_TIPO_USUARIO = "SELECT tipo_usuario FROM Usuario";
     private final String CONSULTA_INSERTAR_USUARIO = "INSERT INTO Usuario (nombre_usuario, contrasenia_usuario, tipo_usuario) VALUES (?,?,?)";
+    private final String ACTUALIZAR_CAN_AL_RE_VENTA = "UPDATE Producto SET cantidad = ? WHERE id_producto = ?";
+    private final String CONSULTA_ULTIMA_VENTA = "SELECT MAX(id_venta) FROM Venta";
+    private final String INSERTAR_DETALLE_VENTA = "INSERT INTO Detalle_Venta (producto_dv, precio_venta, cantidad_dv, subtotal, venta) VALUES (?, ?, ?, ?, ?)";
    
     public SQL() {
     }
@@ -85,6 +88,18 @@ public class SQL {
 
     public String getCONSULTA_INSERTAR_USUARIO() {
         return CONSULTA_INSERTAR_USUARIO;
+    }
+
+    public String getACTUALIZAR_CAN_AL_RE_VENTA() {
+        return ACTUALIZAR_CAN_AL_RE_VENTA;
+    }
+
+    public String getCONSULTA_ULTIMA_VENTA() {
+        return CONSULTA_ULTIMA_VENTA;
+    }
+
+    public String getINSERTAR_DETALLE_VENTA() {
+        return INSERTAR_DETALLE_VENTA;
     }
     
 }

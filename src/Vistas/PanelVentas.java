@@ -48,10 +48,12 @@ public class PanelVentas extends javax.swing.JPanel {
         separadorDerecha = new javax.swing.JSeparator();
         separadorIzquierda = new javax.swing.JSeparator();
         panelAgregarProductos = new javax.swing.JPanel();
-        letIDProducto = new javax.swing.JLabel();
+        letINoCodBarras = new javax.swing.JLabel();
         txtNoCodigoBarras = new javax.swing.JTextField();
-        letCantidadVenta = new javax.swing.JLabel();
+        letIDProducto = new javax.swing.JLabel();
         txtCantidadVenta = new javax.swing.JTextField();
+        letCantidadVenta1 = new javax.swing.JLabel();
+        txtIDProducto = new javax.swing.JTextField();
         letNombreProducto = new javax.swing.JLabel();
         txtNombreProducto = new javax.swing.JTextField();
         letPrecio = new javax.swing.JLabel();
@@ -111,28 +113,37 @@ public class PanelVentas extends javax.swing.JPanel {
         panelAgregarProductos.setBackground(new java.awt.Color(122, 167, 167));
         panelAgregarProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        letIDProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
-        letIDProducto.setForeground(new java.awt.Color(255, 255, 255));
-        letIDProducto.setText("NO. CODIGO DE BARRAS");
-        panelAgregarProductos.add(letIDProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
+        letINoCodBarras.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letINoCodBarras.setForeground(new java.awt.Color(255, 255, 255));
+        letINoCodBarras.setText("NO. CODIGO DE BARRAS");
+        panelAgregarProductos.add(letINoCodBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
 
         txtNoCodigoBarras.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         txtNoCodigoBarras.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panelAgregarProductos.add(txtNoCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 250, 30));
 
-        letCantidadVenta.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
-        letCantidadVenta.setForeground(new java.awt.Color(255, 255, 255));
-        letCantidadVenta.setText("CANTIDAD");
-        panelAgregarProductos.add(letCantidadVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        letIDProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letIDProducto.setForeground(new java.awt.Color(255, 255, 255));
+        letIDProducto.setText("ID PRODUCTO");
+        panelAgregarProductos.add(letIDProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, -1, -1));
 
         txtCantidadVenta.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
-        panelAgregarProductos.add(txtCantidadVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 250, 30));
+        panelAgregarProductos.add(txtCantidadVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 120, 30));
+
+        letCantidadVenta1.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letCantidadVenta1.setForeground(new java.awt.Color(255, 255, 255));
+        letCantidadVenta1.setText("CANTIDAD");
+        panelAgregarProductos.add(letCantidadVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+
+        txtIDProducto.setEditable(false);
+        panelAgregarProductos.add(txtIDProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 120, 30));
 
         letNombreProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letNombreProducto.setForeground(new java.awt.Color(255, 255, 255));
         letNombreProducto.setText("NOMBRE PRODUCTO");
         panelAgregarProductos.add(letNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
 
+        txtNombreProducto.setEditable(false);
         txtNombreProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         panelAgregarProductos.add(txtNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 250, 30));
 
@@ -141,6 +152,7 @@ public class PanelVentas extends javax.swing.JPanel {
         letPrecio.setText("PRECIO");
         panelAgregarProductos.add(letPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
 
+        txtPrecioVenta.setEditable(false);
         txtPrecioVenta.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         panelAgregarProductos.add(txtPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 250, 30));
 
@@ -280,6 +292,8 @@ public class PanelVentas extends javax.swing.JPanel {
         panelProductosAgregados.add(tblProductosAgregados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 330));
 
         fondoPanel.add(panelProductosAgregados, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 390, 330));
+
+        txtTotalVenta.setEditable(false);
         fondoPanel.add(txtTotalVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, 250, 30));
 
         btnRegresar.setBackground(new java.awt.Color(96, 124, 124));
@@ -340,10 +354,11 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel letBuscarNIT;
-    private javax.swing.JLabel letCantidadVenta;
+    private javax.swing.JLabel letCantidadVenta1;
     private javax.swing.JLabel letFondoVentas;
     private javax.swing.JLabel letIDProducto;
     private javax.swing.JLabel letIDProducto1;
+    private javax.swing.JLabel letINoCodBarras;
     private javax.swing.JLabel letImagen;
     public javax.swing.JLabel letImagenVentas;
     private javax.swing.JLabel letMetodoPago;
@@ -364,6 +379,7 @@ public class PanelVentas extends javax.swing.JPanel {
     public javax.swing.JTable tblProductos;
     public javax.swing.JScrollPane tblProductosAgregados;
     public javax.swing.JTextField txtCantidadVenta;
+    public javax.swing.JTextField txtIDProducto;
     public javax.swing.JTextField txtNITVentas;
     public javax.swing.JTextField txtNoCodigoBarras;
     public javax.swing.JTextField txtNombreCliente;

@@ -6,6 +6,7 @@ import java.sql.Time;
 
 public class ModeloVentas {
     PanelVentas vistaVentas;
+    private int idProducto;
     private int noCodidgoBarras;
     private int cantidadProducto;
     private String nombreProducto;
@@ -36,6 +37,14 @@ public class ModeloVentas {
 
     public void setVistaVentas(PanelVentas vistaVentas) {
         this.vistaVentas = vistaVentas;
+    }
+
+    public int getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
     public int getNoCodidgoBarras() {

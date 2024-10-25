@@ -111,12 +111,15 @@ public class ControladorVentas implements MouseListener, KeyListener {
         } else if(seleccion == 1){
             precio = model.getPercioPromocion();
         }
+        
+        modelo.getVistaVentas().txtIDProducto.setText(String.valueOf(model.getIdProducto()));
         modelo.getVistaVentas().txtNombreProducto.setText(model.getNombreProducto());
         modelo.getVistaVentas().txtPrecioVenta.setText(String.valueOf(precio));
         modelo.getVistaVentas().letImagenVentas.setIcon(implementacion.generarImagen(model.getImagenProducto(), modelo.getVistaVentas().letImagenVentas.getWidth(), modelo.getVistaVentas().letImagenVentas.getHeight()));
     }
     
     public void agregarProudctoEnTabla(){
+        String idProducto = modelo.getVistaVentas().txtIDProducto.getText();
         String nombre = modelo.getVistaVentas().txtNombreProducto.getText();
         double precio = Double.parseDouble(modelo.getVistaVentas().txtPrecioVenta.getText());
         int cantidad = Integer.parseInt(modelo.getVistaVentas().txtCantidadVenta.getText());
@@ -125,7 +128,7 @@ public class ControladorVentas implements MouseListener, KeyListener {
         String cantidadTabla = String.valueOf(cantidad);
         String subTotalTabla = String.valueOf(subTotal);
         
-        modelo.getVistaVentas().tblProductos.setModel(implementacion.agregarEnTabla(nombre, precioTabla, cantidadTabla, subTotalTabla));
+        modelo.getVistaVentas().tblProductos.setModel(implementacion.agregarEnTabla(idProducto, nombre, precioTabla, cantidadTabla, subTotalTabla));
     }
     
     public void mostrarTotalVenta(){
@@ -133,7 +136,7 @@ public class ControladorVentas implements MouseListener, KeyListener {
         double total = 0;
         
         for(int i = 0; i < modelo.getVistaVentas().tblProductos.getRowCount(); i++){
-            fila = Double.parseDouble(modelo.getVistaVentas().tblProductos.getValueAt(i, 3).toString());
+            fila = Double.parseDouble(modelo.getVistaVentas().tblProductos.getValueAt(i, 4).toString());
             total += fila;
         }
         modelo.getVistaVentas().txtTotalVenta.setText(String.valueOf(total));

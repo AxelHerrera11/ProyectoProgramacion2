@@ -31,6 +31,7 @@ public class VentaImp implements iVenta{
             ps.setInt(1, noCodBar);
             rs = ps.executeQuery();
             while(rs.next()){
+                modelo.setIdProducto(rs.getInt("id_producto"));
                 modelo.setNombreProducto(rs.getString("nombre_producto"));
                 modelo.setCantidadProducto(Integer.parseInt(rs.getString("cantidad")));
                 modelo.setPrecioNormal(Double.parseDouble(rs.getString("precio_normal")));
@@ -56,13 +57,13 @@ public class VentaImp implements iVenta{
     DefaultTableModel modeloTabla = new DefaultTableModel();
     public DefaultTableModel modeloTablaClientes() {
         
-        modeloTabla.setColumnIdentifiers(new Object[]{"Producto","Precio","Cantidad","Sub Total"});
+        modeloTabla.setColumnIdentifiers(new Object[]{"ID","Producto","Precio","Cantidad","Sub Total"});
         return modeloTabla;
     }
     
-    public DefaultTableModel agregarEnTabla(String nombre, String precio, String cantidad, String subTotal){
-        modeloTabla.setColumnIdentifiers(new Object[]{"Producto","Precio","Cantidad","Sub Total"});
-        modeloTabla.addRow(new Object[]{nombre, precio, cantidad, subTotal});
+    public DefaultTableModel agregarEnTabla(String idProducto, String nombre, String precio, String cantidad, String subTotal){
+        modeloTabla.setColumnIdentifiers(new Object[]{"ID","Producto","Precio","Cantidad","Sub Total"});
+        modeloTabla.addRow(new Object[]{idProducto, nombre, precio, cantidad, subTotal});
         return modeloTabla;
     }
     

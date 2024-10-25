@@ -1,7 +1,8 @@
 package Conector;
 
 public class SQL {
-
+    
+    //CONSULTAS SQL
     private final String CONSULTA_CLIENTES = "SELECT * FROM Cliente";
     private final String CONSULTA_CLIENTES_CODIGO = "SELECT * FROM Cliente WHERE id_cliente = ?";
     private final String INSERTAR_CLIENTE = "INSERT INTO Cliente (nombre_cliente, telefono_cliente, nit_cliente) VALUES(?,?,?)";
@@ -16,6 +17,9 @@ public class SQL {
     private final String CONSULTA_TIPO_PAGO = "SELECT nombre_tipo_pago FROM Tipo_Pago";
     private final String CONSULTA_CLIENTE_NIT = "SELECT * FROM Cliente WHERE nit_cliente = ?";
     private final String INSERTAR_VENTA = "INSERT INTO Venta (vendedor, tipo_pago, fecha_venta, hora_venta, total_venta, iva, cliente) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    private final String CONSULTA_MOSTRAR_TIPO_USUARIO = "SELECT tipo_usuario FROM Usuario";
+    private final String CONSULTA_INSERTAR_USUARIO = "INSERT INTO Usuario (nombre_usuario, contrasenia_usuario, tipo_usuario) VALUES (?,?,?)";
+   
     public SQL() {
     }
 

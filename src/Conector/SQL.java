@@ -25,6 +25,10 @@ public class SQL {
     private final String INSERTAR_DETALLE_VENTA = "INSERT INTO Detalle_Venta (producto_dv, precio_venta, cantidad_dv, subtotal, venta) VALUES (?, ?, ?, ?, ?)";
     private final String CONSULTA_MOSTRAR_USUARIOS = "SELECT nombre_usuario, contrasenia_usuario FROM Usuario";
     private final String CONSULTA_ELIMINAR_USUARIO = "DELETE FROM Usuario WHERE nombre_usuario = ?;";
+    private final String ACTUALIZAR_PRODUCTO = "UPDATE Producto SET nombre_producto = ?, cantidad = ?, precio_normal = ?, precio_promocional = ?, categoria_producto = ? WHERE id_producto = ?";
+    private final String ELIMINAR_PRODUCTO = "DELETE FROM Producto WHERE id_producto = ?";
+    private final String ACTUALIZAR_IMAGEN_PRODUCTO = "UPDATE Producto SET imagen_producto = ? WHERE id_producto = ?";
+    private final String ELIMINAR_IMAGEN_PRODUCTO = "UPDATE Producto SET imagen_producto = NULL WHERE id_producto = ?";
     
     public SQL() {
     }
@@ -115,6 +119,22 @@ public class SQL {
 
     public String getCONSULTA_ELIMINAR_USUARIO() {
         return CONSULTA_ELIMINAR_USUARIO;
+    }
+
+    public String getACTUALIZAR_PRODUCTO() {
+        return ACTUALIZAR_PRODUCTO;
+    }
+
+    public String getELIMINAR_PRODUCTO() {
+        return ELIMINAR_PRODUCTO;
+    }
+
+    public String getACTUALIZAR_IMAGEN_PRODUCTO() {
+        return ACTUALIZAR_IMAGEN_PRODUCTO;
+    }
+
+    public String getELIMINAR_IMAGEN_PRODUCTO() {
+        return ELIMINAR_IMAGEN_PRODUCTO;
     }
     
 }

@@ -11,9 +11,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.JPanel;
 
-public class ControladorSupervisor implements MouseListener {
+public class ControladorSupervisor implements MouseListener , WindowListener{
 
     ModeloSupervisor modelo;
 
@@ -95,6 +97,42 @@ public class ControladorSupervisor implements MouseListener {
             modelo.getVistaSupervisor().btnRegistrar.setBackground(new Color(48, 99, 99));
         }
 
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+        PanelProductos panelP = new PanelProductos();
+        MostrarPanel(panelP);
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+        
     }
 
 }

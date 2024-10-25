@@ -250,6 +250,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
         btnSupervisorReportesVentas.addMouseListener(controlador);
         btnVolver.addMouseListener(controlador);
         btnRegistrar.addMouseListener(controlador);
+        this.addWindowListener(controlador);
 
     }
 

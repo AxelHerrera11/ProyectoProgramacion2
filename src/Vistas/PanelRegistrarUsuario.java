@@ -96,7 +96,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             btnRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnRegistrarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnRegistrarLayout.setVerticalGroup(
@@ -107,7 +107,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        FondoPanel.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, 110, 40));
+        FondoPanel.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, 130, 40));
 
         FondoRegistro.setBackground(new java.awt.Color(122, 167, 167));
         FondoRegistro.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N

@@ -38,6 +38,23 @@ public class SQL {
                                                         "    Usuario u ON gi.usuario_gestion = u.id_usuario\n" +
                                                         "JOIN \n" +
                                                         "    Producto p ON gi.producto_gestion = p.id_producto";
+    private final String CONSULTA_VENTAS = "SELECT \n" +
+                                            "    v.id_venta,\n" +
+                                            "    u.nombre_usuario,\n" +
+                                            "    tp.nombre_tipo_pago,\n" +
+                                            "    c.nombre_cliente,\n" +
+                                            "    v.total_venta,\n" +
+                                            "    v.iva,\n" +
+                                            "    v.fecha_venta,\n" +
+                                            "    v.hora_venta\n" +
+                                            "FROM \n" +
+                                            "    Venta v\n" +
+                                            "JOIN \n" +
+                                            "    Usuario u ON v.vendedor = u.id_usuario\n" +
+                                            "JOIN \n" +
+                                            "    Tipo_Pago tp ON v.tipo_pago = tp.id_tipo_pago\n" +
+                                            "JOIN \n" +
+                                            "    Cliente c ON v.cliente = c.id_cliente;";
     
     public SQL() {
     }

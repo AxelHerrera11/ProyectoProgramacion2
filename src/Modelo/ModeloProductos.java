@@ -16,7 +16,7 @@ public class ModeloProductos {
     private byte [] imagenProducto;
     private int numeroCodigoBarras;
     private int tipoGestion;
-    private int usuarioGestion;
+    private String usuarioGestion;
     private Date fechaGestion;
     private Time horaGestion;
 
@@ -115,11 +115,11 @@ public class ModeloProductos {
         this.tipoGestion = tipoGestion;
     }
 
-    public int getUsuarioGestion() {
+    public String getUsuarioGestion() {
         return usuarioGestion;
     }
 
-    public void setUsuarioGestion(int usuarioGestion) {
+    public void setUsuarioGestion(String usuarioGestion) {
         this.usuarioGestion = usuarioGestion;
     }
 

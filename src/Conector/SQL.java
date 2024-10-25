@@ -30,14 +30,18 @@ public class SQL {
     private final String ACTUALIZAR_IMAGEN_PRODUCTO = "UPDATE Producto SET imagen_producto = ? WHERE id_producto = ?";
     private final String ELIMINAR_IMAGEN_PRODUCTO = "UPDATE Producto SET imagen_producto = NULL WHERE id_producto = ?";
     private final String INSERTAR_GESTION_INVENTARIO = "INSERT INTO Gestion_Inventario (tipo_gestion, cantidad_gestion, fecha_gestion, hora_gestion, usuario_gestion, producto_gestion) VALUES(?, ?, ?, ?, ?, ?)";
-    private final String CONSULTAR_GESTION_INVENTARIO = "FROM \n" +
+    private final String CONSULTAR_GESTION_INVENTARIO = "SELECT \n" +
+                                                        "    gi.id_gestion_inventario,\n" +
+                                                        "    tg.nombre_tipo_gestion,\n" +
+                                                        "    gi.cantidad_gestion,\n" +
+                                                        "    gi.fecha_gestion,\n" +
+                                                        "    gi.hora_gestion,\n" +
+                                                        "    gi.usuario_gestion,\n" +
+                                                        "    gi.producto_gestion\n" +
+                                                        "FROM \n" +
                                                         "    Gestion_Inventario gi\n" +
                                                         "JOIN \n" +
-                                                        "    Tipo_Gestion tg ON gi.tipo_gestion = tg.id_tipo_gestion\n" +
-                                                        "JOIN \n" +
-                                                        "    Usuario u ON gi.usuario_gestion = u.id_usuario\n" +
-                                                        "JOIN \n" +
-                                                        "    Producto p ON gi.producto_gestion = p.id_producto";
+                                                        "    Tipo_Gestion tg ON gi.tipo_gestion = tg.id_tipo_gestion";
     private final String CONSULTA_VENTAS = "SELECT \n" +
                                             "    v.id_venta,\n" +
                                             "    u.nombre_usuario,\n" +
@@ -55,7 +59,6 @@ public class SQL {
                                             "    Tipo_Pago tp ON v.tipo_pago = tp.id_tipo_pago\n" +
                                             "JOIN \n" +
                                             "    Cliente c ON v.cliente = c.id_cliente;";
-    private final String CONSULTAR_ULTIMO_PRODUCTO_AGREGADO = "SELECT MAX(id_producto) FROM Producto";
     
     public SQL() {
     }
@@ -176,8 +179,4 @@ public class SQL {
         return CONSULTA_VENTAS;
     }
 
-    public String getCONSULTAR_ULTIMO_PRODUCTO_AGREGADO() {
-        return CONSULTAR_ULTIMO_PRODUCTO_AGREGADO;
-    }
-    
 }

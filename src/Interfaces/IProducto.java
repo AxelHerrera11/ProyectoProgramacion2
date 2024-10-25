@@ -15,5 +15,4 @@ public interface IProducto {
     public boolean eliminarImagen(int idProducto);
     public boolean actualizarImagenProducto(ModeloProductos modelo);
     public boolean insertarGestionInventario(ModeloProductos modelo);
-    public int consultaUltimoProducto();
 }

@@ -7,8 +7,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,7 +17,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
 public class ControladorProductos implements MouseListener, KeyListener {
@@ -88,10 +85,10 @@ public class ControladorProductos implements MouseListener, KeyListener {
                 
                 int pTipoGestion = 1;
                 int pCantidad = Integer.parseInt(modelo.getVistaProductos().txtCantidad.getText());
-                int pUsuario = modeloIS.getIdUsuarioEncontrado();
-                int pIdProducto = implementacion.consultaUltimoProducto();
+                String pUsuario = modeloIS.getUsuarioEncontrado();
+                String nombreProducto = modelo.getVistaProductos().txtNombreProducto.getText();
                 
-                insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, pIdProducto);
+                insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, nombreProducto);
    
             } catch (IOException ex) {
                 Logger.getLogger(ControladorProductos.class.getName()).log(Level.SEVERE, null, ex);
@@ -106,18 +103,18 @@ public class ControladorProductos implements MouseListener, KeyListener {
             actualizarProducto();
             int pTipoGestion = 2;
             int pCantidad = Integer.parseInt(modelo.getVistaProductos().txtCantidad.getText());
-            int pUsuario = modeloIS.getIdUsuarioEncontrado();
-            int pIdProducto = Integer.parseInt(modelo.getVistaProductos().txtCodigoProducto.getText());
+            String pUsuario = modeloIS.getUsuarioEncontrado();
+            String nombreProducto = modelo.getVistaProductos().txtNombreProducto.getText();
             
-            insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, pIdProducto);
+            insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, nombreProducto);
         } else if(e.getComponent().equals(modelo.getVistaProductos().btnEliminarProducto)){
             
             int pTipoGestion = 3;
             int pCantidad = 0;
-            int pUsuario = modeloIS.getIdUsuarioEncontrado();
-            int pIdProducto = Integer.parseInt(modelo.getVistaProductos().txtCodigoProducto.getText());
+            String pUsuario = modeloIS.getUsuarioEncontrado();
+            String nombreProducto = modelo.getVistaProductos().txtNombreProducto.getText();
             
-            insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, pIdProducto);
+            insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, nombreProducto);
             eliminarProducto();
         } else if(e.getComponent().equals(modelo.getVistaProductos().btnActualizarImagen)){
             actualizarImagenProducto();
@@ -222,7 +219,7 @@ public class ControladorProductos implements MouseListener, KeyListener {
             }
     }
     
-    public void insertarRegistroVenta(int tipoGestion, int cantidad, int usuario, int idProducto){
+    public void insertarRegistroVenta(int tipoGestion, int cantidad, String usuario, String nombreProducto){
         boolean resultado;
         LocalDate fechaActual = LocalDate.now();
         LocalTime horaActual = LocalTime.now();
@@ -236,7 +233,7 @@ public class ControladorProductos implements MouseListener, KeyListener {
         modelo.setFechaGestion(fecha);
         modelo.setHoraGestion(hora);
         modelo.setUsuarioGestion(usuario);
-        modelo.setIdProducto(idProducto);
+        modelo.setNombreProducto(nombreProducto);
         resultado = implementacion.insertarGestionInventario(modelo);
         if(!resultado){
                 System.out.println("Insercion realizada con exito.");

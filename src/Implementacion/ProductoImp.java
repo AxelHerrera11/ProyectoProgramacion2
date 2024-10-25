@@ -256,32 +256,13 @@ public class ProductoImp implements IProducto{
             ps.setInt(2, modelo.getCantidad());
             ps.setDate(3, modelo.getFechaGestion());
             ps.setTime(4, modelo.getHoraGestion());
-            ps.setInt(5, modelo.getUsuarioGestion());
-            ps.setInt(6, modelo.getIdProducto());
+            ps.setString(5, modelo.getUsuarioGestion());
+            ps.setString(6, modelo.getNombreProducto());
             resultado = ps.execute();
         } catch (SQLException e) {
             conector.mensaje(e.getMessage(), "Error en al actualizar", 0);
         }
         return resultado;
     }
-
-    @Override
-    public int consultaUltimoProducto() {
-        int idProducto = 0;
-        conector.conectar();
-        try {
-            ps = conector.preparar(sql.getCONSULTAR_ULTIMO_PRODUCTO_AGREGADO());
-            rs = ps.executeQuery();
-            while(rs.next()){
-                idProducto = rs.getInt("MAX(id_producto)");
-            }
-            return idProducto;
-        } catch (SQLException e) {
-            conector.mensaje("Error al consultar la ulitma venta", "Error de conexion", 0);
-            return idProducto;
-        }
-    }
-
-
-    
+ 
 }

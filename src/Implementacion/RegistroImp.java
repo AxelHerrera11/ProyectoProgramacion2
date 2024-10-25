@@ -7,8 +7,10 @@ package Implementacion;
 import Conector.DBConnection;
 import Conector.SQL;
 import Interfaces.IRegistro;
-import com.mysql.cj.protocol.Resultset;
+import Modelo.ModeloRegistroUsuario;
+import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -20,13 +22,13 @@ public class RegistroImp implements IRegistro{
     DBConnection conector = new DBConnection();
     SQL sql = new SQL();
     PreparedStatement ps;
-    Resultset rs;
+    ResultSet rs;
     
     
     
 
     @Override
-    public boolean guardarUsuario() {
+    public boolean guardarUsuario(ModeloRegistroUsuario modelo) {
         
         return false;
     }
@@ -38,10 +40,14 @@ public class RegistroImp implements IRegistro{
         
         try {
             ps = conector.preparar(sql.getCONSULTA_MOSTRAR_TIPO_USUARIO());
-        } catch (Exception e) {
+            rs = ps.executeQuery();
+            
+          
+          return modelo;
+        } catch (SQLException e) {
+            conector.mensaje("Error al cargar los tipos de usuarios", "Error en la conexion", 0);
         }
         
-        return null;
+        return modelo;
     }
-    
 }

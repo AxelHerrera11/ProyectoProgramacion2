@@ -4,10 +4,22 @@
  */
 package Controlador;
 
+import Implementacion.RegistroImp;
+import Modelo.ModeloRegistroUsuario;
+
 /**
  *
  * @author jhosu
  */
 public class ControladorRegistroUsuario {
+    ModeloRegistroUsuario modelo;
+    RegistroImp implementacion = new RegistroImp();
+    
+    public ControladorRegistroUsuario(ModeloRegistroUsuario modelo){
+        this.modelo = modelo;
+        
+    }
+    
+    
     
 }

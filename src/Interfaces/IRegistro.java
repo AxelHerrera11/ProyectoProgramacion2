@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import Modelo.ModeloRegistroUsuario;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -12,7 +13,7 @@ import javax.swing.DefaultComboBoxModel;
  */
 public interface IRegistro {
     
-    public boolean guardarUsuario();
+    public boolean guardarUsuario(ModeloRegistroUsuario modelo);
     public DefaultComboBoxModel mostrarTiposUsuarios();
     
 }

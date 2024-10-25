@@ -250,7 +250,7 @@ public class ProductoImp implements IProducto{
     public boolean insertarGestionInventario(ModeloProductos modelo) {
         boolean resultado = true;
         conector.conectar();
-        ps = conector.preparar(sql.getACTUALIZAR_PRODUCTO());
+        ps = conector.preparar(sql.getINSERTAR_GESTION_INVENTARIO());
         try {
             ps.setInt(1, modelo.getTipoGestion());
             ps.setInt(2, modelo.getCantidad());
@@ -263,6 +263,23 @@ public class ProductoImp implements IProducto{
             conector.mensaje(e.getMessage(), "Error en al actualizar", 0);
         }
         return resultado;
+    }
+
+    @Override
+    public int consultaUltimoProducto() {
+        int idProducto = 0;
+        conector.conectar();
+        try {
+            ps = conector.preparar(sql.getCONSULTAR_ULTIMO_PRODUCTO_AGREGADO());
+            rs = ps.executeQuery();
+            while(rs.next()){
+                idProducto = rs.getInt("MAX(id_producto)");
+            }
+            return idProducto;
+        } catch (SQLException e) {
+            conector.mensaje("Error al consultar la ulitma venta", "Error de conexion", 0);
+            return idProducto;
+        }
     }
 
 

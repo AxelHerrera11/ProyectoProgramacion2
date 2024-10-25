@@ -192,7 +192,7 @@ public class VentaImp implements iVenta{
             }
             return idVenta;
         } catch (SQLException e) {
-            conector.mensaje("Error al consultar la ulitma venta", "Error de conexion", idVenta);
+            conector.mensaje("Error al consultar la ulitma venta", "Error de conexion", 0);
             return idVenta;
         }
     }

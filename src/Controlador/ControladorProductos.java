@@ -1,6 +1,7 @@
 package Controlador;
 
 import Implementacion.ProductoImp;
+import Modelo.ModeloInicioSesion;
 import Modelo.ModeloProductos;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -12,6 +13,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -20,6 +25,7 @@ import javax.swing.JOptionPane;
 public class ControladorProductos implements MouseListener, KeyListener {
     ModeloProductos modelo;
     ProductoImp implementacion = new ProductoImp();
+    ModeloInicioSesion modeloIS = new ModeloInicioSesion();
 
     public ControladorProductos(ModeloProductos modelo) {
         this.modelo = modelo;
@@ -79,6 +85,14 @@ public class ControladorProductos implements MouseListener, KeyListener {
         } else if(e.getComponent().equals(modelo.getVistaProductos().btnAgregarProducto)){
             try {
                 agregarProducto();
+                
+                int pTipoGestion = 1;
+                int pCantidad = Integer.parseInt(modelo.getVistaProductos().txtCantidad.getText());
+                int pUsuario = modeloIS.getIdUsuarioEncontrado();
+                int pIdProducto = implementacion.consultaUltimoProducto();
+                
+                insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, pIdProducto);
+   
             } catch (IOException ex) {
                 Logger.getLogger(ControladorProductos.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -90,7 +104,20 @@ public class ControladorProductos implements MouseListener, KeyListener {
             }
         } else if(e.getComponent().equals(modelo.getVistaProductos().btnActualizarProducto)){
             actualizarProducto();
+            int pTipoGestion = 2;
+            int pCantidad = Integer.parseInt(modelo.getVistaProductos().txtCantidad.getText());
+            int pUsuario = modeloIS.getIdUsuarioEncontrado();
+            int pIdProducto = Integer.parseInt(modelo.getVistaProductos().txtCodigoProducto.getText());
+            
+            insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, pIdProducto);
         } else if(e.getComponent().equals(modelo.getVistaProductos().btnEliminarProducto)){
+            
+            int pTipoGestion = 3;
+            int pCantidad = 0;
+            int pUsuario = modeloIS.getIdUsuarioEncontrado();
+            int pIdProducto = Integer.parseInt(modelo.getVistaProductos().txtCodigoProducto.getText());
+            
+            insertarRegistroVenta(pTipoGestion, pCantidad, pUsuario, pIdProducto);
             eliminarProducto();
         } else if(e.getComponent().equals(modelo.getVistaProductos().btnActualizarImagen)){
             actualizarImagenProducto();
@@ -192,6 +219,29 @@ public class ControladorProductos implements MouseListener, KeyListener {
                 JOptionPane.showMessageDialog(null, "Imagen del producto actualzada con exito", "Producto", 1);
             }else{
                 JOptionPane.showMessageDialog(null, "Error al actualizar la imagen del producto", "Producto", 0);
+            }
+    }
+    
+    public void insertarRegistroVenta(int tipoGestion, int cantidad, int usuario, int idProducto){
+        boolean resultado;
+        LocalDate fechaActual = LocalDate.now();
+        LocalTime horaActual = LocalTime.now();
+        
+        Date fecha = Date.valueOf(fechaActual);
+        Time hora = Time.valueOf(horaActual);
+        
+        ModeloProductos modelo = new ModeloProductos();
+        modelo.setTipoGestion(tipoGestion);
+        modelo.setCantidad(cantidad);
+        modelo.setFechaGestion(fecha);
+        modelo.setHoraGestion(hora);
+        modelo.setUsuarioGestion(usuario);
+        modelo.setIdProducto(idProducto);
+        resultado = implementacion.insertarGestionInventario(modelo);
+        if(!resultado){
+                System.out.println("Insercion realizada con exito.");
+            }else{
+                System.out.println("Hubo un problema al insertar.");
             }
     }
 }

@@ -139,8 +139,8 @@ public class PanelReportesVentas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnExportarExcel;
-    private javax.swing.JPanel btnExportarPDF;
+    public javax.swing.JPanel btnExportarExcel;
+    public javax.swing.JPanel btnExportarPDF;
     public javax.swing.JPanel btnMostrarVentas;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JTable jTable1;

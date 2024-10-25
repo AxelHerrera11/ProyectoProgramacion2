@@ -170,5 +170,9 @@ public class SQL {
     public String getCONSULTAR_GESTION_INVENTARIO() {
         return CONSULTAR_GESTION_INVENTARIO;
     }
+
+    public String getCONSULTA_VENTAS() {
+        return CONSULTA_VENTAS;
+    }
     
 }

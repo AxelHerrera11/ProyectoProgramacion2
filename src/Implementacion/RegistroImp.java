@@ -53,7 +53,7 @@ public class RegistroImp implements IRegistro{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                modelo.addElement(rs.getString("nombre_tipo_usuarios"));   
+                modelo.addElement(rs.getString("nombre_tipo_usuario"));   
             }
           
           return modelo;

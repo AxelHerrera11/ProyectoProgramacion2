@@ -5,6 +5,7 @@
 package Vistas;
 
 import Controlador.ControladorRegistroUsuario;
+import Implementacion.RegistroImp;
 import Modelo.ModeloRegistroUsuario;
 
 /**
@@ -21,6 +22,9 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         
         Modelo.ModeloRegistroUsuario modelo = new ModeloRegistroUsuario(this);
         Controlador.ControladorRegistroUsuario controlador = new ControladorRegistroUsuario(modelo);
+        setControlador(controlador);
+        RegistroImp implementacion = new RegistroImp();
+        cmbTipoUsuario.setModel(implementacion.mostrarTiposUsuarios());
         
     }
 

@@ -38,6 +38,7 @@ public class ClienteImp implements ICliente {
         conector.conectar();
         ps = conector.preparar(sql.getCONSULTA_ACTUALIZAR_CLIENTE());
         try {
+            ps.setInt(3, modelo.getCodigo_cliente());
             ps.setString(1, modelo.getNombreCliente());
             ps.setString(2,modelo.getTelefono_Cliente());
             

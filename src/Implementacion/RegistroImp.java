@@ -31,12 +31,13 @@ public class RegistroImp implements IRegistro{
     public boolean guardarUsuario(ModeloRegistroUsuario modelo) {
         boolean resultado = true;
         conector.conectar();
-        ps = conector.preparar(sql.getINSERTAR_CLIENTE());
+        ps = conector.preparar(sql.getCONSULTA_INSERTAR_USUARIO());
         
         try {
             ps.setString(1,modelo.getNombreUsuario());
             ps.setString(2,modelo.getContraseniaUsuario());
             ps.setInt(3,modelo.getCategoriaUsuario());
+            resultado = ps.execute();
         } catch (Exception e) {
             conector.mensaje(e.getMessage(), "Error en la insercion del usuario", 0);
         }

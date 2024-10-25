@@ -35,13 +35,11 @@ public class ControladorRegistroUsuario implements MouseListener {
 
         ModeloRegistroUsuario model = new ModeloRegistroUsuario();
         int CodigoCategoriaU = this.modelo.getVistaRegistro().cmbTipoUsuario.getSelectedIndex() + 1;
-        modelo.setNombreUsuario(this.modelo.getVistaRegistro().txtNombreUsuario.getText());
-        modelo.setContraseniaUsuario(this.modelo.getVistaRegistro().txtContraseniaUsuario.getText());
-        modelo.setCategoriaUsuario(CodigoCategoriaU);
+        model.setNombreUsuario(this.modelo.getVistaRegistro().txtNombreUsuario.getText());
+        model.setContraseniaUsuario(this.modelo.getVistaRegistro().txtContraseniaUsuario.getText());
+        model.setCategoriaUsuario(CodigoCategoriaU);
         implementacion.guardarUsuario(model);
-        
-        
-            
+                  
     }
 
     @Override

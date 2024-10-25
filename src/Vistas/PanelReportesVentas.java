@@ -18,11 +18,9 @@ public class PanelReportesVentas extends javax.swing.JPanel {
      */
     public PanelReportesVentas() {
         initComponents();
-        
-        
-        
+           
         Modelo.ModeloReportesVentas modelo = new ModeloReportesVentas(this);
-        Controlador.ControladorReportesVentas controlador = new ControladorReportesVentas();
+        Controlador.ControladorReportesVentas controlador = new ControladorReportesVentas(modelo);
         setControlador(controlador);
        
     }
@@ -152,7 +150,7 @@ public class PanelReportesVentas extends javax.swing.JPanel {
     private javax.swing.JPanel panelTabla;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
-    private javax.swing.JScrollPane tblReportesVentas;
+    public javax.swing.JScrollPane tblReportesVentas;
     // End of variables declaration//GEN-END:variables
 
 
@@ -162,7 +160,10 @@ public class PanelReportesVentas extends javax.swing.JPanel {
         letMostrarVentas.addMouseListener(controlador);
         letExportarExcel.addMouseListener(controlador);
         letExportarPDF.addMouseListener(controlador);
-    
+        
+        btnMostrarVentas.addMouseListener(controlador);
+        btnExportarPDF.addMouseListener(controlador);
+        btnExportarPDF.addMouseListener(controlador);
     
     }
 }

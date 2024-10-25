@@ -1,6 +1,8 @@
 package Modelo;
 
 import Vistas.PanelVentas;
+import java.sql.Date;
+import java.sql.Time;
 
 public class ModeloVentas {
     PanelVentas vistaVentas;
@@ -12,6 +14,14 @@ public class ModeloVentas {
     private byte[] imagenProducto;
     private String nitCliente;
     private String nombreCliente;
+    
+    private int idVendedor;
+    private int tipoPago;
+    private Date fecha;
+    private Time hora;
+    private Double totalVenta;
+    private Double iva;
+    private int idCliente;
 
     public ModeloVentas() {
     }
@@ -90,6 +100,62 @@ public class ModeloVentas {
 
     public void setNombreCliente(String nombreCliente) {
         this.nombreCliente = nombreCliente;
+    }
+
+    public int getIdVendedor() {
+        return idVendedor;
+    }
+
+    public void setIdVendedor(int idVendedor) {
+        this.idVendedor = idVendedor;
+    }
+
+    public int getTipoPago() {
+        return tipoPago;
+    }
+
+    public void setTipoPago(int tipoPago) {
+        this.tipoPago = tipoPago;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Time getHora() {
+        return hora;
+    }
+
+    public void setHora(Time hora) {
+        this.hora = hora;
+    }
+
+    public Double getTotalVenta() {
+        return totalVenta;
+    }
+
+    public void setTotalVenta(Double totalVenta) {
+        this.totalVenta = totalVenta;
+    }
+
+    public Double getIva() {
+        return iva;
+    }
+
+    public void setIva(Double iva) {
+        this.iva = iva;
+    }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
     
     

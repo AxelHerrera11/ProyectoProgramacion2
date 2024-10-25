@@ -10,6 +10,7 @@ public class ModeloInicioSesion {
     private static int tipoUsuario;
     private static String usuarioEncontrado;
     private static String contraseniaEncontrada;
+    private static int idUsuarioEncontrado;
 
     public ModeloInicioSesion() {
     }
@@ -66,4 +67,12 @@ public class ModeloInicioSesion {
         this.contraseniaEncontrada = contraseniaEncontrada;
     }
 
+    public int getIdUsuarioEncontrado() {
+        return idUsuarioEncontrado;
+    }
+
+    public void setIdUsuarioEncontrado(int idUsuarioEncontrado) {
+        this.idUsuarioEncontrado = idUsuarioEncontrado;
+    }
+    
 }

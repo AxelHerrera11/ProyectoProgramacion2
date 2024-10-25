@@ -109,7 +109,22 @@ public class VentaImp implements iVenta{
 
     @Override
     public boolean guardarVenta(ModeloVentas modelo) {
-        return false;
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getINSERTAR_VENTA());
+        try {
+            ps.setInt(1, modelo.getIdVendedor());
+            ps.setInt(2, modelo.getTipoPago());
+            ps.setDate(3, modelo.getFecha());
+            ps.setTime(4, modelo.getHora());
+            ps.setDouble(5, modelo.getTotalVenta());
+            ps.setDouble(6, modelo.getIva());
+            ps.setInt(7, modelo.getIdCliente());
+            resultado = ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error en la insercion", 0);
+        }
+        return resultado;
     }
     
 }

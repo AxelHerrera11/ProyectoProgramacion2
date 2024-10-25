@@ -1,6 +1,7 @@
 package Controlador;
 
 import Implementacion.VentaImp;
+import Modelo.ModeloInicioSesion;
 import Modelo.ModeloVentas;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -141,6 +142,11 @@ public class ControladorVentas implements MouseListener, KeyListener {
     public void eliminarProductoEnTabla(){
         int fila = modelo.getVistaVentas().tblProductos.getSelectedRow();
         modelo.getVistaVentas().tblProductos.setModel(implementacion.eliminarEnTabla(fila));
+    }
+    
+    public void realizarVenta(){
+        ModeloInicioSesion modeloIS = new ModeloInicioSesion();
+        int vVendedor = modeloIS.getTipoUsuario();
     }
     
 }

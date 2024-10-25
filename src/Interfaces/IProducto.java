@@ -10,4 +10,8 @@ public interface IProducto {
     public DefaultComboBoxModel mostrarCategoriaProducto();
     public int consultarNoCodigoBarras();
     public ModeloProductos mostrarProducto(int idProducto);
+    public boolean actualizarProducto(ModeloProductos modelo);
+    public boolean eliminarProducto(int idProducto);
+    public boolean eliminarImagen(int idProducto);
+    public boolean actualizarImagenProducto(ModeloProductos modelo);
 }

@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 
 public class ControladorProductos implements MouseListener, KeyListener {
     ModeloProductos modelo;
@@ -87,6 +88,14 @@ public class ControladorProductos implements MouseListener, KeyListener {
             } catch (IOException ex) {
                 Logger.getLogger(ControladorProductos.class.getName()).log(Level.SEVERE, null, ex);
             }
+        } else if(e.getComponent().equals(modelo.getVistaProductos().btnActualizarProducto)){
+            actualizarProducto();
+        } else if(e.getComponent().equals(modelo.getVistaProductos().btnEliminarProducto)){
+            eliminarProducto();
+        } else if(e.getComponent().equals(modelo.getVistaProductos().btnActualizarImagen)){
+            actualizarImagenProducto();
+        } else if(e.getComponent().equals(modelo.getVistaProductos().btnBorrarImagen)){
+            eliminarImagenProducto();
         }
     }
 
@@ -126,13 +135,63 @@ public class ControladorProductos implements MouseListener, KeyListener {
     }
     
     public void mostrarProducto() throws IOException{
+        modelo.getVistaProductos().letProductoImagen.setIcon(null);
+        modelo.getVistaProductos().letCodigoBarras.setIcon(null);
         ModeloProductos model = implementacion.mostrarProducto(Integer.parseInt(modelo.getVistaProductos().txtCodigoProducto.getText()));
         modelo.getVistaProductos().txtNombreProducto.setText(model.getNombreProducto());
         modelo.getVistaProductos().txtCantidad.setText(String.valueOf(model.getCantidad()));
         modelo.getVistaProductos().txtPrecioNormal.setText(String.valueOf(model.getPrecioNormal()));
         modelo.getVistaProductos().txtPrecioPromocional.setText(String.valueOf(model.getPrecioPromocion()));
-        modelo.getVistaProductos().letProductoImagen.setIcon(implementacion.generarImagen(model.getImagenProducto(), modelo.getVistaProductos().letProductoImagen.getWidth(), modelo.getVistaProductos().letProductoImagen.getHeight()));
+        if(model.getImagenProducto() == null){
+        
+        }else{
+            modelo.getVistaProductos().letProductoImagen.setIcon(implementacion.generarImagen(model.getImagenProducto(), modelo.getVistaProductos().letProductoImagen.getWidth(), modelo.getVistaProductos().letProductoImagen.getHeight()));
+        }
         modelo.getVistaProductos().letCodigoBarras.setIcon(implementacion.generarImagen(model.getCodigoBarras(), modelo.getVistaProductos().letCodigoBarras.getWidth(), modelo.getVistaProductos().letCodigoBarras.getHeight()));
     }
     
+    public void actualizarProducto(){
+        boolean resultado;
+        ModeloProductos modelo = new ModeloProductos();
+        int codigoCategoria = this.modelo.getVistaProductos().comBoxCategoriaProducto.getSelectedIndex() + 1;
+        modelo.setNombreProducto(this.modelo.getVistaProductos().txtNombreProducto.getText());
+        modelo.setCantidad(Integer.parseInt(this.modelo.getVistaProductos().txtCantidad.getText()));
+        modelo.setPrecioNormal(Double.parseDouble(this.modelo.getVistaProductos().txtPrecioNormal.getText()));
+        modelo.setPrecioPromocion(Double.parseDouble(this.modelo.getVistaProductos().txtPrecioPromocional.getText()));
+        modelo.setCategoriaProducto(codigoCategoria);
+        modelo.setIdProducto(Integer.parseInt(this.modelo.getVistaProductos().txtCodigoProducto.getText()));
+        resultado = implementacion.actualizarProducto(modelo);
+        if(!resultado){
+                JOptionPane.showMessageDialog(null, "Producto actualzado con exito", "Producto", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al actualizar el producto", "Producto", 0);
+            }
+    }
+    
+    public void eliminarProducto() {
+            int respuesta = JOptionPane.showConfirmDialog(null, "El producto se eliminará, ¿está seguro?", "ELIMINAR PRODUCTO", JOptionPane.YES_NO_OPTION);
+        if (respuesta == JOptionPane.YES_OPTION) {
+            implementacion.eliminarProducto(Integer.parseInt(modelo.getVistaProductos().txtCodigoProducto.getText()));
+        }
+    }
+    
+    public void eliminarImagenProducto() {
+            int respuesta = JOptionPane.showConfirmDialog(null, "La imagen del producto se eliminará, ¿está seguro?", "ELIMINAR IMAGEN DEL PRODUCTO", JOptionPane.YES_NO_OPTION);
+        if (respuesta == JOptionPane.YES_OPTION) {
+            implementacion.eliminarImagen(Integer.parseInt(modelo.getVistaProductos().txtCodigoProducto.getText()));
+        }
+    }
+    
+    public void actualizarImagenProducto(){
+        boolean resultado;
+        ModeloProductos modelo = new ModeloProductos();
+        modelo.setIdProducto(Integer.parseInt(this.modelo.getVistaProductos().txtCodigoProducto.getText()));
+        modelo.setImagenProducto(getImagen());
+        resultado = implementacion.actualizarImagenProducto(modelo);
+        if(!resultado){
+                JOptionPane.showMessageDialog(null, "Imagen del producto actualzada con exito", "Producto", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al actualizar la imagen del producto", "Producto", 0);
+            }
+    }
 }

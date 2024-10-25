@@ -251,7 +251,7 @@ public class PanelProductos extends javax.swing.JPanel {
     public javax.swing.JPanel btnActualizarImagen;
     public javax.swing.JPanel btnActualizarProducto;
     public javax.swing.JPanel btnAgregarProducto;
-    private javax.swing.JPanel btnBorrarImagen;
+    public javax.swing.JPanel btnBorrarImagen;
     public javax.swing.JPanel btnBuscarProducto;
     public javax.swing.JPanel btnEliminarProducto;
     public javax.swing.JPanel btnImagen;
@@ -291,6 +291,6 @@ public class PanelProductos extends javax.swing.JPanel {
         btnAgregarProducto.addMouseListener(controlador);
         btnEliminarProducto.addMouseListener(controlador);
         btnImagen.addMouseListener(controlador);
-
+        btnBorrarImagen.addMouseListener(controlador);
     }
 }

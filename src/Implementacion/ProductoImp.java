@@ -103,6 +103,10 @@ public class ProductoImp implements IProducto{
         }
         return resultado;
     }
+    
+//    public ImageIcon imagenNulla(){
+//        
+//    }
 
     @Override
     public ImageIcon seleccionarImagen() {
@@ -178,6 +182,70 @@ public class ProductoImp implements IProducto{
         }
         return modelo;
     }
+
+    @Override
+    public boolean actualizarProducto(ModeloProductos modelo) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getACTUALIZAR_PRODUCTO());
+        try {
+            ps.setInt(6, modelo.getIdProducto());
+            ps.setString(1, modelo.getNombreProducto());
+            ps.setInt(2, modelo.getCantidad());
+            ps.setDouble(3, modelo.getPrecioNormal());
+            ps.setDouble(4, modelo.getPrecioPromocion());
+            ps.setInt(5, modelo.getCategoriaProducto());
+            resultado = ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error en al actualizar", 0);
+        }
+        return resultado;
+    }
+
+    @Override
+    public boolean eliminarProducto(int idProducto) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getELIMINAR_PRODUCTO());
+        
+        try {
+            ps.setInt(1, idProducto);
+            return ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje("No se pudo eliminar el producto", "Error al eliminar", 0);
+            return resultado;
+        }
+    }
+
+    @Override
+    public boolean eliminarImagen(int idProducto) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getELIMINAR_IMAGEN_PRODUCTO());
+        try {
+            ps.setInt(1, idProducto);
+            return resultado = ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje("No se pudo eliminar la imagen del producto", "Error al eliminar", 0);
+            return resultado;
+        }
+    }
+
+    @Override
+    public boolean actualizarImagenProducto(ModeloProductos modelo) {
+        boolean resultado = true;
+        conector.conectar();
+        ps = conector.preparar(sql.getACTUALIZAR_IMAGEN_PRODUCTO());
+        try {
+            ps.setBytes(1, modelo.getImagenProducto());
+            ps.setInt(2, modelo.getIdProducto());
+            resultado = ps.execute();
+        } catch (SQLException e) {
+            conector.mensaje(e.getMessage(), "Error en la insercion", 0);
+        }
+        return resultado;
+    }
+
 
     
 }

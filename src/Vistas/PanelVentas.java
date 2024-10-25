@@ -68,7 +68,6 @@ public class PanelVentas extends javax.swing.JPanel {
         ComBoxPromocion = new javax.swing.JComboBox<>();
         btnEliminarProducto = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        letIDProducto1 = new javax.swing.JLabel();
         panelMetodoPago = new javax.swing.JPanel();
         letNIT = new javax.swing.JLabel();
         txtNITVentas = new javax.swing.JTextField();
@@ -78,6 +77,7 @@ public class PanelVentas extends javax.swing.JPanel {
         comboMetodoPago = new javax.swing.JComboBox<>();
         btnBuscarNIT = new javax.swing.JPanel();
         letBuscarNIT = new javax.swing.JLabel();
+        letIDProducto1 = new javax.swing.JLabel();
         letProductosAgregados = new javax.swing.JLabel();
         letTextoContinuar = new javax.swing.JLabel();
         btnVentasContinuar = new javax.swing.JPanel();
@@ -136,6 +136,7 @@ public class PanelVentas extends javax.swing.JPanel {
         panelAgregarProductos.add(letCantidadVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
         txtIDProducto.setEditable(false);
+        txtIDProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
         panelAgregarProductos.add(txtIDProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 120, 30));
 
         letNombreProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
@@ -209,11 +210,6 @@ public class PanelVentas extends javax.swing.JPanel {
 
         fondoPanel.add(panelAgregarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 720));
 
-        letIDProducto1.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
-        letIDProducto1.setForeground(new java.awt.Color(255, 255, 255));
-        letIDProducto1.setText("TOTAL VENTA");
-        fondoPanel.add(letIDProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, -1, 20));
-
         panelMetodoPago.setBackground(new java.awt.Color(122, 167, 167));
         panelMetodoPago.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -251,6 +247,11 @@ public class PanelVentas extends javax.swing.JPanel {
 
         fondoPanel.add(panelMetodoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 720));
 
+        letIDProducto1.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letIDProducto1.setForeground(new java.awt.Color(255, 255, 255));
+        letIDProducto1.setText("TOTAL VENTA");
+        fondoPanel.add(letIDProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, -1, 20));
+
         letProductosAgregados.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letProductosAgregados.setForeground(new java.awt.Color(255, 255, 255));
         letProductosAgregados.setText("PRODUCTOS AGREGADOS");
@@ -276,6 +277,7 @@ public class PanelVentas extends javax.swing.JPanel {
         panelProductosAgregados.setPreferredSize(new java.awt.Dimension(250, 250));
         panelProductosAgregados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblProductos.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
         tblProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -294,6 +296,7 @@ public class PanelVentas extends javax.swing.JPanel {
         fondoPanel.add(panelProductosAgregados, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 390, 330));
 
         txtTotalVenta.setEditable(false);
+        txtTotalVenta.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
         fondoPanel.add(txtTotalVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, 250, 30));
 
         btnRegresar.setBackground(new java.awt.Color(96, 124, 124));
@@ -306,7 +309,7 @@ public class PanelVentas extends javax.swing.JPanel {
         jLabel2.setText("REGRESAR");
         btnRegresar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
 
-        fondoPanel.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 650, 110, 30));
+        fondoPanel.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, 110, 30));
 
         btnTerminarVenta.setBackground(new java.awt.Color(96, 124, 124));
         btnTerminarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -318,7 +321,7 @@ public class PanelVentas extends javax.swing.JPanel {
         jLabel3.setText("TERMINAR VENTA");
         btnTerminarVenta.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
 
-        fondoPanel.add(btnTerminarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 650, 140, 30));
+        fondoPanel.add(btnTerminarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 610, 140, 30));
 
         letFondoVentas.setBackground(new java.awt.Color(122, 167, 167));
         letFondoVentas.setOpaque(true);

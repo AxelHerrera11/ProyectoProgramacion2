@@ -73,22 +73,22 @@ public class PanelClientes extends javax.swing.JPanel {
         separadorIzquierda.setOpaque(true);
         fondoPanel.add(separadorIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 240, -1));
 
-        lblNIT.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblNIT.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         lblNIT.setForeground(new java.awt.Color(255, 255, 255));
         lblNIT.setText("NIT");
         fondoPanel.add(lblNIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
 
-        letNombreCliente.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        letNombreCliente.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letNombreCliente.setForeground(new java.awt.Color(255, 255, 255));
         letNombreCliente.setText("NOMBRE DE CLIENTE");
         fondoPanel.add(letNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
-        letTelefono.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        letTelefono.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letTelefono.setForeground(new java.awt.Color(255, 255, 255));
         letTelefono.setText("TELÉFONO");
         fondoPanel.add(letTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ID DE CLIENTE");
         fondoPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
@@ -103,11 +103,12 @@ public class PanelClientes extends javax.swing.JPanel {
         fondoPanel.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 320, -1));
 
         txtIDCliente.setEditable(false);
+        txtIDCliente.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
         fondoPanel.add(txtIDCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 320, -1));
 
         btnAgregar.setBackground(new java.awt.Color(48, 99, 99));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("AGREGAR");
@@ -133,7 +134,7 @@ public class PanelClientes extends javax.swing.JPanel {
 
         btnActualizar.setBackground(new java.awt.Color(48, 99, 99));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("ACTUALIZAR");
@@ -159,7 +160,7 @@ public class PanelClientes extends javax.swing.JPanel {
 
         btnEliminar.setBackground(new java.awt.Color(48, 99, 99));
 
-        lblEliminar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblEliminar.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         lblEliminar.setForeground(new java.awt.Color(255, 255, 255));
         lblEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEliminar.setText("ELIMINAR");
@@ -183,6 +184,7 @@ public class PanelClientes extends javax.swing.JPanel {
 
         fondoPanel.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 100, 40));
 
+        tblClientes.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

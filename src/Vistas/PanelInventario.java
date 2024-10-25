@@ -68,6 +68,7 @@ public class PanelInventario extends javax.swing.JPanel {
         panelTabla.setMinimumSize(new java.awt.Dimension(800, 370));
         panelTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable1.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

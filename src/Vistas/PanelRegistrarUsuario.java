@@ -46,9 +46,11 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         cmbTipoUsuario = new javax.swing.JComboBox<>();
         btnRegistrar = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        letRegistrar = new javax.swing.JLabel();
         btnBorrar = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        letBorrar = new javax.swing.JLabel();
+        separadorIzquierda = new javax.swing.JSeparator();
+        separadorDerecha = new javax.swing.JSeparator();
         FondoRegistro = new javax.swing.JLabel();
 
         FondoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,44 +59,47 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         letTituloProducto.setForeground(new java.awt.Color(255, 255, 255));
         letTituloProducto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letTituloProducto.setText("REGISTRO DE USUARIO");
-        FondoPanel.add(letTituloProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 980, -1));
+        FondoPanel.add(letTituloProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 980, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("NOMBRE DE USUARIO");
-        FondoPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+        FondoPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 190, 20));
 
-        txtNombreUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        FondoPanel.add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 290, -1));
+        txtNombreUsuario.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        FondoPanel.add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 290, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("CONTRASEÑA DE USUARIO");
-        FondoPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+        FondoPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 190, -1));
 
-        txtContraseniaUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtContraseniaUsuario.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         txtContraseniaUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContraseniaUsuarioActionPerformed(evt);
             }
         });
-        FondoPanel.add(txtContraseniaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 290, -1));
+        FondoPanel.add(txtContraseniaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 290, -1));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("TIPO DE USUARIO");
-        FondoPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, 20));
+        FondoPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, 190, 20));
 
+        cmbTipoUsuario.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
         cmbTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        FondoPanel.add(cmbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 150, -1));
+        FondoPanel.add(cmbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, 150, -1));
 
         btnRegistrar.setBackground(new java.awt.Color(48, 99, 99));
-        btnRegistrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("REGISTRAR");
+        letRegistrar.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        letRegistrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letRegistrar.setText("REGISTRAR");
 
         javax.swing.GroupLayout btnRegistrarLayout = new javax.swing.GroupLayout(btnRegistrar);
         btnRegistrar.setLayout(btnRegistrarLayout);
@@ -102,26 +107,25 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             btnRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnRegistrarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                .addComponent(letRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnRegistrarLayout.setVerticalGroup(
             btnRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnRegistrarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addComponent(letRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        FondoPanel.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 130, 40));
+        FondoPanel.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 130, 40));
 
         btnBorrar.setBackground(new java.awt.Color(48, 99, 99));
-        btnBorrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("BORRAR");
+        letBorrar.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
+        letBorrar.setForeground(new java.awt.Color(255, 255, 255));
+        letBorrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        letBorrar.setText("BORRAR");
 
         javax.swing.GroupLayout btnBorrarLayout = new javax.swing.GroupLayout(btnBorrar);
         btnBorrar.setLayout(btnBorrarLayout);
@@ -129,18 +133,26 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             btnBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnBorrarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                .addComponent(letBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnBorrarLayout.setVerticalGroup(
             btnBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnBorrarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addComponent(letBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        FondoPanel.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, 130, 40));
+        FondoPanel.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 130, 40));
+
+        separadorIzquierda.setForeground(new java.awt.Color(255, 255, 255));
+        separadorIzquierda.setOpaque(true);
+        FondoPanel.add(separadorIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 150, -1));
+
+        separadorDerecha.setForeground(new java.awt.Color(255, 255, 255));
+        separadorDerecha.setOpaque(true);
+        FondoPanel.add(separadorDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 150, -1));
 
         FondoRegistro.setBackground(new java.awt.Color(122, 167, 167));
         FondoRegistro.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -171,12 +183,14 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     public javax.swing.JPanel btnBorrar;
     public javax.swing.JPanel btnRegistrar;
     public javax.swing.JComboBox<String> cmbTipoUsuario;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel letBorrar;
+    private javax.swing.JLabel letRegistrar;
     private javax.swing.JLabel letTituloProducto;
+    private javax.swing.JSeparator separadorDerecha;
+    private javax.swing.JSeparator separadorIzquierda;
     public javax.swing.JTextField txtContraseniaUsuario;
     public javax.swing.JTextField txtNombreUsuario;
     // End of variables declaration//GEN-END:variables

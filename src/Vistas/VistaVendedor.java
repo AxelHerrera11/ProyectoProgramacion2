@@ -47,6 +47,7 @@ public class VistaVendedor extends javax.swing.JFrame {
         contenedor2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         fondoPanelVendedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

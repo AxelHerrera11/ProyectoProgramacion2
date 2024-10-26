@@ -51,6 +51,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
         contenedor2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         fondoPanelSupervisor.setBackground(new java.awt.Color(122, 167, 167));
         fondoPanelSupervisor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

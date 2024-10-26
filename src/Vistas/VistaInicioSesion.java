@@ -47,6 +47,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
         fondoIzquierda = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         fondoPanelInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

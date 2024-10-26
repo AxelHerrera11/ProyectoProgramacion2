@@ -14,7 +14,7 @@ public interface IReportesVenta {
     public DefaultTableModel modeloReportesVentas(String fecha);
     
     public ModeloReportesVentas exportarPDF(String nombreVendedor, String tipoPago, String nombreCliente, String fechaVenta);
-    public ModeloReportesVentas exportarPDFREPORTE();
+    public void exportarPDFREPORTE();
     public ModeloReportesVentas exportarExcelResportes();
     
 }

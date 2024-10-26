@@ -18,6 +18,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import com.itextpdf.text.pdf.PdfPTable;
+import java.awt.HeadlessException;
 import java.sql.Date;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
@@ -113,8 +114,7 @@ public class ReportesVentasImp implements IReportesVenta {
     }
 
     @Override
-    public ModeloReportesVentas exportarPDFREPORTE() {
-        ModeloReportesVentas modelo = new ModeloReportesVentas();
+    public void exportarPDFREPORTE() {
         Document documento = new Document();
         conector.conectar();
 
@@ -131,28 +131,22 @@ public class ReportesVentasImp implements IReportesVenta {
             tabla.addCell("CLIENTE");
             tabla.addCell("FECHA DE VENTA");
 
-            
-            
-            if(rs.next()){
-                 do {
-                tabla.addCell(rs.getString("nombre_vendedor"));
-                tabla.addCell(rs.getString("nombre_tipo_pago"));
-                tabla.addCell(rs.getString("nombre_cliente"));
-                tabla.addCell(rs.getString("fecha_venta"));
+            if (rs.next()) {
+                do {
+                    tabla.addCell(rs.getString("nombre_vendedor"));
+                    tabla.addCell(rs.getString("nombre_tipo_pago"));
+                    tabla.addCell(rs.getString("nombre_cliente"));
+                    tabla.addCell(rs.getString("fecha_venta"));
 
-            } while (rs.next());
-                
+                } while (rs.next());
+                documento.add(tabla);
             }
-           
-
-            documento.add(tabla);
-            JOptionPane.showMessageDialog(null, "Reporte Creado", "REPORTE PDF", JOptionPane.INFORMATION_MESSAGE);
             documento.close();
+            JOptionPane.showMessageDialog(null, "Reporte Creado", "REPORTE PDF", JOptionPane.INFORMATION_MESSAGE);
 
-        } catch (Exception e) {
+        } catch (DocumentException | HeadlessException | FileNotFoundException | SQLException e) {
         }
 
-        return modelo;
     }
 
     @Override
@@ -168,7 +162,7 @@ public class ReportesVentasImp implements IReportesVenta {
     @Override
     public DefaultTableModel modeloReportesVentas(String fecha) {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.setColumnIdentifiers(new Object[]{"Vendedor","Tipo Pago","Cliente","Fecha"});
+        modelo.setColumnIdentifiers(new Object[]{"Vendedor", "Tipo Pago", "Cliente", "Fecha"});
         conector.conectar();
 
         try {

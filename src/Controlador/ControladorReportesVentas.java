@@ -9,8 +9,10 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.Date;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import javax.swing.JOptionPane;
 
 public class ControladorReportesVentas implements MouseListener, KeyListener {
@@ -28,7 +30,7 @@ public class ControladorReportesVentas implements MouseListener, KeyListener {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String fechaString = formatter.format(fecha);
         modelo.getVistaReportesVentas().tblDatosReporteVentas.setModel(implementacion.modeloReportesVentas(fechaString));
-        
+
     }
 
 //    public void exportarPDF(){
@@ -51,7 +53,11 @@ public class ControladorReportesVentas implements MouseListener, KeyListener {
 //            JOptionPane.showMessageDialog(null, "Debe de ingresar todos los campos", "ERROR AL AGREGAR CLIENTE", JOptionPane.ERROR_MESSAGE);
         } else if (e.getComponent().equals(modelo.getVistaReportesVentas().btnExportarPDF)) {
             System.out.println("Bton exportar");
-            implementacion.exportarPDFREPORTE();
+//            implementacion.exportarPDFREPORTE();
+            LocalDate fechaActual = LocalDate.now();
+
+            Date fecha = Date.valueOf(fechaActual);
+            implementacion.exportarReporteDeVentas(fecha);
         }
 
     }

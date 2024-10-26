@@ -194,4 +194,42 @@ public class ReportesVentasImp implements IReportesVenta {
         return modelo;
     }
 
+    @Override
+    public void exportarReporteDeVentas(Date fecha) {
+        Document documento = new Document();
+        try {
+            String ruta = System.getProperty("user.home");
+            PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte-Vetas.pdf"));
+            documento.open();
+            
+            PdfPTable tabla = new PdfPTable(4);
+            tabla.addCell("Vendedor");
+            tabla.addCell("Tipo de Pago");
+            tabla.addCell("Cliente");
+            tabla.addCell("Fecha");
+            
+            try {
+                conector.conectar();
+                ps = conector.preparar(sql.getCONSULTA_REPORTE_VENTAS());
+                ps.setDate(1, fecha);
+                rs = ps.executeQuery();
+                
+                if(rs.next()){
+                    do{
+                        tabla.addCell(rs.getString(1));
+                        tabla.addCell(rs.getString(2));
+                        tabla.addCell(rs.getString(3));
+                        tabla.addCell(rs.getString(4));
+                        
+                    }while(rs.next());
+                    documento.add(tabla);
+                }
+            } catch (DocumentException | SQLException e) {
+            }
+            documento.close();
+            JOptionPane.showMessageDialog(null, "Reporte Ventas Creado");
+        } catch (DocumentException | HeadlessException | FileNotFoundException e) {
+        }
+    }
+
 }

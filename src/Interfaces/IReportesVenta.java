@@ -16,5 +16,6 @@ public interface IReportesVenta {
     public ModeloReportesVentas exportarPDF(String nombreVendedor, String tipoPago, String nombreCliente, String fechaVenta);
     public void exportarPDFREPORTE();
     public ModeloReportesVentas exportarExcelResportes();
+    public void exportarReporteDeVentas(Date fecha);
     
 }

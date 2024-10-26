@@ -1,7 +1,7 @@
 package Controlador;
 
+import Implementacion.ExportarExcelImp;
 import Implementacion.ReportesVentasImp;
-import Implementacion.VentaImp;
 import Modelo.ModeloReportesVentas;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -9,11 +9,10 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.Date;
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalTime;
-import javax.swing.JOptionPane;
+import java.io.IOException;
+
 
 public class ControladorReportesVentas implements MouseListener, KeyListener {
 
@@ -23,6 +22,10 @@ public class ControladorReportesVentas implements MouseListener, KeyListener {
     public ControladorReportesVentas(ModeloReportesVentas modelo) {
         this.modelo = modelo;
     }
+    
+    ExportarExcelImp exportar;
+    
+    
 
     public void mostrarVentas() {
         LocalDate fechaActual = LocalDate.now();
@@ -50,6 +53,7 @@ public class ControladorReportesVentas implements MouseListener, KeyListener {
         if (e.getComponent().equals(modelo.getVistaReportesVentas().btnMostrarVentas)) {
             System.out.println("Botón presionado");
             mostrarVentas();
+            modelo.getVistaReportesVentas().btnExportarExcel.setVisible(true);
 //            JOptionPane.showMessageDialog(null, "Debe de ingresar todos los campos", "ERROR AL AGREGAR CLIENTE", JOptionPane.ERROR_MESSAGE);
         } else if (e.getComponent().equals(modelo.getVistaReportesVentas().btnExportarPDF)) {
             System.out.println("Bton exportar");
@@ -58,6 +62,12 @@ public class ControladorReportesVentas implements MouseListener, KeyListener {
 
             Date fecha = Date.valueOf(fechaActual);
             implementacion.exportarReporteDeVentas(fecha);
+        } else if(e.getComponent().equals(modelo.getVistaReportesVentas().btnExportarExcel)){
+            try {
+                exportar = new ExportarExcelImp();
+                exportar.exportarExcel(modelo.getVistaReportesVentas().tblDatosReporteVentas);
+            } catch (IOException ex) {
+            }
         }
 
     }

@@ -25,7 +25,7 @@ public class PanelReportesVentas extends javax.swing.JPanel {
         setControlador(controlador);
         
         ReportesVentasImp implementacion = new ReportesVentasImp();
-        
+        this.btnExportarExcel.setVisible(false);
        
     }
 

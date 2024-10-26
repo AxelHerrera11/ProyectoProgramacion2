@@ -42,6 +42,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JPasswordField();
         btnIngreso = new javax.swing.JPanel();
         letInicioSesion = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         fondoDerecha = new javax.swing.JLabel();
         fondoIzquierda = new javax.swing.JLabel();
 
@@ -91,7 +92,16 @@ public class VistaInicioSesion extends javax.swing.JFrame {
 
         fondoPanelInicio.add(btnIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 120, 40));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 100)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("BIENVENIDO");
+        fondoPanelInicio.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 980, 720));
+
         fondoDerecha.setBackground(new java.awt.Color(122, 167, 167));
+        fondoDerecha.setFont(new java.awt.Font("Arial", 1, 60)); // NOI18N
+        fondoDerecha.setForeground(new java.awt.Color(255, 255, 255));
+        fondoDerecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fondoDerecha.setOpaque(true);
         fondoPanelInicio.add(fondoDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 980, 720));
 
@@ -153,6 +163,7 @@ public class VistaInicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel fondoDerecha;
     private javax.swing.JLabel fondoIzquierda;
     private javax.swing.JPanel fondoPanelInicio;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel letContraseña;
     public javax.swing.JLabel letInicioSesion;
     private javax.swing.JLabel letTitulo;

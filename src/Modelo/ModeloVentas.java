@@ -14,7 +14,7 @@ public class ModeloVentas {
     private double percioPromocion;
     private byte[] imagenProducto;
     private String nitCliente;
-    private String nombreCliente;
+    private static String nombreCliente;
     private double precioVenta;
     private int cantidadVenta;
     private double subTotal;
@@ -33,6 +33,13 @@ public class ModeloVentas {
 
     public ModeloVentas(PanelVentas vistaVentas) {
         this.vistaVentas = vistaVentas;
+    }
+
+    public ModeloVentas(String nombreProducto, double precioVenta, int cantidadVenta, double subTotal) {
+        this.nombreProducto = nombreProducto;
+        this.precioVenta = precioVenta;
+        this.cantidadVenta = cantidadVenta;
+        this.subTotal = subTotal;
     }
 
     public PanelVentas getVistaVentas() {

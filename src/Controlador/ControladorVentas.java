@@ -363,7 +363,7 @@ public class ControladorVentas implements MouseListener, KeyListener {
             Paragraph nombreTipPag = new Paragraph();
             nombreTipPag.setAlignment(Paragraph.ALIGN_LEFT);
             nombreTipPag.setFont(FontFactory.getFont("Arial", 12, Font.NORMAL, BaseColor.BLACK));
-            nombreTipPag.add(tipoPago + "\n\n");
+            nombreTipPag.add(nombreTipoPago + "\n\n");
             
             Paragraph tituloTotal = new Paragraph();
             tituloTotal.setAlignment(Paragraph.ALIGN_LEFT);

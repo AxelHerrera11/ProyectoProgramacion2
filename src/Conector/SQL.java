@@ -60,6 +60,22 @@ public class SQL {
                                             "JOIN \n" +
                                             "    Cliente c ON v.cliente = c.id_cliente;";
     
+    private final String CONSULTA_REPORTE_VENTAS = "SELECT \n" +
+                                                "    Usuario.nombre_usuario AS nombre_vendedor,\n" +
+                                                "    Tipo_Pago.nombre_tipo_pago AS nombre_tipo_pago,\n" +
+                                                "    Cliente.nombre_cliente AS nombre_cliente,\n" +
+                                                "    fecha_venta\n" +
+                                                "FROM \n" +
+                                                "    Venta\n" +
+                                                "JOIN \n" +
+                                                "    Usuario ON Venta.vendedor = Usuario.id_usuario\n" +
+                                                "JOIN \n" +
+                                                "    Tipo_Pago ON Venta.tipo_pago = Tipo_Pago.id_tipo_pago\n" +
+                                                "JOIN \n" +
+                                                "    Cliente ON Venta.cliente = Cliente.id_cliente\n" +
+                                                "WHERE \n" +
+                                                "    fecha_venta = ?";
+    
     public SQL() {
     }
 
@@ -179,4 +195,8 @@ public class SQL {
         return CONSULTA_VENTAS;
     }
 
+    public String getCONSULTA_REPORTE_VENTAS() {
+        return CONSULTA_REPORTE_VENTAS;
+    }
+    
 }

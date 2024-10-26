@@ -8,18 +8,51 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 public class ControladorReportesVentas implements MouseListener, KeyListener {
 
     ModeloReportesVentas modelo;
     ReportesVentasImp implementacion = new ReportesVentasImp();
-    
-    public ControladorReportesVentas(ModeloReportesVentas modelo){
+
+    public ControladorReportesVentas(ModeloReportesVentas modelo) {
         this.modelo = modelo;
     }
 
+    public void mostrarVentas() {
+        LocalDate fechaActual = LocalDate.now();
+        Date fecha = Date.valueOf(fechaActual);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaString = formatter.format(fecha);
+        modelo.getVistaReportesVentas().tblDatosReporteVentas.setModel(implementacion.modeloReportesVentas(fechaString));
+        
+    }
+
+//    public void exportarPDF(){
+////        ModeloReportesVentas modeloRV = new ModeloReportesVentas();
+//
+//        
+//        String nombreVendedor = modelo.getVistaReportesVentas().tblDatosReporteVentas.getColumnName(1);
+//        String tipoPago = modelo.getVistaReportesVentas().tblDatosReporteVentas.getColumnName(2);
+//        String nombreCliente = modelo.getVistaReportesVentas().tblDatosReporteVentas.getColumnName(3);
+//        String fechaVenta = modelo.getVistaReportesVentas().tblDatosReporteVentas.getColumnName(4);
+//        
+//        ModeloReportesVentas model = implementacion.exportarPDF(nombreVendedor, tipoPago, nombreCliente, fechaVenta);
+//    }
     @Override
     public void mouseClicked(MouseEvent e) {
+
+        if (e.getComponent().equals(modelo.getVistaReportesVentas().btnMostrarVentas)) {
+            System.out.println("Botón presionado");
+            mostrarVentas();
+//            JOptionPane.showMessageDialog(null, "Debe de ingresar todos los campos", "ERROR AL AGREGAR CLIENTE", JOptionPane.ERROR_MESSAGE);
+        } else if (e.getComponent().equals(modelo.getVistaReportesVentas().btnExportarPDF)) {
+            System.out.println("Bton exportar");
+            implementacion.exportarPDFREPORTE();
+        }
 
     }
 
@@ -49,14 +82,13 @@ public class ControladorReportesVentas implements MouseListener, KeyListener {
 
     @Override
     public void mouseExited(MouseEvent e) {
-         if (e.getComponent().equals(modelo.getVistaReportesVentas().btnExportarExcel)) {
+        if (e.getComponent().equals(modelo.getVistaReportesVentas().btnExportarExcel)) {
             modelo.getVistaReportesVentas().btnExportarExcel.setBackground(new Color(48, 99, 99));
         } else if (e.getComponent().equals(modelo.getVistaReportesVentas().btnExportarPDF)) {
             modelo.getVistaReportesVentas().btnExportarPDF.setBackground(new Color(48, 99, 99));
         } else if (e.getComponent().equals(modelo.getVistaReportesVentas().btnMostrarVentas)) {
             modelo.getVistaReportesVentas().btnMostrarVentas.setBackground(new Color(48, 99, 99));
         }
-
 
     }
 

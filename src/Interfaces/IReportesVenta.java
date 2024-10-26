@@ -1,6 +1,7 @@
 package Interfaces;
 
 import Modelo.ModeloReportesVentas;
+import java.sql.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -10,8 +11,10 @@ import javax.swing.table.DefaultTableModel;
 public interface IReportesVenta {
     
     public Modelo.ModeloReportesVentas mostrarVentas(ModeloReportesVentas modelo);
-    public DefaultTableModel modeloReportesVentas();
+    public DefaultTableModel modeloReportesVentas(String fecha);
     
-    
+    public ModeloReportesVentas exportarPDF(String nombreVendedor, String tipoPago, String nombreCliente, String fechaVenta);
+    public ModeloReportesVentas exportarPDFREPORTE();
+    public ModeloReportesVentas exportarExcelResportes();
     
 }

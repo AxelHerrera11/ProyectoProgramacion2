@@ -5,6 +5,7 @@
 package Vistas;
 
 import Controlador.ControladorReportesVentas;
+import Implementacion.ReportesVentasImp;
 import Modelo.ModeloReportesVentas;
 
 /**
@@ -22,6 +23,9 @@ public class PanelReportesVentas extends javax.swing.JPanel {
         Modelo.ModeloReportesVentas modelo = new ModeloReportesVentas(this);
         Controlador.ControladorReportesVentas controlador = new ControladorReportesVentas(modelo);
         setControlador(controlador);
+        
+        ReportesVentasImp implementacion = new ReportesVentasImp();
+        
        
     }
 
@@ -42,7 +46,7 @@ public class PanelReportesVentas extends javax.swing.JPanel {
         letMostrarVentas = new javax.swing.JLabel();
         panelTabla = new javax.swing.JPanel();
         tblReportesVentas = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDatosReporteVentas = new javax.swing.JTable();
         btnExportarExcel = new javax.swing.JPanel();
         letExportarExcel = new javax.swing.JLabel();
         btnExportarPDF = new javax.swing.JPanel();
@@ -78,8 +82,8 @@ public class PanelReportesVentas extends javax.swing.JPanel {
 
         panelTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatosReporteVentas.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
+        tblDatosReporteVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -90,7 +94,7 @@ public class PanelReportesVentas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tblReportesVentas.setViewportView(jTable1);
+        tblReportesVentas.setViewportView(tblDatosReporteVentas);
 
         panelTabla.add(tblReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 370));
 
@@ -141,7 +145,6 @@ public class PanelReportesVentas extends javax.swing.JPanel {
     public javax.swing.JPanel btnExportarPDF;
     public javax.swing.JPanel btnMostrarVentas;
     private javax.swing.JPanel fondoPanel;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel letExportarExcel;
     private javax.swing.JLabel letExportarPDF;
     private javax.swing.JLabel letMostrarVentas;
@@ -150,6 +153,7 @@ public class PanelReportesVentas extends javax.swing.JPanel {
     private javax.swing.JPanel panelTabla;
     private javax.swing.JSeparator separadorDerecha;
     private javax.swing.JSeparator separadorIzquierda;
+    public javax.swing.JTable tblDatosReporteVentas;
     public javax.swing.JScrollPane tblReportesVentas;
     // End of variables declaration//GEN-END:variables
 
@@ -157,13 +161,10 @@ public class PanelReportesVentas extends javax.swing.JPanel {
 
     private void setControlador(ControladorReportesVentas controlador) {
         
-        letMostrarVentas.addMouseListener(controlador);
-        letExportarExcel.addMouseListener(controlador);
-        letExportarPDF.addMouseListener(controlador);
-        
         btnMostrarVentas.addMouseListener(controlador);
         btnExportarPDF.addMouseListener(controlador);
-        btnExportarPDF.addMouseListener(controlador);
+        btnExportarExcel.addMouseListener(controlador);
+              
     
     }
 }

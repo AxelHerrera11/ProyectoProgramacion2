@@ -85,7 +85,7 @@ public class VistaSupervisor extends javax.swing.JFrame {
         letSupervisorInventario.setFont(new java.awt.Font("Arial Unicode MS", 0, 18)); // NOI18N
         letSupervisorInventario.setForeground(new java.awt.Color(255, 255, 255));
         letSupervisorInventario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        letSupervisorInventario.setText("INVENTARIO");
+        letSupervisorInventario.setText("GESTIÓN INVENTARIO");
         btnSupervisorInventario.add(letSupervisorInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 40));
 
         fondoPanelSupervisor.add(btnSupervisorInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 300, 40));

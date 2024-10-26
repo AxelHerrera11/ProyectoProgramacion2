@@ -107,6 +107,7 @@ public class PanelClientes extends javax.swing.JPanel {
         fondoPanel.add(txtIDCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 320, -1));
 
         btnAgregar.setBackground(new java.awt.Color(48, 99, 99));
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel3.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,6 +134,7 @@ public class PanelClientes extends javax.swing.JPanel {
         fondoPanel.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 100, 40));
 
         btnActualizar.setBackground(new java.awt.Color(48, 99, 99));
+        btnActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel6.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -159,6 +161,7 @@ public class PanelClientes extends javax.swing.JPanel {
         fondoPanel.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 100, 40));
 
         btnEliminar.setBackground(new java.awt.Color(48, 99, 99));
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblEliminar.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         lblEliminar.setForeground(new java.awt.Color(255, 255, 255));

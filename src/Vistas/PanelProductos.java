@@ -122,6 +122,7 @@ public class PanelProductos extends javax.swing.JPanel {
         fondoPanel.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 250, -1));
         fondoPanel.add(letCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 580, 250, 70));
 
+        btnImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         letProductoImagen.setBackground(new java.awt.Color(255, 255, 255));
@@ -150,6 +151,7 @@ public class PanelProductos extends javax.swing.JPanel {
         fondoPanel.add(comBoxCategoriaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 260, 30));
 
         btnAgregarProducto.setBackground(new java.awt.Color(48, 99, 99));
+        btnAgregarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         letAgregarProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
@@ -161,6 +163,7 @@ public class PanelProductos extends javax.swing.JPanel {
         fondoPanel.add(btnAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 80, 30));
 
         btnActualizarProducto.setBackground(new java.awt.Color(48, 99, 99));
+        btnActualizarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnActualizarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         letActualizarProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
@@ -172,6 +175,7 @@ public class PanelProductos extends javax.swing.JPanel {
         fondoPanel.add(btnActualizarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 590, 80, 30));
 
         btnEliminarProducto.setBackground(new java.awt.Color(48, 99, 99));
+        btnEliminarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         letEliminarProducto.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
@@ -195,6 +199,7 @@ public class PanelProductos extends javax.swing.JPanel {
         fondoPanel.add(btnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 75, 30));
 
         btnActualizarImagen.setBackground(new java.awt.Color(96, 124, 124));
+        btnActualizarImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnActualizarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
@@ -206,6 +211,7 @@ public class PanelProductos extends javax.swing.JPanel {
         fondoPanel.add(btnActualizarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 120, 30));
 
         btnBorrarImagen.setBackground(new java.awt.Color(96, 124, 124));
+        btnBorrarImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBorrarImagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N

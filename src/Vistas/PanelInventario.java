@@ -89,6 +89,7 @@ public class PanelInventario extends javax.swing.JPanel {
         fondoPanel.add(panelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 800, 370));
 
         btnMostrarGestionInventario.setBackground(new java.awt.Color(48, 99, 99));
+        btnMostrarGestionInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMostrarGestionInventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         letMostrarInventario.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
@@ -100,6 +101,7 @@ public class PanelInventario extends javax.swing.JPanel {
         fondoPanel.add(btnMostrarGestionInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 280, 40));
 
         btnMostrarVentas.setBackground(new java.awt.Color(48, 99, 99));
+        btnMostrarVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMostrarVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N

@@ -95,6 +95,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         FondoPanel.add(cmbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, 150, -1));
 
         btnRegistrar.setBackground(new java.awt.Color(48, 99, 99));
+        btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         letRegistrar.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letRegistrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,6 +122,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         FondoPanel.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 130, 40));
 
         btnBorrar.setBackground(new java.awt.Color(48, 99, 99));
+        btnBorrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         letBorrar.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
         letBorrar.setForeground(new java.awt.Color(255, 255, 255));
